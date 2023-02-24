@@ -1,0 +1,193 @@
+/* ------------------------ General Style ------------------------ */
+:root{
+    --white-color: #fff;
+    --light-color: #dbdbdb;
+    --black-color: #000;
+    --dark-color: #2b2b2b;
+
+    --whitesmoke-color: #f5f5f5;
+    --gray-color: #a1a1a1;
+
+/* Dark Mode Color */
+
+    /* --white-color: #242424;
+    --light-color: gray;
+    --black-color: #fff;
+    --dark-color: whitesmoke;
+    --whitesmoke-color: #423f3f; */
+}
+body{
+    background: var(--white-color);
+    color: var(--black-color);
+}
+.section-bg{
+    background: var(--whitesmoke-color);
+    color: var(--black-color);
+}
+.btn{
+    padding: 1rem 3rem;
+    border-radius: 20px;
+}
+.btn-gray{
+    color: var(--black-color);
+    background: var(--light-color);
+}
+.btn.active{
+    background: var(--dark-color);
+    color: var(--white-color);
+}
+.btn-secondary{
+    background: #d9534f;
+    color: #fff;
+}
+.btn-secondary:hover{
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: var(--black-color);
+}
+a:hover{
+    text-decoration: none;
+    color: var(--black-color);
+}
+a:focus{
+    text-decoration: none;
+    color: unset;
+}
+li{list-style: none;}
+input::placeholder{color: var(--dark-color);}
+.bookmarked{color: #c9322d}
+.d-flex{display: flex;}
+.d-flex-sb{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.d-flex-sa{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.top-nav{
+    width: 100%;
+    margin: 0;
+    padding: 2rem 2rem 2rem 2rem;
+    position: fixed;
+    top: 0;
+}
+.top-nav.bg-1{background: var(--whitesmoke-color);}
+.top-nav.bg-2{background: var(--white-color);}
+.top-nav i{font-size: 2rem;}
+
+/* ---------------- Roommate Finder Style ------------------ */
+.rm-finder-wrapper{
+    width: 100%;
+    background: var(--white-color);
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+.rm-finder-wrapper h3{letter-spacing: 1.5px;}
+.rm-finder-wrapper .box{
+    background: transparent;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1.5px solid var(--dark-color);
+    border-radius: 5px;
+}
+.rm-finder-wrapper .box img{
+    width: 100%;
+}
+.rm-finder-wrapper .box h4{
+    font-family: corbel, cursive;
+    font-weight: bold;
+    font-size: 24px;
+}
+.rm-finder-wrapper .box p{
+    padding: 0 12px;
+}
+.rm-finder-wrapper .bio-data-instruction{
+    padding-left: 5px;
+    border-left: 2px solid gray;
+}
+.almost-done-text{
+    font-size: 16px;
+    padding: 5px 0;
+    line-height: 30px;
+}
+.in-text-input{
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted gray;
+    line-height: 0;
+}
+.in-text-input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted gray;
+}
+.rm-finder-wrapper.aaa{
+    padding-top: 10rem;
+}
+/* Roommate finder profile */
+.top-nav-profile-pic img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.rm-finder-wrapper .sub-header a{font-weight: bold;}
+.rm-finder-wrapper .sub-header a.active{color: brown;}
+.rmf-profile .user-profile img{
+    width: 100%;
+    max-height: 50vh;
+    margin-top: 15px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.rmf-profile .user-profile-inn{
+    background: whitesmoke;
+    padding: 7px 0;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 8px 2px rgba(128, 128, 128, 0.829);
+    -webkit-box-shadow: 2px 1px 8px 2px rgba(128, 128, 128, 0.829);
+    -moz-box-shadow: 2px 1px 8px 2px rgba(128, 128, 128, 0.829);
+}
+.rmf-profile .user-profile-inn h3{font-weight: bold;}
+.rmf-profile .user-profile-inn .action-btn{
+    width: 35%;
+    margin: 0 auto;
+}
+.rmf-profile .user-profile-inn .action-btn .circle{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+}
+#accept{
+    background: #00ff00;
+    background: linear-gradient(90deg,#00ff00 0%, #1d811d 90%);
+    background: -webkit-linear-gradient(90deg,#00ff00 0%, #1d811d 90%);
+    background: -moz-linear-gradient(90deg,#00ff00 0%, #1d811d 90%);
+}
+#decline{
+    background: #ff4400;
+    background: linear-gradient(90deg,#ff4400 0%, #a2260b 90%);
+    background: -webkit-linear-gradient(90deg,#ff4400 0%, #a2260b 90%);
+    background: -moz-linear-gradient(90deg,#ff4400 0%, #a2260b 90%);
+}
+.rmf-profile .user-profile-inn .profile-desc{
+    margin: 10px 0;
+}
+.rmf-profile .user-profile-inn input{
+    background: transparent;
+    outline: none;
+    border: 1px solid gray;
+    margin-bottom: 5px;
+}

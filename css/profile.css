@@ -1,0 +1,123 @@
+/* ---------------- Profile Style ------------------ */
+.user-profile-wrapper{
+    padding: 7rem 0;
+    min-height: 100vh;
+}
+.user-profile{
+    width: 90%;
+    background: var(--white-color);
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px 4px rgba(172, 172, 172, 0.808);
+}
+.user-profile h2{
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.user-profile span a{padding: 0 0.8rem;}
+.user-profile span i{font-size: 2rem;}
+.user-details{
+    margin-top: 3rem;
+}
+.user-details .left{
+    margin-right: 20px;
+}
+.user-details .left img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.user-details .right{
+    width: 85%;
+}
+.user-details .right h3{
+    color: var(--dark-color);
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.user-details .right small{
+    color: var(--gray-color);
+}
+.trophy-badge{
+    color: rgb(139, 119, 0);
+    margin-left: 3px;
+}
+.more-details{
+    margin: 10px 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(128, 128, 128, 0.233);
+}
+.more-details div{
+    width: 33%;
+}
+.more-details h4{
+    font-size: 15px;
+    margin: 0;
+    font-weight: bold;
+}
+.more-details p{color: var(--gray-color);}
+.switch-btn,
+.lower-section{
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 2px 1px 8px 2px rgba(187, 187, 187, 0.472);
+    -webkit-box-shadow: 2px 1px 8px 2px rgba(187, 187, 187, 0.472);
+    -moz-box-shadow: 2px 1px 8px 2px rgba(187, 187, 187, 0.472);
+}
+.switch-btn ul{
+    padding: 0;
+    margin-bottom: 0;
+}
+.switch-btn ul li{
+    width: 33%;
+    padding: 10px 0;
+    text-align: center;
+}
+.switch-btn ul li:nth-child(2){
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+.active{background: rgba(77, 77, 77, 0.383);}
+.switch-btn .active{background: rgba(77, 77, 77, 0.383);}
+.switch-btn .active:first-child{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.switch-btn .active:last-child{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.lower-section{
+    padding: 10px;
+}
+.lower-section ul{
+    padding: 0;
+}
+.lower-section ul li{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.233);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.lower-section ul li:last-child{
+    border: none;
+    padding-bottom: 0;
+}
+.lower-section img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+.courses-wrapper,
+.study-wrapper{
+    display: none;
+}
+.courses-wrapper span{
+    width: 100%;
+    margin-left: 5px;
+}
