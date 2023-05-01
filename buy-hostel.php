@@ -3,6 +3,9 @@ session_start();
 if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
+if(isset($_SESSION['id'])){
+  $id = $_SESSION['id'];
+}
 require "database/connection.php";
 if(isset($_GET['time'])){
     $time = $_GET['time'];
@@ -13,9 +16,14 @@ $sql1 = "SELECT * FROM register_house WHERE timestamp='$time' ";
 $stmt1 = $conn->prepare($sql1);
 $stmt1->execute();
 $result1 = $stmt1->get_result();
-if($result1->num_rows){
+if($result1->num_rows > 0){
     $row1 = $result1->fetch_assoc();
-        
+    $user_id = $row1['user_id'];
+
+    $sql4 = "INSERT INTO visitors_clicks(visitor_id, owner_id, feature) VALUES(?,?,'hostel')";
+        $stmt4 = $conn->prepare($sql4);
+        $stmt4->bind_param('ss', $user_id, $id);
+        $stmt4->execute();
 }
 
 ?>
@@ -55,9 +63,9 @@ if($result1->num_rows){
 
 <style>
 .contact_agent{
-  background-color: blue;
-  color: #fff;
-  padding: 1rem 0;
+  background-color: rgba(255,255,255,.2);
+  color: blue;
+  padding: 1rem 1rem;
 }
 </style>
 
@@ -77,7 +85,7 @@ if($result1->num_rows){
   <main id="main">
 
    <!-- ======= Pricing Section ======= -->
- <section id="pricing" class="pricing">
+ <section id="pricing" class="pricing mt-0 pt-3">
       <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
@@ -149,13 +157,34 @@ if($result1->num_rows){
         </div>
         <div class="mt-5">
           
-        <h3 class="mb-5">Sellers Info</h3>
-
-        <a class="contact_agent form-control text-center"><?= $row1['contact_email']; ?></a><br />
-        <a class="contact_agent form-control text-center"><?= $row1['contact_phone']; ?></a><br />
-        <a href="connect-agent.php?id=<?= $row1['user_id']; ?>" class="contact_agent form-control text-center">Chat Agent</a><br />
-        <p class="text-danger">Note: Never send any money to any agent until you have confirmed the house and make sure you meet the agent in an open environment. Contact us immediately you feel you have been defrauded(09048480552).</p>
+        <h3 class="mb-2">Safety Tips</h3>
+        <ol>
+          <li>Do not make any inspection fee without seeing the agent and property.</li>
+          <li>Only pay Rental fee, Sales fee or any upfront payment after you verify the Landlord.</li>
+          <li>Ensure you meet the Agent in an open location.</li>
+          <li>The Agent does not represent Eazy Learn and Eazy Learn is not liable for any monetary transaction between you and the agent.</li>
+        </ol>
+        <div class="text-end">
+        <a href="" class="text-danger" style="font-size: 1.5rem; border-bottom: 2px solid red;">Report Property</a>
         </div>
+        </div>
+
+        <div class="mt-5">
+          
+          <h3 class="mb-5">Sellers Info</h3>
+  
+          <a class="contact_agent form-control"><i class="bi bi-envelope-open"></i> <?= $row1['contact_email']; ?></a><br />
+          <a class="contact_agent form-control"><i class="bi bi-telephone"></i> <?= $row1['contact_phone']; ?></a><br />
+          <a href="connect-agent.php?id=<?= $row1['user_id']; ?>" class="contact_agent form-control">Chat Agent</a>
+          </div>
+
+          <div class="mt-5">
+          
+          <h3 class="mb-2">Disclaimer</h3>
+          <p>This property consists of an advertisement by <?= $row1['business_name']; ?>. Eazy Learn only serves as a medium for the advertisement for this property and is not responsible for selling the property.</p>
+      
+          </div>
+  
 
       </div>
     </section> 

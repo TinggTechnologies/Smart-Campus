@@ -37,7 +37,7 @@ if(isset($_POST['image-btn'])){
             $fileNameNew = time() . '.' . $fileActualExt;
             $fileDestination = 'uploads/'. $fileNameNew;
             if(move_uploaded_file($_FILES['file']['tmp_name'], $fileDestination)){
-            $sql = "UPDATE users SET image = '$fileDestination' WHERE user_id='$id'";
+            $sql = "UPDATE users SET image = '$fileNameNew' WHERE user_id='$id'";
             $stmt = $conn->prepare($sql);
             if($stmt->execute()){
                 $notification = $lastname . " " . $firstname . " just updated his photo";

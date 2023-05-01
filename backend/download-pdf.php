@@ -26,31 +26,21 @@ if($result->num_rows){
             $department = $row1['department'];
         }
     $output .= '
-    <body>
-    <section class="container-fluid login-wrapper pt-5">
-        <div class="container">
-
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                <div class="login-form">
-          
-                <h2 class="pt-5" style="font-size: 3rem; line-height: 1.3;">'.$row['course_title'].'</h2>
-                <span style="font-weight: 500; font-size: 1.7rem;">Faculty: '.$row1['faculty'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Department: '.$department.'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Description: '.$row['description'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">School: '.$row1['school'].'</span><br />
-                <form id="profile_form">                         
-                    <div class="form-group">
-                    <a href="download.php?path='.$row['container'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Download Pdf</a>
-                    </div>
-                </form>
-               
-            </div>
-                </div>
-            </div>
-           
-        </div>
-    </section>
+    <div style="margin-top: 3rem;">
+    <div class="col-md-4">
+    <div class="teacher">
+      <div class="teacher-img">
+        <img src="uploads/'.$row1['image'].'">
+      </div>
+      <div class="teacher-info">
+        <h3>'.$name.'</h3>
+        <p>'.$row['course_title'].'</p>
+        <p>'.$row['amount'].'</p>
+        <a href="buy-book.php?item_id='.$row['tutorial_id'].'" class="btn enroll-btn" style="background: blue; color: #fff; font-weight: 700;">Buy Course</a>
+      </div>
+    </div>
+  </div>
+    </div>
     ' ;
 }
 } else {
@@ -63,9 +53,10 @@ if($result->num_rows){
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                <div class="login-form">
+                <div class="login-form text-center">
           
-                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">No Tutorial Available</h2>
+                <h2 class="pt-5" style="font-size: 7rem; line-height: 1.3;"><i class="bi bi-x-circle-fill text-danger"></i></h2> 
+                <span style="font-size: 1.8rem;">No Tutorial    </span>     
               
                
             </div>

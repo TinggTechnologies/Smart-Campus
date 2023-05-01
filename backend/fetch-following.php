@@ -30,7 +30,7 @@ if($stmt->execute()){
     $output .= '
     <li class="follower d-flex-sb">
     <a href="#">
-        <div class="follower-img"><img src="'.$rows1['image'].'"></div>
+        <div class="follower-img"><img src="uploads/'.$rows1['image'].'"></div>
         
         <div class="follower-info">
             <h4>'.$rows1['lastname']. ' ' . $rows1['firstname'].'</h4>

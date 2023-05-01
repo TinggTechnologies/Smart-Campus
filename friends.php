@@ -25,9 +25,7 @@
     $(document).ready(function(){
         fetch_user();
 
-        setInterval(function(){
             fetch_user();
-        }, 5000);
 
         function fetch_user(){
             $.ajax({

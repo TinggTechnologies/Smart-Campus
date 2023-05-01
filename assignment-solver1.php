@@ -5,7 +5,6 @@ if(!isset($_SESSION['id'])){
 }
 require "database/connection.php";
 require "header.php"; 
-require "backend/assignment-solver1.php";
 
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -21,7 +20,7 @@ if($stmt->execute()){
 }
 ?>
 <body>
-    <section class="container-fluid login-wrapper pt-5">
+    <section class="container-fluid login-wrapper pt-4">
         <div class="container">
 
             <div class="row justify-content-center">
@@ -30,8 +29,8 @@ if($stmt->execute()){
             <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Assignment Solver</a>
             <img src="./assets/img/easylearn/ass.jpg" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Assignment Solver</h2>
-                <a href="#" style="color: blue; font-weight: 500; font-size: 1.1rem;">Fill in all inputs</a>
-                <form id="p_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
+                <a href="#" style="color: blue; font-weight: 500; font-size: 1.1rem;">Edit Assignment</a>
+                <form id="p_form" method="POST" enctype="multipart/form-data">
                 <?php
                 if(isset($error['file'])){
                     echo $error['file'];
@@ -94,3 +93,32 @@ if($stmt->execute()){
         </div>
     </section>
 <?php require "footer.php"; ?>
+<script>
+    $(document).ready(function(){
+        $('#p_form').on('submit', function(e){
+            e.preventDefault();
+            var formData = new FormData(this);
+            var fileSize = $('#file')[0].files[0].size;
+            var maxSize = 5000000;
+            if(fileSize > maxSize){
+                $('#message').html('Image size is too large');
+            } else{
+                $.ajax({
+                    url: 'backend/assignment-solver1.php',
+                    type: 'POST',
+                    data: formData,         
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        $('#message').html(response);
+                      location.href = "select-teacher.php";
+                    }
+                });
+            }
+        });
+        $('#p_form')[0].reset();
+    });
+</script>
+
+
+

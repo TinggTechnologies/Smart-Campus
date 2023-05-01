@@ -17,51 +17,27 @@ if($stmt->execute()){
     }
 }
 
-require "backend/donate-pdf.php";
+require "header.php";
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Favicons -->
-    <link href="assets/img/easylearn/logo2.jpg" rel="icon">
-    <link href="assets/img/easylearn/logo2.jpg" rel="apple-touch-icon">
-
-    <title>Easy Learn</title>
-    <link rel="stylesheet" href="./vendors/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/sweetalert.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/query.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-    <section class="container-fluid login-wrapper pt-3">
+<section class="container-fluid login-wrapper pt-4">
         <div class="container">
 
-            <div class="row justify-content-center ">
+            <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="login-form">
-                        <div class="logo text-danger"><a href="javascript:history.back();" style="font-size: 1.6rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> </a></div>
-                            <h2 class="pt-3">Donate Pdf</h2>
-                            <a href="edit-donate-pdf.php" class="text-primary">Edit Pdf</a>
-                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
-                            <div class="form-group text-center">
-                                <div class="message">
-                                <?php 
-                           if(isset($error['file'])){
-                            echo $error['file'];
-                           }
-                        ?>
-                                </div>
-                            </div>
+                <div class="login-form">
+            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Donate Pdf</a>
+            <img src="./assets/img/easylearn/ass.jpg" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
+                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Donate Pdf</h2>
+                <a href="edit-donate-pdf.php" style="color: blue; font-weight: 500; font-size: 1.1rem;">Edit Pdf</a>
+                <form id="dp_form" class="pt-0 mt-3" method="POST" enctype="multipart/form-data">
+                <?php
+                if(isset($error['file'])){
+                    echo $error['file'];
+                }
+                ?>
+                <p>Help Eazy Learn by donating the PDF you have for other students to have access to. You can also monetize your books by registering as a teacher.</p>
                                 <div class="input-group mb-5">
                                     <input type="text" name="title" id="course_title" class="form-control" placeholder="Course Title" required>
                                 </div>
@@ -79,14 +55,6 @@ require "backend/donate-pdf.php";
                                 <div class="form-group mt-5">
                                     <button type="submit" name="donate-pdf-btn" id="donate-pdf-btn" class="form-control getStarted-btn">Upload</button>
                                 </div>
-            
-                               <!--  <div class="progress">                   
-                                    <div class="progress-bar" role="progressbar" style="width: 50%; height: 50px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% 
-                                        <div class="spinner-border text-light float-end" role="status">
-                                            <span class="visually-hidden">Loading...</span>
-                                          </div> 
-                                    </div>
-                                  </div> -->
                                 
                             </form>
                             
@@ -97,9 +65,43 @@ require "backend/donate-pdf.php";
             
         </div>
     </section>
+    <?php require "footer.php"; ?>
     <script src="js/jquery2.js"></script>
     <script src="js/index.js"></script>
     <script src="./assets/js/sweetalert.js"></script>
 </body>
     </html>
+    <script>
+    $(document).ready(function(){
+        $('#dp_form').on('submit', function(e){
+            e.preventDefault();
+            var formData = new FormData(this);
+            var fileSize = $('#file')[0].files[0].size;
+            var maxSize = 5000000;
+            if(fileSize > maxSize){
+                $('#message').html('Image size is too large');
+            } else{
+                $.ajax({
+                    url: 'backend/donate-pdf.php',
+                    type: 'POST',
+                    data: formData,         
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        $('#message').html(response);
+                        Swal.fire(
+                            'Success',
+                            'Uploaded Successfully',
+                            'success'
+                    )
+                    }
+                });
+            }
+        });
+        $('#dp_form')[0].reset();
+    });
+</script>
+
+
+
     

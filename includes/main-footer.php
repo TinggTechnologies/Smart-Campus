@@ -7,7 +7,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <span>Eazy Learn</span>
       </a>
-      <p>Eazy Learn is a platform where we make learning much easier and we make learning environment much conducive.</p>
+      <p>Eazy Learn, the ultimate solution to stress-free schooling.</p>
       <div class="social-links d-flex mt-4">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -75,8 +75,25 @@
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 
+
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+<script>
+  $(document).ready(function(){
+	// Add animation to hostel panels when hovering
+	$(".panel").hover(
+		function(){
+			$(this).addClass("panel-info");
+			$(this).find(".btn").addClass("btn-info");
+		},
+		function(){
+			$(this).removeClass("panel-info");
+			$(this).find(".btn").removeClass("btn-info");
+		}
+	);
+});
+
+</script>
 
 </body>
 

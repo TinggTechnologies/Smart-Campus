@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 session_start();
 include "../database/connection.php";
@@ -6,14 +6,12 @@ include "../database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
-if(isset($_SESSION['ass_code'])){
-    $ass_code = $_SESSION['ass_code'];
-}
+
 $output = '';
 
-$sql2 = "SELECT * FROM assigment WHERE assignment_code=?";
+$sql2 = "SELECT * FROM users WHERE user_id=?";
 $stmt2 = $conn->prepare($sql2);
-$stmt2->bind_param('s', $ass_code);
+$stmt2->bind_param('s', $id);
 if($stmt2->execute()){
     $result2 = $stmt2->get_result();
     if($result2->num_rows > 0){ 
@@ -41,12 +39,14 @@ if($stmt->execute()){
                 $row1 = $result1->fetch_assoc();
 
                 $output .= '
-                <img src="'.$row1['image'].'" style="height: 14rem; width: 14rem;" alt="">
+                <div style="box-shadow: 0px 0px 5px rgba(0,0,0,.3),0px 3px 5px rgba(0,0,0,.2),0px 3px 5px rgba(0,0,0,.15),0px 5px 7px rgba(0,0,0,.1),0px 5px 10px rgba(0,0,0,.05); padding: 2rem 0">
+                <img src="uploads/'.$row1['image'].'" style="height: 14rem; width: 14rem; border-radius: 50%;">
                 <h5>Teacher Name: <span>'.$row1['lastname'].' '.$row1['firstname'].'</span></h5>
                 <h5>Department: <span>'.$row2['department'].'</span></h5>
                 <h5>School: <span>'.$row1['school'].'</span></h5>
                 <h5>Rating: <span>4/5</span></h5><br />
-                <a href="teacher-choosen.php?assignment_id='.$ass_code.'&teacher_id='.$user_id.'" class="assignment-pdf" style="border: none; background: blue;">Select Teacher</a>
+                <a href="teacher-choosen.php?teacher_id='.$user_id.'" class="assignment-pdf" style="border: none; background: blue;">Select Teacher</a>
+                </div>
                 <hr>
                 ';
 

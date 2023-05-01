@@ -200,7 +200,7 @@ if($result->num_rows){
                 },
                 success: function(data){
                     $('.message').html(data);
-                    
+                    location.href = 'admin-dashboard.php';
                 }
             });
             $('#business_form')[0].reset();

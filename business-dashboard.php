@@ -40,7 +40,7 @@ require_once "includes/dashboard-header.php"; ?>
         <!-- End Navigation -->
 
          <!-- ================= Story ================== -->
-         <div class="story-scroller d-flex-sb">
+         <div class="story-scroller d-flex-sb" style="padding-top: 5rem;">
             <div class="feed d-flex align-items-center">
                 <div class="feed-text">
                     <h3>Hi, <span style="color: blue;"><?= $_SESSION['lastname']; ?></span></h3>

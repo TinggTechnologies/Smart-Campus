@@ -41,7 +41,7 @@ require "database/connection.php";
 <body>
     <main id="main">
     <section id="pricing" class="pricing pt-0">
-      <div class="container" data-aos="fade-up">
+      <div style="width: 98%; margin: auto;" data-aos="fade-up">
 
       <div class="section-header mt-2 d-flex justify-content-between align-items-center">
      <a href="javascript:history.back();">

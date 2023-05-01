@@ -49,7 +49,7 @@ $output .= '
 
 <div class="individuals-comment d-flex-sb">
 <div class="person-profile-xs">
-    <img src="'.$rows1['image'].'">
+    <img src="uploads/'.$rows1['image'].'">
 </div>
 <div class="individuals">
     <h6>'.$rows1['lastname']. ' ' .$rows1['firstname'].'</h6>

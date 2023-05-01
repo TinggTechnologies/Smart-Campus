@@ -27,17 +27,17 @@ if($stmt->execute()){
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <div class="login-form">
-            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Shop</a>
-            <img src="./assets/img/easylearn/business.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive mt-5">
+            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i></a>
+            <img src="./assets/img/easylearn/buy.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive mt-5">
             
                 <form id="registration_form" class="mt-3">
 
+                <h3 class="text-center">Online Shop</h3>
+                <p class="text-center">Eazy Learn Tutorial is a platform specially designed for students to easily sell and buy stuff from other students at a good price.
+            </p>
+
                     <div class="form-group mt-5 text-center">
-                        <a href="buy.php" class="form-control getStarted-btn" style="background: #030a23;">Buy Stuffs</a>
-                    </div>
-                    
-                    <div class="form-group mt-4 text-center">
-                        <a href="./job.php" class="form-control getStarted-btn">Register Business</a>
+                        <a href="buy.php" class="form-control getStarted-btn" style="background: blue;">Buy Stuffs</a>
                     </div>
 
                 </form>

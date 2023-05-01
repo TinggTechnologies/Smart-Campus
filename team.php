@@ -37,6 +37,25 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="member">
+              <img src="assets/img/easylearn/image.png" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>Joseph Leonard</h4>
+                <span>Backend Developer | Data Scientist</span>
+                <p>
+                  
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="member">
               <img src="assets/img/easylearn/moyin.jpg" class="img-fluid" alt="">
@@ -58,7 +77,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="member">
-              <img src="assets/img/easylearn/gbest.jpg" class="img-fluid" alt="">
+              <img src="assets/img/easylearn/gbest.jpg" class="img-fluid" style="height: 25rem;" alt="">
               <div class="member-content">
                 <h4>Awotanmi Gbemisola Omololu Elijah</h4>
                 <span>Front-End Developer</span>

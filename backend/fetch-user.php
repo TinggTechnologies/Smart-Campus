@@ -9,15 +9,15 @@ if(isset($_SESSION['id'])){
 }
 $output = '';
 
-$sql = "SELECT * FROM friends WHERE user_id='$incoming_id' AND status='f' ORDER BY id desc";
+$sql = "SELECT DISTINCT * FROM messages WHERE outgoing_id='$incoming_id'";
 $stmt = $conn->prepare($sql);
 
 if($stmt->execute()){
     $result = $stmt->get_result();
     if($result->num_rows > 0){
        while($fetch = $result->fetch_assoc()){
-        $outgoing_id = $fetch['user_id'];
-        $friend_id = $fetch['friend_id'];
+        $outgoing_id = $fetch['outgoing_id'];
+        $friend_id = $fetch['incoming_id'];
         $sql2 = "SELECT * FROM users WHERE user_id='$friend_id'";
 $stmt2 = $conn->prepare($sql2);
 
@@ -47,7 +47,7 @@ if($stmt2->execute()){
                   $count3 = "";
                 }
 
-                if($outputs == ""){
+                if($outputs == "No message available"){
                   @$timing = "";
                 } else {
                   @$timing = substr($row1['timestamp'], 11, -3);
@@ -63,15 +63,15 @@ if($stmt2->execute()){
         $output .= '
         <a href="chat.php?id='.$friend_id.'"><li class="individual-chat d-flex-sb">
        <div class="d-flex">
-       <img src="'.$fetch2['image'].'">
+       <img src="uploads/'.$fetch2['image'].'">
        <div class="friend-chat" style="margin-left: .5rem;">
-           <h4>'.$fetch2['lastname']. ' '.$fetch2['firstname'].' <i class="bi bi-check2-circle" style="color: '.$sta.'"></i></h4>
+           <h4>'.$fetch2['lastname']. ' '.$fetch2['firstname'].' <i class="bi bi-circle-fill" style="color: '.$sta.'; font-size: 1rem;"></i></h4>
            <p class="read">'.$outputs.'</p>
        </div>
        </div>
-        <div class="d-flex">
+        <div class="d-flex" style="flex-direction: column;">
         <span>'.@$timing.'</span> 
-        <span class="badge bg-success badge-number" style="background: blue; margin-left: 1rem;">'.$count3.'</span>
+        <span class="badge bg-success badge-number" style="background: blue; margin-left: 1rem; margin-top: 1rem;">'.$count3.'</span>
         </div>
         </li></a>
         ';
@@ -83,7 +83,7 @@ if($stmt2->execute()){
     
 } else {
   echo '
-  <div class="text-center text-primary" style="font-weight: 700; font-size: 2.5rem;">No Friends</div>
+  <div class="text-center text-primary" style="font-weight: 700; font-size: 2.5rem;">No Message</div>
   ';
 }}
 echo $output; 

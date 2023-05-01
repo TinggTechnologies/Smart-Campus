@@ -1,31 +1,75 @@
-<nav class="nav d-flex-sb">
-            <div>
-                <ul class="d-flex-sa">
-                    <li class="">
-                        <a href="dashboard.php">
-                            <i class="bi bi-house-door-fill" style="color: blue"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="search.php">
-                            <i class="bi bi-search"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <a href="create-post.php" class="nav-add-btn">
-                <i class="bi bi-plus-circle-fill animation-btn"></i>
-            </a>
-            <div>
-                <ul class="d-flex-sa">
-                    <li class="not" id="not">
-                        
-                    </li>
-                    <li>
-                        <a href="followers.php">
-                            <i class="bi bi-people"></i>
-                    </li>
-                    </a>
-                </ul>
-            </div>
-        </nav>
+<style>
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: 65px;
+}
+
+.bottom-nav .nav-item a {
+  text-decoration: none; 
+  color: #999;
+}
+
+.bottom-nav .nav-item.animate a i{
+  font-size: 40px;
+}
+
+.bottom-nav .nav-item a i{
+    font-size: 23px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 900;
+
+
+
+
+
+
+
+}
+
+</style>
+
+
+
+<div class="bottom-nav">
+  <div class="nav-item">
+    <a href="dashboard.php">
+      <i class="bi bi-house-door-fill" style="color: blue;"></i> 
+    </a>
+  </div>
+  <div class="nav-item">
+    <a href="search.php">
+      <i class="bi bi-search"></i>
+    </a>
+  </div>
+  <div class="nav-item animate">
+    <a href="create-post.php">
+      <i class="bi bi-plus-circle"></i>
+    </a>
+  </div>
+
+  <div class="nav-item not">
+
+  </div>
+  <div class="nav-item fr">
+   
+  </div>
+  
+</div>
+

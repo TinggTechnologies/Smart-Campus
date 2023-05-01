@@ -7,6 +7,7 @@ require "database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
+date_default_timezone_set('Africa/Lagos');
 $sql = "SELECT * FROM users WHERE user_id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $id);
@@ -18,20 +19,16 @@ if($stmt->execute()){
 }
 
 
-$rm_sql = "SELECT * FROM users WHERE user_id=?";
+$rm_sql = "SELECT * FROM users WHERE user_id=? AND (department='' OR school='' OR faculty='')";
 $rm_stmt = $conn->prepare($rm_sql);
 $rm_stmt->bind_param('s', $id);
 if($rm_stmt->execute()){
    $rm_result = $rm_stmt->get_result();
    if($rm_result->num_rows > 0){
-    $rm_row = $rm_result->fetch_assoc();
-    $department = $rm_row['department'];
+    echo "<script>location.href = 'verify-email.php';</script>"; 
    }
 }
 
-if($department == ""){
-    echo "<script>location.href = 'verify-email.php';</script>"; 
-}
 
 ?>
 <!DOCTYPE html>

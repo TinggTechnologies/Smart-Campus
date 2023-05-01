@@ -11,7 +11,7 @@ $output = "";
 if(isset($_POST['pq-btn'])){
 $department = $_POST['department'];
 $course_title = $_POST['course_title'];
-$ans = $_POST['ans'];
+$price = $_POST['price'];
 $pq_id = $_POST['pq_id'];
 
 
@@ -28,13 +28,13 @@ $pq_id = $_POST['pq_id'];
     $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'doc');
     if(in_array($fileActualExt, $allowed)){
         if($_FILES['file']['error'] === 0){
-        if($_FILES['file']['size'] < 2000000){
+        if($_FILES['file']['size'] < 5000000){
             $fileNameNew = time() . '.' . $fileActualExt;
             $fileDestination = 'uploads/'. $fileNameNew;
             if(move_uploaded_file($_FILES['file']['tmp_name'], $fileDestination)){
-            $sql = "UPDATE past_question SET department=?, file=?, course_title=?, type=? WHERE id=?";
+            $sql = "UPDATE past_question SET department=?, file=?, course_title=?, price=? WHERE id=?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('sssss', $department, $fileDestination, $course_title, $ans, $pq_id);
+            $stmt->bind_param('sssss', $department, $fileDestination, $course_title, $price, $pq_id);
             if($stmt->execute()){
             echo "<script>location.href = 'pq-edit-success.php';</script>";
             }

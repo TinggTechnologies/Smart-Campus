@@ -41,7 +41,7 @@ if($stmt2->execute()){
 
       <div class="swiper-slide">
         <div class="testimonial-item">
-          <img src="'.$row3['image'].'" style="border-radius: 25px;" class="testimonial-img" alt="">                 
+          <img src="uploads/'.$row3['image'].'" style="border-radius: 25px;" class="testimonial-img" alt="">                 
         </div>
       </div>
       

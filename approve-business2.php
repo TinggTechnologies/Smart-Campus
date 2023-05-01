@@ -181,6 +181,7 @@ require "database/connection.php";
                 },
                 success: function(data){
                     $('.message').html(data);
+                    location.href = 'admin-dashboard.php';
                     
                 }
             });

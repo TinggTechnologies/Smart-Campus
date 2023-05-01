@@ -29,10 +29,24 @@ $stmt1->execute();
 
       
         <!-- ================= Feeds ================== -->
-        <div class="feed-wrapper" style="padding-top: 4.5rem;">
+        <div class="feed-wrapper" style="padding-top: 4.5rem; padding-bottom: 2rem;">
         <img src="./assets/img/easylearn/student.jpg" class="form-control" style="height: 25rem;" alt="">
         <h4 style="font-size: 3rem; padding-top: 2rem;">Admin Dashboard</h4>
         <p style="font-size: 1.6rem; line-height: 1.5; margin-top: 2rem; margin-bottom: 3rem;">You are welcome to Easy Learn where we simplify learning by making learning much more easier and learning environment more conducive for learning. With this dashboard you can monitor everything happening on this system. thank you!</p>
+        <?php
+$counter_file = "counter.txt";
+
+if(!file_exists($counter_file)){
+  echo "No file"; 
+} else {
+  $counter = file_get_contents($counter_file);
+}
+
+
+echo "Visitors: " . $counter;
+
+
+?>
         <div class="form-group text-center">
                         <a href="dashboard.php" class="form-control getStarted-btn">Go to Home</a>
                     </div>

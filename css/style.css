@@ -197,7 +197,7 @@ h2{
 
 /* ------------------------ Header Style ------------------------ */ 
 .nav-container{
-    padding: 20px;
+    padding: 15px 20px;
     background-color: #fff;
     position: fixed;
     top: 0;
@@ -215,7 +215,7 @@ h2{
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0;    
     width: 100%;
     height: 1px;
     background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3));
@@ -233,6 +233,7 @@ h2{
 .menu-links{
     position: absolute;
     top: 100%;
+    height: 100vh;
     left: 0;
     right: 0;
     background: #fff;
@@ -256,11 +257,12 @@ h2{
 }
 .menu-links li{
     display: block;
-    margin-bottom: 10px;
+    margin: 0 0 10px -15px;
+    padding: 0;
 }
 .menu-links a{
     display: block;
-    padding: 10px;
+    padding: 10px 0;
     text-decoration: none;
     color: #333;
     transition: blue 0.4s ease;
@@ -272,14 +274,34 @@ h2{
 #image-container{
     position: relative;
 }
-#loader{
+.loader{
     position: absolute;
     top: 0; 
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, .5);
-    display: none;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /*display: none; */
+}
+.loader::before{
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-top-color: #eee;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 /* ----------------------- Navigation style ------------------------ */
@@ -408,8 +430,9 @@ h2{
 .nav-add-btn:hover{color: rgb(47, 47, 240);}
 /* ------------------------ Index Page ------------------------ */
 .index-wrapper{
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #ebe6e6;
 }
 .chats{cursor: pointer;
 font-size: 3rem;
@@ -424,54 +447,48 @@ font-size: 3rem;
     border-radius: 5px;
 }
 /* Story style */
-.story-scroller{
+.profile-header{
     width: 100%;
-    margin-bottom: 2rem;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-}
-.story-scroller::-webkit-scrollbar{display: none;}
-
-
-.feed img{
-    width: 65px;
-    height: 65px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid (214, 78, 101);
-}
-.feed .feed-text{
-    margin-top: -1rem;
-    margin-left: 1.2rem;
-}
-.feed .feed-text p{
-    margin-top: -.7rem;
-    color: rgb(47, 47, 240);
-    padding-bottom: 1rem;
-    border-bottom: 1px solid black;
-}
-.feed .feed-text a{
-    position: absolute;
-    right: 20px;
+    margin: auto;
+    background-color: #fff;
     padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.profile-header span{
+    background-color: #f8f4f4;
+    margin-left: 1rem;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    opacity: .7;
+    width: 70%;
+}
+.profile-header a{
+    font-size: 3rem;
 }
 
 /* Feed Post Style */
-.feed-post{margin-bottom: 2.5rem;}
+.feed-post{
+    margin-bottom: 1rem;
+    background-color: #fff;
+}
 .feed-wrapper-img{
     width: 100%;
-    border-radius: 20px;
 }
 .feed-wrapper-img img{
     width: 100%;
     object-fit: cover;
-    border-radius: 20px;
 }
 .post-content{
     margin: 1rem 0;
     padding-left: .5rem;
 }
-.post-details{padding-left: 1rem;}
 .post-details img{
     width: 30px;
     height: 30px;
@@ -487,9 +504,22 @@ font-size: 3rem;
 .create-post-wrapper{
     width: 100%;
     min-height: 100vh;
-    padding: 9.5rem 2rem;
+    padding: .5rem 2rem;
     padding-bottom: 4rem;
     background: var(--whitesmoke-color);
+}
+.create-post-wrapper header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding-bottom: .5rem;
+}
+.create-post-wrapper header h2{
+    font-size: 2.5rem;
+}
+.create-post-wrapper header .left-click{
+    font-size: 2rem;
 }
 .creator-info{gap: 1rem;}
 .creator-info img{
@@ -708,7 +738,7 @@ font-size: 3rem;
 /* ---------------- Search Style ------------------ */
 .search-wrapper{margin-top: -4rem;}
 .search-box{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 0.1rem 1rem;
     border-radius: 5px;

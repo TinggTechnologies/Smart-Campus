@@ -30,7 +30,7 @@ require "backend/room_mate_finder3.php";
             <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Room Mate Finder</a>
             <img src="./assets/img/easylearn/intro3.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive" >
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Bio Data</h2>
-                <span style="color: rgb(214, 78, 101); font-weight: 500; font-size: 1.3rem;">Step 3 of 5</span>
+                <span style="color: blue; font-weight: 500; font-size: 1.3rem;">Step 3 of 5</span>
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                     <div class="input-group mb-4">
                         <?php 

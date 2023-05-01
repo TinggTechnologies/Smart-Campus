@@ -19,7 +19,7 @@ if($count === 0){
 }
 $output = ' <a href="messages.php">
 <i class="bi bi-chat-text chats" style="font-size: 3rem;"></i>
-<span class="badge bg-success badge-number" style="background-color: rgb(47, 47, 240); position: absolute; right: 6.5rem; top: 1.9rem; font-weight: bolder; padding: .5rem .5rem 1.7rem;">'. $count.'</span>
+<span class="badge bg-success badge-number" style="background-color: rgb(47, 47, 240); position: absolute; right: 6rem; top: 1.9rem; font-weight: bolder; padding: .5rem .5rem 1.7rem;">'. $count.'</span>
 </a>' ;
 
         echo $output;

@@ -15,10 +15,11 @@ $message = stripslashes($message);
 $incoming_id = $_POST['incoming_id'];
 
 $outgoing_id =  $_POST['outgoing_id'];
+$date_time = date('m/d/y h:i a', time());
 
 
-$sql = "INSERT INTO messages (incoming_id, outgoing_id, message) VALUES(?,?,?)";
+$sql = "INSERT INTO messages (incoming_id, outgoing_id, message, time) VALUES(?,?,?,?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('sss', $incoming_id, $outgoing_id, $message);
+$stmt->bind_param('ssss', $incoming_id, $outgoing_id, $message, $date_time);
 $stmt->execute();
    

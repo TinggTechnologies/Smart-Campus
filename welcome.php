@@ -18,15 +18,15 @@ require "header.php"; ?>
         <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
                 </a>
                                   
-            <img src="./assets/img/easylearn/intro.jpg" class="pre-login-img img-responsive mt-5">
-                <h2 class="pt-5">Hello, <span class="text-primary"><?php if(isset($_SESSION['lastname'])){
+            <img src="./assets/img/easylearn/success.gif" class="pre-login-img img-responsive">
+                <h2 class="pt-5">Dear, <span class="text-primary"><?php if(isset($_SESSION['lastname'])){
                             echo $_SESSION['lastname'];
-                        } ?></span></h2>
+                        } ?>!</span></h2>
                 <form role="form" action="" class="mt-4">
 
                     <div class="input-group mb-4">
                         <h6 style="line-height: 1.4; opacity: .8;">
-                        We welcome you to this platform where we make learning easy and stress free for students. Our aim is also to create Job Opportunities for students. <br /><br />To help us and others know you better you will have to answer the questions we ask next.
+                        We're thrilled to welcome you to Eazy Learn, your one-stop shop for all your educational needs. Congratulations on taking the first step towards unlocking your full potential!. <br /><br />At Eazy Learn, we're committed to providing you with the best learning experience possible. Our platform is here to support you every step of the way.
                         </h6>
                     </div>
 

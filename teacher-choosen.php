@@ -9,9 +9,9 @@ if(isset($_SESSION['id'])){
     
 }
 if(isset($_GET['teacher_id'])){
-    $teacher_id = $_GET['teacher_id'];
-    
+    $teacher_id = $_GET['teacher_id']; 
 }
+
 if(isset($_GET['assignment_id'])){
     $assignment_id = $_GET['assignment_id'];
     
@@ -78,11 +78,10 @@ if($stmt1->execute()){
 <div class="row gy-4">
 
 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-  <div class="pricing-item">
-    <img src="<?= $rows1['image']; ?>" style="height: 14rem; width: 14rem;" alt="" class="mb-3">
-    <h3>Are you sure you want to connect with <span class="text-primary"><?= $rows1['lastname']; ?></span></h3>
+  <div class="pricing-item text-center">
+    <img src="uploads/<?= $rows1['image']; ?>" style="height: 10rem; width: 10rem; border-radius: 50%;" alt="" class="mb-3">
+    <p>Are you sure you want <span class="text-primary"><?= $rows1['lastname']; ?></span> to solve the assignment?</p>
     <form id="ass_form">
-    <input type="hidden" id="assignment_id" value="<?= $assignment_id; ?>">
     <input type="hidden" id="teacher_id" value="<?= $teacher_id; ?>">
     <a id="assignment_btn" class="buy-btn" style="cursor: pointer;">Yes</a>
     </form>
@@ -128,10 +127,9 @@ if($stmt1->execute()){
         $(document).on('click', '#assignment_btn', function(e){
         e.preventDefault();
 
-        var assignment_id = $('#assignment_id').val();
         var teacher_id = $('#teacher_id').val();
 
-        if(assignment_id == ""){
+        if(teacher_id == ""){
             Swal.fire(
             'Invalid',
             'Enter a value',
@@ -144,14 +142,13 @@ if($stmt1->execute()){
                 type: 'post',
                 data:
                 {
-                    assignment_id: assignment_id,
                     teacher_id: teacher_id
                 },
                 success: function(data){
                     
                     Swal.fire(
                     'Success',
-                    'Teacher Selected',
+                    'Teacher Selected, we will send you an email immediately the teacher responds',
                     'success'
                 )
                 }

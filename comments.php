@@ -1,7 +1,7 @@
 <?php require "includes/dashboard-header.php"; ?>
 <body>
 
-    <section class="index-wrapper feeds-comments-header">
+    <section class="index-wrapper feeds-comments-header" style="background-color: #fff;">
         <?php
 
 if(isset($_GET['post_id'])){
@@ -41,7 +41,7 @@ if($stmt->execute()){
 
             <div class="say-something chat-box">
                 <div class="pp-in-ac">
-                    <img src="<?= $row['image']; ?>">
+                    <img src="uploads/<?= $row['image']; ?>">
                 </div>
                 <div class="write-something cb-ws">
                     <form id="comment_form">
@@ -163,9 +163,9 @@ if($stmt->execute()){
                     post_id: post_id,
                     user_id:user_id
                 },
-                success: function(data){
+                success: function(data){ 
 
-                    
+                    $(".comments").html(data);
                 }
             });
             $('#like_form')[0].reset();

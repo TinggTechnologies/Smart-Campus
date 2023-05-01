@@ -21,7 +21,7 @@ require "backend/register-teacher3.php";
 ?>
 
 <body>
-    <section class="container-fluid login-wrapper pt-5">
+    <section class="container-fluid login-wrapper pt-4">
         <div class="container">
 
             <div class="row justify-content-center">

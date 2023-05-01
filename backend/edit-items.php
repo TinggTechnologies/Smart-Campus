@@ -29,7 +29,7 @@ if($stmt->execute()){
                 $row1 = $result1->fetch_assoc();
 
                 $output .= '
-                <img src="'.$rows['image'].'" style="height: 14rem; width: 14rem;" alt="">
+                <img src="uploads/'.$rows['image'].'" style="height: 14rem; width: 14rem;" alt="">
                 <h5>Item Name: <span>'.$rows['item_name'].'</span></h5>
                 <h5>Price: <span>'.$rows['price'].'</span></h5>
                 <h5>Category: <span>'.$rows['category'].'</span></h5>

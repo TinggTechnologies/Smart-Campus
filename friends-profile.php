@@ -69,7 +69,7 @@ if($stmt->execute()){
         <div class="container-fluid friends-profile">
             
             <div class="person-info">
-                <img src="<?= $rows['image'] ?>">
+                <img src="uploads/<?= $rows['image'] ?>">
                 <h3><?= $rows['lastname'] .' '.$rows['firstname']; ?></h3>
                 <p style="font-weight: bolder; opacity: 1;"><?= $rows['school']; ?></p>
                 <p style="color: blue;"><?= $rows['department']; ?> <span style="color: #030a23;">#<?= $rows['faculty']; ?></span></p>

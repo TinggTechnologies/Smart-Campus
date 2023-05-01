@@ -32,7 +32,7 @@ if($stmt1->execute()){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Easy Learn</title>
+  <title>Eazy Learn</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -65,7 +65,7 @@ if($stmt1->execute()){
 
       <div class="section-header mt-2">
           
-          <a href="javascript:history.back();" style="font-size: 1.4rem; margin-right: 4rem; color: rgba(0,0,0,1);"><i class="bi bi-arrow-left" style="margin-right: 4rem;"></i> Meet Seller</a>
+          <a href="javascript:history.back();" style="font-size: 1.4rem; margin-right: 4rem; color: rgba(0,0,0,1);"><i class="bi bi-arrow-left" style="margin-right: 4rem;"></i> Message Seller</a>
 
         </div>
 
@@ -74,13 +74,13 @@ if($stmt1->execute()){
 
 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
   <div class="pricing-item">
-    <img src="<?= $rows1['image']; ?>" style="max-width: 100%; margin-bottom: 1rem;" alt="">
-    <h3>Are you sure you want to connect with <span class="text-primary"><?= $rows1['lastname']; ?></span></h3>
+    <img src="uploads/<?= $rows1['image']; ?>" style="max-width: 100%; margin-bottom: 1rem;" alt="">
+    <h3>Are you sure you want to message <span class="text-primary"><?= $rows1['lastname']; ?> <?= $rows1['firstname']; ?></span></h3>
     <form id="connect_form">
     <input type="hidden" id="friend_id" value="<?= $friend_id; ?>">
      <input type="hidden" id="user_id" value="<?= $id; ?>">
 
-    <a id="connect_btn" class="buy-btn">Yes</a>
+    <a id="connect_btn" class="buy-btn" style="cursor: pointer;">Yes</a>
     </form>
   </div>
 </div><!-- End Pricing Item -->

@@ -22,23 +22,22 @@ if($stmt->execute()){
 ?>
 
 <body>
-    <section class="container-fluid login-wrapper pt-3">
+    <section class="container-fluid login-wrapper pt-4">
         <div class="container">
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <div class="login-form">
-            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Download Tutorial</a>
-            <img src="./assets/img/easylearn/intro5.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive">
+            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i></a>
+             <img src="./assets/img/easylearn/intro5.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive"> 
             
                 <form id="registration_form" class="mt-3">
 
-                    <div class="form-group mt-5 text-center">
-                        <a href="register-teacher.php" class="form-control getStarted-btn" style="background: #030a23;">Become a Teacher</a>
-                    </div>
+                <h3 class="text-center">Download Tutorial</h3>
+                <p class="text-center">Eazy Learn Tutorial is a platform specially designed for students to easily download and sell tutorials whether in Video, text or pictorial format.</p>
                     
                     <div class="form-group mt-4 text-center">
-                        <a href="download-tutorial.php" class="form-control getStarted-btn">Download Pdf/Notes/Videos</a>
+                        <a href="download-tutorial.php" class="form-control getStarted-btn">Download Tutorial</a>
                     </div>
                 </form>
                

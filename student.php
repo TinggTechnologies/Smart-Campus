@@ -21,7 +21,7 @@ require "./database/connection.php";
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
                 </a>
-            <img src="./assets/img/easylearn/student.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive">
+            <img src="./assets/img/easylearn/student4.gif" style="border-radius: 10px; padding-right: 5rem;" class="pre-login-img img-responsive">
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Let's Know More About You</h2>
                 <form id="student_form">
                     <div class="input-group mb-3">

@@ -39,7 +39,7 @@ $output = '';
 
       <div class="swiper-slide">
         <div class="testimonial-item">
-          <img src="'.$row6['image'].'" style="border-radius: 25px;" class="testimonial-img" alt="">                 
+          <img src="uploads/'.$row6['image'].'" style="border-radius: 25px;" class="testimonial-img" alt="">                 
         </div>
       </div>
       

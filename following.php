@@ -17,6 +17,7 @@ if(isset($_SESSION['id'])){
             <a href="followers.php">Friends Request</a>
             <a href="#" class="active" style="background-color: transparent;">Sent Request</a>
         </nav>
+        <?php require "includes/footer-nav-no.php"; ?>
         <div class="followers">
 
 

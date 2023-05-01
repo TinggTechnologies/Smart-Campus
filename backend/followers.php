@@ -21,7 +21,7 @@ if($stmt->execute()){
     $school = $row['school'];
     $faculty = $row['faculty'];
 
-    $sql = "SELECT * FROM users WHERE (department=? OR school=? OR faculty=?) AND user_id != ?";
+    $sql = "SELECT * FROM users WHERE (department=? OR school=? OR faculty=?) AND user_id != ? ORDER BY RAND() LIMIT 5";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssss', $department, $school, $faculty, $id);
     if($stmt->execute()){
@@ -33,7 +33,7 @@ if($stmt->execute()){
                 <form id="follower_form"></form>
                <li class="follower d-flex-sb">
                 <a href="friends-profile.html">
-                    <div class="follower-img"><img src="'. $friends_row['image'].'"></div>
+                    <div class="follower-img"><img src="uploads/'. $friends_row['image'].'"></div>
                     
                     <div class="follower-info">
                         <h4>'. $friends_row['lastname'] . ' '. $friends_row['firstname'].'</h4>

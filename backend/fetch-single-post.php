@@ -50,10 +50,10 @@ if($stmt->execute()){
             }
           
 $output .= '
-<header class="d-flex">
+<header class="d-flex" style="width: 90%; margin: auto; padding-bottom: .7rem;">
             <a href="javascript:history.back()"><i class="bi bi-chevron-left"></i></a>
             <div class="user-details-inheader d-flex">
-                <img src="'. $rows1['image'].'">
+                <img src="uploads/'. $rows1['image'].'">
                 <div><a href="#">
                     <h4>'. $rows1['lastname'] . ' ' . $rows1['firstname'].'</h4>
                     <small>'. $rows1['date'].'</small>
@@ -66,7 +66,7 @@ $output .= '
 
             <div class="authors-post">
                 <div class="comment-image">
-                    <img src="'. $rows['post_image'] .'">
+                    <img src="uploads/'. $rows['post_image'] .'">
                 </div>
                 <div class="post-contents">
                     '. $rows['text'].'

@@ -29,7 +29,7 @@ if($stmt->execute()){
     <section class="container-fluid index-wrapper">
         <header class="d-flex-sb" style="padding-bottom: 2.5rem;">
             <a href="javascript:history.back()"><i class="bi bi-arrow-left"></i></a>
-            <img src="<?= $rows['image']; ?>">
+            <img src="uploads/<?= $rows['image']; ?>">
             <h3><a href="friends-profile.html"><?= $rows['lastname'] .' '. $rows['firstname']; ?></a></h3>
             <i class="bi bi-three-dots-vertical notifications"></i>
         </header>

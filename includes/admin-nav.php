@@ -1,10 +1,10 @@
- <!-- ================= Header ================== -->
  <?php
 
 require "database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
+
 $sql = "SELECT * FROM users WHERE user_id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $id);
@@ -14,9 +14,11 @@ if($stmt->execute()){
         $row = $result->fetch_assoc();
     }
 }
+
 ?>
+
  
- <style>
+<style>
     .logo{
         font-size: 25px;
   margin: 0;
@@ -24,16 +26,6 @@ if($stmt->execute()){
   color: #fff;
   font-family: cursive;
   color: rgba(0,0,0,.7);
-    }
-    ul{
-        padding-top: 5rem;
-    }
-    ul li{
-        padding: .5rem 0;
-        padding-left: 1rem;
-    }
-    ul li a{
-        font-size: 1.5rem;
     }
     .profile{
         justify-content: center;
@@ -44,13 +36,26 @@ if($stmt->execute()){
     }
  
  </style>
- <header class="d-flex-sb" style="background-color: white;">
- 
-            <i class="bi bi-filter-left slider" style="font-family: cursive; font-size: 4rem;"></i>
-            <div class="index-dropdown" style="margin-top: 1rem;">
-                
-                <ul>
-                    <li>
+
+<div class="nav-container">
+    <div class="menu-toggle">
+    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo3.jpg" style="width: 13rem;" alt="Eazy Learn Logo"></a>
+    <div style="display: flex; align-items: center;">
+    <div class="">
+           <!-- <a href="./profile.php"><img src="<?= $row['image']; ?>" alt=""></a> -->
+            <div class="mes">
+
+             </div>
+           </div>
+    <div class="clickme" style="padding-left: 2rem;">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+
+</div>
+    <ul class="menu-links">
+    <li>
                         <a href="admin-dashboard.php">
                             <i class="bi bi-house-door"></i> Dashboard</a>
                     </li>
@@ -82,19 +87,7 @@ if($stmt->execute()){
                         <a href="total-users.php">
                             <i class="bi bi-people"></i> Total Users</a>
                     </li>
-                 
-                </ul>
-            </div>
-            <h1 class="logo"><span style="color: blue;"><?= $_SESSION['lastname']; ?></span></h1>
-           <div class="div d-flex profile">
-           <img src="<?= $row['image']; ?>" alt="">
-            <div class="mes">
-
-             </div>
-           </div>
-
-
-            
-
-        </header>
-        <!-- End Header -->
+     
+    </ul>
+    </div>
+</div>

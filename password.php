@@ -30,7 +30,7 @@ require "header.php"; ?>
                         <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password *">
                     </div>
                     <div class="input-group mb-3">
-                        <h6 style="line-height: 1.4; opacity: .7;">By clicking Agree & join, you agree to the Easy Learn <span style="color: rgb(214, 78, 101);">User Agreement</span>, <span style="color: rgb(214, 78, 101);">Privacy Policy</span>, and <span style="color: rgb(214, 78, 101);">Cookie Policy</span>.</h6>
+                        <h6 style="line-height: 1.4; opacity: .7;">By clicking Agree & join, you agree to the Easy Learn <a href="privacy.php" style="color: rgb(214, 78, 101);">User Agreement</a>, <a href="privacy.php" style="color: rgb(214, 78, 101);">Privacy and Policy</a>.</h6>
                     </div>
                     
                     <div class="form-group">

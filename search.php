@@ -10,7 +10,7 @@ require_once "includes/dashboard-header.php";
             <a href="javascript:history.back();"><i class="bi bi-x chats"></i></a>
         </header>
 
-        <?php require "includes/footer-nav.php"; ?>
+        <?php require "includes/footer-nav-search.php"; ?>
 
         <div class="search-wrapper">
             <hr>

@@ -29,7 +29,7 @@ require "header.php"; ?>
                     </div>
 
                     <div class="mb-4">
-                    <input type="file" name="file" id="file" class="form-control mt-2"  style="border: 1px solid rgba(0,0,0,.6); border-radius: 5px;">
+                    <input type="file" name="file" id="file" class="form-control mt-2" required style="border: 1px solid rgba(0,0,0,.6); border-radius: 5px;">
                     </div>
 
                     <div class="form-group">

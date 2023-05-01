@@ -99,11 +99,11 @@ if(isset($_SESSION['id'])){
 
           <div class="assignment" style="width: 90%; margin: auto;">
 
-          <div style="margin-top: 3rem;">
-          <h3 class="text-center">Select Teacher</h3>
+          <div style="padding-top: 7rem;">
+          <h2 class="text-center w-700">Select Teacher</h2>
             
             
-            <div class="assignment-student" style="padding-bottom: 4rem; padding-top: 3rem;">
+            <div class="assignment-student text-center" style="padding-bottom: 4rem; padding-top: 3rem;">
 
            
             </div>

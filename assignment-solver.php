@@ -34,7 +34,7 @@ if($stmt->execute()){
                 <form id="registration_form" class="mt-3">
 
                     <div class="form-group mt-5 text-center">
-                        <a href="job.php" class="form-control getStarted-btn" style="background: #030a23;">Edit Assignment Questions</a>
+                        <a href="job.php" class="form-control getStarted-btn" style="background: #030a23;">Solve Assignment and get paid</a>
                     </div>
                     
                     <div class="form-group mt-4 text-center">

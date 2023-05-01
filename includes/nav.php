@@ -20,7 +20,7 @@ if($stmt->execute()){
     .logo{
         font-size: 25px;
   margin: 0;
-  font-weight: 700;
+  font-weight: 700; 
   color: #fff;
   font-family: cursive;
   color: rgba(0,0,0,.7);
@@ -57,10 +57,7 @@ if($stmt->execute()){
                         <a href="pq1.php">
                             <i class="bi bi-file-richtext"></i> Past Question</a>
                     </li>   
-                    <li>
-                        <a href="donate-pdf.php">
-                            <i class="bi bi-file-pdf"></i> Donate Pdf</a>
-                    </li>
+            
                     <li>
                         <a href="assignment-solver.php">
                             <i class="bi bi-file-earmark-lock"></i> Assignment Solver</a>
@@ -82,14 +79,14 @@ if($stmt->execute()){
                             <i class="bi bi-cart4"></i> Online Shop</a>
                     </li>
                     <li>
-                        <a href="job.php">
-                            <i class="bi bi-person"></i> Join Team</a>
+                        <a href="index-shop.php">
+                            <i class="bi bi-truck"></i> Order Cab</a>
+                    </li>
+                    <li>
+                        <a href="index-shop.php">
+                            <i class="bi bi-pencil-square"></i> Event</a>
                     </li>
 
-                    <li>
-                        <a href="job-dashboard.php">
-                            <i class="bi bi-app-indicator"></i> Job Dashboard</a>
-                    </li>
                     <li>
                         <a href="settings.php">
                             <i class="bi bi-controller"></i> Settings</a>

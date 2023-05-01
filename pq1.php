@@ -30,17 +30,16 @@ if($stmt->execute()){
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <div class="login-form">
-            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Past Question</a>
-            <img src="./assets/img/easylearn/intro3.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive mt-5">
+            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> </a>
+            <img src="./assets/img/easylearn/intro3.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive mt-3">
             
                 <form id="registration_form" class="mt-3">
 
-                    <div class="form-group mt-5 text-center">
-                        <a href="upload-pq.php" class="form-control getStarted-btn" style="background: #030a23;">Upload Past Questions</a>
-                    </div>
+                <h2 class="text-center pb-3" style="font-size: 2rem;">Past Questions for all institutions</h2>
+                <p class="text-center">Eazy Learn Past Question is a platform specially designed for students to easily download and sell past questions.</p>
                     
                     <div class="form-group mt-4 text-center">
-                        <a href="./download-past-question.php" class="form-control getStarted-btn">Download Past Questions</a>
+                        <a href="./download-past-question.php" class="form-control getStarted-btn">Continue</a>
                     </div>
 
                 </form>

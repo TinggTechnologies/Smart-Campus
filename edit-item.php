@@ -9,7 +9,7 @@ if(isset($_SESSION['id'])){
 }
 
 if(isset($_GET['item_id'])){
-    $item_id = $_GET['item_id'];
+    $item_id = $_GET['item_id']; 
 }
 
 $sql = "SELECT * FROM sell WHERE id=?";
@@ -38,7 +38,7 @@ require "backend/edit-item.php";
     <link href="assets/img/easylearn/logo4.png" rel="icon">
     <link href="assets/img/easylearn/logo4.png" rel="apple-touch-icon">
 
-    <title>Easy Learn</title>
+    <title>Eazy Learn</title>
     <link rel="stylesheet" href="./vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/sweetalert.css">
@@ -91,14 +91,13 @@ require "backend/edit-item.php";
                                 </div>
             
                                 <div class="mb-4" >  
-                                    <label for="file">Upload Image</label>
-                                    <input class="form-control" type="file" id="file" name="file" required>
+                                    <a href="edit-item-image.php?item_id=<?= $item_id; ?>"><img src="uploads/<?= $row['image']; ?>" style="max-width: 100%" alt=""></a>
                                 </div>
 
-                                <input type="hidden" name="item_id" id="" value="<?= $item_id; ?>">
+                                <input type="hidden" name="item_id" id="item_id" value="<?= $item_id; ?>">
             
                                 <div class="form-group mt-5">
-                                    <button type="submit" name="donate-pdf-btn" id="donate-pdf-btn" class="form-control getStarted-btn">Upload</button>
+                                    <button type="submit" name="donate-pdf-btn" id="donate-pdf-btn" class="form-control getStarted-btn">Edit Item</button>
                                 </div>
                                 
                             </form>

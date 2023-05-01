@@ -1,7 +1,7 @@
 <?php require "includes/dashboard-header.php"; ?>
 <body>
 
-    <section class="container-fluid index-wrapper">
+    <section class="container-fluid index-wrapper" style="background-color: #fff;">
         <header class="d-flex-sb" style="padding-bottom: 1rem;">
             <a href="javascript:history.back()"><i class="bi bi-chevron-left"></i></a>
             <h3>Messages</h3>
@@ -20,7 +20,7 @@
         <div class="mes">
 
         </div>
-        <?php require "includes/footer-nav-no.php"; ?>
+        <?php require "includes/footer-msg.php"; ?>
             
                 
             
@@ -38,7 +38,7 @@
 
         function fetch_user(){
             $.ajax({
-                url:"backend/fetch-user.php",
+                url:"backend/tester.php",
                 method: "POST",
                 success: function(data){
                     $(".mes").html(data);

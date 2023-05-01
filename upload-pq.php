@@ -5,7 +5,6 @@ if(!isset($_SESSION['id'])){
 }
 require "database/connection.php";
 require "header.php"; 
-//require "backend/upload-pq.php";
 
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -28,49 +27,26 @@ if($stmt->execute()){
                 <div class="col-lg-6">
                 <div class="login-form">
             <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Past Question</a>
-            <img src="./assets/img/easylearn/ass.jpg" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
-                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Upload Past Question</h2>
-                <a href="edit-pq.php" style="color:blue; font-weight: 500; font-size: 1.1rem;">Edit Past Question</a>
-                <form id="p_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
-                <?php
-                        if(isset($error['file'])){
-                            echo $error['file'];
-                        }
-                        ?>
-                    <div class="input-group mb-4">
-                        <select id="department" name="department" class="form-control" required>
-                            <option value="">Select Department</option>
-                            <?php
-                            $sql = "SELECT * FROM department";
-                            $stmt = $conn->prepare($sql);
-                            if($stmt->execute()){
-                                $result = $stmt->get_result();
-                                if($result->num_rows > 0){
-                                    while($school_rows = $result->fetch_assoc()){
-                                        ?>
-                                        <option value="<?= $school_rows['department_name']; ?>"><?= $school_rows['department_name']; ?></option>
-                                        <?php
-                                    }
-                                }
-                            }
-                         ?>
-                        </select>
-                    </div>
-                    <div class="input-group mb-4">
-                       <input type="text" id="course_title" name="course_title" class="form-control" placeholder="Enter Course Title" required>
-                    </div>
+                <h2 class="pt-5 pb-3" style="font-size: 2rem; line-height: 1.3;">Upload Past Question</h2>
+                <p style="font-weight: 500; font-size: 1rem;">You are only allowed to post the past questions of your department and school. for e.g if you are from Computer Science and from the Federal University Oye-Ekiti, you can only post the past questions of the department of Computer Science and the prestigious school only. <br /><br />
+            Now concerning the file upload, it is advisable to upload the past questions of all the levels of your department because if another student should do that it will have more chances of being approved.
+            <br /><br />
+            Now concerning pricing, it is advisable to put a pricing of #500 if you have uploaded all the levels past questions and #200 if you uploaded some levels past questions.
+            </p>
+                <form id="pq_form" method="POST" enctype="multipart/form-data">
+               <div class="message"></div>
 
                     <div class="input-group mb-4">
-                       <select id="ans" name="ans" class="form-control" required>
-                        <option value="">Has the Past Question been answered?</option>
-                        <option value="yes">yes</option>
-                        <option value="no">no</option>
-                       </select>
+                       <textarea id="course_title" name="course_title" class="form-control" placeholder="Enter Course Title" required></textarea>
                     </div>
+                    <input type="hidden" name="department" value="<?= $row['department']; ?>">
   
                     <label for="">Past Question File</label>
                     <div class="input-group mb-4">
                        <input type="file" id="file" name="file" class="form-control" style="border: 2px solid rgba(0,0,0,.3);" required>
+                    </div>
+                    <div class="input-group mb-4">
+                    <input type="tel" id="price" name="price" class="form-control" placeholder="Enter Price" required>
                     </div>
                     
                     <div class="form-group">
@@ -85,3 +61,35 @@ if($stmt->execute()){
         </div>
     </section>
 <?php require "footer.php"; ?>
+<script>
+    $(document).ready(function(){
+        $('#pq_form').on('submit', function(e){
+            e.preventDefault();
+            var formData = new FormData(this);
+            var fileSize = $('#file')[0].files[0].size;
+            var maxSize = 5000000;
+            if(fileSize > maxSize){
+                $('#message').html('Image size is too large');
+            } else{
+                $.ajax({
+                    url: 'backend/upload-pq.php',
+                    type: 'POST',
+                    data: formData,         
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        $('#message').html(response);
+                        Swal.fire(
+                            'Success',
+                            'Uploaded Successfully',
+                            'success'
+                    )
+                    }
+                });
+            }
+        });
+        $('#pq_form')[0].reset();
+    });
+</script>
+
+

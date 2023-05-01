@@ -66,7 +66,7 @@ if($stmt->execute()){
 
 <style>
 .contact_agent{
-  background-color: blue;
+  background-color: rgba(0,0,0,.5);
   color: #fff;
   padding: 1rem 0;
 }
@@ -95,12 +95,12 @@ if($stmt->execute()){
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="pricing-item">
-                <img src="<?= $row['image']; ?>" alt="" style="max-width: 100%;" class="mb-3">
+                <img src="uploads/<?= $row['image']; ?>" alt="" style="max-width: 100%;" class="mb-3">
               <h3><?= $row['item_name']; ?></h3>
               <h4><sup>N</sup><?= $row['price']; ?></h4>
               <h5>Category: <?= $row['category']; ?></h5>
              
-        <div class="mt-5">
+     `   <div class="mt-5">
           
         <h3 class="mb-5">Sellers Info</h3>
 
@@ -108,7 +108,7 @@ if($stmt->execute()){
         <a class="contact_agent form-control text-center"><?= $row1['telephone']; ?></a><br />
         <a href="connect-seller.php?id=<?= $row1['user_id']; ?>" class="contact_agent form-control text-center">Chat Seller</a><br />
         <p class="text-danger">Note: Never send any money to any seller until you have confirmed the item. make sure you meet the seller in an open environment. Contact us immediately you feel you have been defrauded(09048480552).</p>
-        </div>
+        </div>`
 
       </div>
     </section> 

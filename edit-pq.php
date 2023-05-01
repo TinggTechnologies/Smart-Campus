@@ -2,7 +2,7 @@
 
 <body>
 
-    <section class="container-fluid index-wrapper" style="padding-top: 13rem;">
+    <section class="container-fluid index-wrapper" style="padding-top: 13rem; background-color: #fff;">
        
         <?php require "includes/nav.php"; ?>
         <?php require "includes/footer-nav.php"; ?>

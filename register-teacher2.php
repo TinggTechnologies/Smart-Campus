@@ -22,7 +22,7 @@ require "backend/room_mate_finder3.php";
 ?>
 
 <body>
-    <section class="container-fluid login-wrapper pt-5">
+    <section class="container-fluid login-wrapper pt-4">
         <div class="container">
 
             <div class="row justify-content-center">
@@ -39,15 +39,15 @@ require "backend/room_mate_finder3.php";
                     </div>
 
                     <div class="input-group mb-4">                 
-                      <input type="text" name="office" id="office" class="form-control" placeholder="The name of the place you taught in">
+                      <input type="text" name="office" id="office" class="form-control" placeholder="The name of the place you taught in?">
                     </div>
 
                     <div class="input-group mb-5">                 
                       <select name="area" id="area" class="form-control">
                         <option value="">Pick an Area that best suites you</option>
                         <option value="assignment">solving assignment</option>
-                        <option value="notes">making tutorial notes</option>
-                        <option value="project">Solving Students Projects   </option>
+                        <option value="notes">making tutorial notes / Videos</option>
+                        <option value="project">Writing Students Projects</option>
                       </select>
                     </div>
                     <input type="hidden" name="department" id="department" value="<?= $department; ?>">

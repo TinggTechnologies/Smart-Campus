@@ -29,13 +29,13 @@ while($fetch = $result->fetch_assoc()){
 if($fetch['outgoing_id'] === $outgoing_id){
     echo '
     <div class="my-msg">
-                    <p>'.$fetch['message'].'</p>
+                    <p style="background: black; color: #fff; font-weight: bold;">'.$fetch['message'].'</p>
                 </div>
     ';
 } else{
     echo '
     <div class="friend-msg">
-    <p>'.$fetch['message'].'</p>
+    <p style="font-weight: bold;">'.$fetch['message'].'</p>
 </div>
     ';
 }

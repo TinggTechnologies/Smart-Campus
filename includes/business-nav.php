@@ -19,7 +19,7 @@ if($stmt->execute()){
 ?>
 
  
- <style>
+<style>
     .logo{
         font-size: 25px;
   margin: 0;
@@ -27,16 +27,6 @@ if($stmt->execute()){
   color: #fff;
   font-family: cursive;
   color: rgba(0,0,0,.7);
-    }
-    ul{
-        padding-top: 5rem;
-    }
-    ul li{
-        padding: .5rem 0;
-        padding-left: 1rem;
-    }
-    ul li a{
-        font-size: 1.5rem;
     }
     .profile{
         justify-content: center;
@@ -47,46 +37,46 @@ if($stmt->execute()){
     }
  
  </style>
- <header class="d-flex-sb" style="background-color: white;">
- 
-            <i class="bi bi-filter-left slider" style="font-family: cursive; font-size: 4rem;"></i>
-            <div class="index-dropdown" style="margin-top: 1rem;">
-                
-                <ul>
-                    <li>
-                        <a href="business-dashboard.php">
-                            <i class="bi bi-house-door"></i> Dashboard</a>
-                    </li>
-            
-                    <li>
-                        <a href="upload-items.php">
-                            <i class="bi bi-upload"></i> Upload items</a>
-                    </li>
-                    <li>
-                        <a href="edit-items.php">
-                            <i class="bi bi-upload"></i> Edit items</a>
-                    </li>
-                    <li>
-                        <a href="edit-business.php">
-                            <i class="bi bi-brush"></i> Edit Profile</a>
-                    </li>
-                    <li>
-                        <a href="job.php">
-                            <i class="bi bi-star"></i> Your Rating</a>
-                    </li>
-                 
-                </ul>
-            </div>
-            <h1 class="logo">Business</h1>
-           <div class="div d-flex profile">
-           <img src="<?= $row['image']; ?>" alt="">
+
+<div class="nav-container">
+    <div class="menu-toggle">
+    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo3.jpg" style="width: 13rem;" alt="Eazy Learn Logo"></a>
+    <div style="display: flex; align-items: center;">
+    <div class="">
+           <!-- <a href="./profile.php"><img src="<?= $row['image']; ?>" alt=""></a> -->
             <div class="mes">
 
              </div>
            </div>
+    <div class="clickme" style="padding-left: 2rem;">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
 
-
-            
-
-        </header>
-        <!-- End Header -->
+</div>
+    <ul class="menu-links">
+    <li>
+                        <a href="business-dashboard.php">
+                            <i class="bi bi-house"></i> Business Dashboard</a>
+                    </li>   
+                    <li>
+                        <a href="upload-items.php">
+                            <i class="bi bi-upload"></i> Upload Items</a>
+                    </li>
+                    <li>
+                        <a href="edit-items.php">
+                            <i class="bi bi-file-earmark-lock"></i> Edit Items</a>
+                    </li>
+                    <li>
+                        <a href="edit-business.php">
+                            <i class="bi bi-house"></i> Edit Profile</a>
+                    </li>
+                    <li>
+                        <a href="job.php">
+                            <i class="bi bi-house"></i> Your Rating</a>
+                    </li>
+     
+    </ul>
+    </div>
+</div>

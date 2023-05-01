@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <!-- link font-->
   <link rel="stylesheet" href="assets/lib/fontawsome/css/all.css">
-  <title>Shopping Spree</title>
+  <title>Eazy Learn</title>
 </head>
 
 <body>
   <!-- navbar -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+ <!--  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
     <div class="container-fluid">
       <a class="navbar-brand py-3" href="dashboard.php">
       <img src="./assets/img/easylearn/logo3.jpg" style="width: 13rem;" alt="">
@@ -79,11 +79,11 @@
       </div>
     </div>
 
-  </nav>
+  </nav> -->
+  <?php require "includes/nav.php" ?>
 
   <!-- ************************nav ends ************************************-->
 
-  <?php require "./includes/footer-nav-no.php"; ?>
 
 
   <!--*********************** hero session/. carousel ********************************************-->
@@ -200,7 +200,7 @@
 
         <div class="col col-6 col-md-4">
           <div class="card shadow">
-            <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+            <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
             <div class="card-body">
               <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
               <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -220,11 +220,11 @@
                       echo "no";
                     }}
         ?>
-   
+  
         
       </div>
     </div>
-
+ 
 
     <!-- ***********************************ends -->
 
@@ -232,9 +232,9 @@
 
     <!--********* Drink session -->
 
-    <div class="container py-5 my-5 me-4 wraps" id="drinks">
-      <h2 class="drink my-5 py-5 text-center bg-primary fs-1">Drinks</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="container py-3 me-4 wraps" id="drinks">
+      <h2 class="drink py-4 my-2 text-center bg-primary fs-1">Drinks</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4 my-5 ">
       <?php 
       
       $sql = "SELECT * FROM sell WHERE category='Drinks'";
@@ -257,7 +257,7 @@
   
           <div class="col col-6 col-md-4">
             <div class="card shadow">
-              <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
               <div class="card-body">
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -309,7 +309,7 @@
   
           <div class="col col-6 col-md-4">
             <div class="card shadow">
-              <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
               <div class="card-body">
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -366,7 +366,7 @@
   
           <div class="col col-6 col-md-4">
             <div class="card shadow">
-              <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
               <div class="card-body">
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -421,7 +421,7 @@
   
           <div class="col col-6 col-md-4">
             <div class="card shadow">
-              <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
               <div class="card-body">
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -489,7 +489,7 @@
   
           <div class="col col-6 col-md-4">
             <div class="card shadow">
-              <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
               <div class="card-body">
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -549,7 +549,7 @@
   
           <div class="col col-6 col-md-4">
             <div class="card shadow">
-              <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
               <div class="card-body">
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -605,7 +605,7 @@
   
           <div class="col col-6 col-md-4">
             <div class="card shadow">
-              <img src="<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
               <div class="card-body">
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
                 <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
@@ -753,7 +753,7 @@
 
 
 
-
+<?php require "includes/dashboard-footer.php" ?>
 
 
 

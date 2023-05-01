@@ -74,7 +74,7 @@ if($stmt1->execute()){
 
 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
   <div class="pricing-item">
-    <img src="<?= $rows1['image']; ?>" style="max-width: 100%; margin-bottom: 1rem;" alt="">
+    <img src="uploads/<?= $rows1['image']; ?>" style="max-width: 100%; margin-bottom: 1rem;" alt="">
     <h3>Are you sure you want to connect with <span class="text-primary"><?= $rows1['lastname']; ?></span></h3>
     <form id="connect_form">
     <input type="hidden" id="friend_id" value="<?= $friend_id; ?>">
@@ -139,7 +139,7 @@ if($stmt1->execute()){
                   if(data == "yes"){
                   Swal.fire(
                     '',
-                    'Already sent you a friend request',
+                    'Already Friends',
                     'error'
                 )
                   } else {

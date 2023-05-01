@@ -28,7 +28,7 @@ $output = '';
                 <form id="follower_form">
                <li class="follower d-flex-sb">
                 <a href="friends-profile.html">
-                    <div class="follower-img"><img src="'. $friends_row['image'].'"></div>
+                    <div class="follower-img"><img src="uploads/'. $friends_row['image'].'"></div>
                     
                     <div class="follower-info">
                         <h4>'. $friends_row['lastname'] . ' '. $friends_row['firstname'].'</h4>

@@ -42,12 +42,13 @@ require "backend/edit-business.php";
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3; color: blue;">Edit Business Profile</h2>
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
 
-                <div class="input-group mb-4">
                 <?php 
                            if(isset($error['file'])){
                             echo $error['file'];
                            }
                         ?>
+
+                <div class="input-group mb-4">
                      <input type="text" name="business_name" id="business_name" value="<?= $row1['business_name']; ?>" class="form-control">
                     </div>
 

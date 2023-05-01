@@ -5,7 +5,6 @@ require "database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
-
 $sql = "SELECT * FROM users WHERE user_id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $id);
@@ -15,9 +14,7 @@ if($stmt->execute()){
         $row = $result->fetch_assoc();
     }
 }
-
 ?>
-
  
  <style>
     .logo{
@@ -28,16 +25,6 @@ if($stmt->execute()){
   font-family: cursive;
   color: rgba(0,0,0,.7);
     }
-    ul{
-        padding-top: 5rem;
-    }
-    ul li{
-        padding: .5rem 0;
-        padding-left: 1rem;
-    }
-    ul li a{
-        font-size: 1.5rem;
-    }
     .profile{
         justify-content: center;
         align-items: center;
@@ -47,42 +34,42 @@ if($stmt->execute()){
     }
  
  </style>
- <header class="d-flex-sb" style="background-color: white;">
- 
-            <i class="bi bi-filter-left slider" style="font-family: cursive; font-size: 4rem;"></i>
-            <div class="index-dropdown" style="margin-top: 1rem;">
-                
-                <ul>
-                    <li>
-                        <a href="teacher-dashboard.php">
-                            <i class="bi bi-house-door"></i> Dashboard</a>
-                    </li>
-            
-                    <li>
-                        <a href="donate-pdf.php">
-                            <i class="bi bi-upload"></i> Upload Note</a>
-                    </li>
-                    <li>
-                        <a href="edit-donate-pdf.php">
-                            <i class="bi bi-brush"></i> Edit Note</a>
-                    </li>
-                    <li>
-                        <a href="job.php">
-                            <i class="bi bi-star"></i> Your Rating</a>
-                    </li>
-                 
-                </ul>
-            </div>
-            <h1 class="logo">Teachers</h1>
-           <div class="div d-flex profile">
-           <img src="<?= $row['image']; ?>" alt="">
+
+<div class="nav-container">
+    <div class="menu-toggle">
+    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo3.jpg" style="width: 13rem;" alt="Eazy Learn Logo"></a>
+    <div style="display: flex; align-items: center;">
+    <div class="">
+           <!-- <a href="./profile.php"><img src="<?= $row['image']; ?>" alt=""></a> -->
             <div class="mes">
 
              </div>
            </div>
+    <div class="clickme" style="padding-left: 2rem;">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
 
-
-            
-
-        </header>
-        <!-- End Header -->
+</div>
+    <ul class="menu-links">
+    <li>
+                        <a href="teacher-dashboard.php">
+                            <i class="bi bi-file-richtext"></i>Dashboard</a>
+                    </li>   
+                    <li>
+                        <a href="donate-pdf.php">
+                            <i class="bi bi-file-pdf"></i> Upload Note</a>
+                    </li>
+                    <li>
+                        <a href="edit-donate-pdf.php">
+                            <i class="bi bi-file-earmark-lock"></i> Edit Note</a>
+                    </li>
+                    <li>
+                        <a href="job.php">
+                            <i class="bi bi-house"></i> Rating</a>
+                    </li>
+          
+    </ul>
+    </div>
+</div>

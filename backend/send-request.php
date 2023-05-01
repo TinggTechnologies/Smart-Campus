@@ -17,9 +17,9 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param('ss', $friend_id, $user_id);
 if($stmt->execute()){
     $message = $_SESSION['lastname'] . ' ' . $_SESSION['firstname'] . " sent you a friend request";
-    $sql = "INSERT INTO notification (message, user_id) VALUES(?,?)";
+    $sql = "INSERT INTO friends_request (message, sender_id, user_id) VALUES(?,?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ss', $message, $friend_id);
+    $stmt->bind_param('sss', $message, $user_id, $friend_id);
     $stmt->execute();
 
 }

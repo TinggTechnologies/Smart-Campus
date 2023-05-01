@@ -26,6 +26,11 @@ $result = $stmt->get_result();
 if($result->num_rows){
     while($row = $result->fetch_assoc()){
         $time = $row['timestamp'];
+        $user_id = $row['user_id'];
+        $sql4 = "INSERT INTO visitors(visitor_id, owner_id, feature) VALUES(?,?,'hostel')";
+        $stmt4 = $conn->prepare($sql4);
+        $stmt4->bind_param('ss', $user_id, $id);
+        $stmt4->execute();
         $sql1 = "SELECT * FROM register_house WHERE timestamp='$time' ";
         $stmt1 = $conn->prepare($sql1);
         $stmt1->execute();

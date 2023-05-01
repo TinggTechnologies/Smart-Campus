@@ -51,14 +51,18 @@ if($stmt->execute()){
                         </h6>
                     </div>
 
-                    <div class="input-group mb-5">
+                    <div class="input-group mb-2">
                         <input type="text" class="form-control" id="code" placeholder="Enter Verification Code *">
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group mb-0">
                         <input type="hidden" class="form-control" id="code_session" value="<?= $code; ?>">
                     </div>
-                    
+
+                    <div class="text-center mt-0 pt-0">
+                       <a href="welcome.php" class="btn text-primary" style="font-size: 1.2rem; ">Verify Later</a>
+                    </div>
+
                     <div class="form-group">
                         <button type="submit" id="register_btn" class="form-control getStarted-btn">Submit</button>
                     </div>

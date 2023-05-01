@@ -8,7 +8,7 @@ if(isset($_SESSION['id'])){
 }
 $output = '';
 
-$sql = "SELECT * FROM past_question WHERE course_title LIKE '%{$_POST['query']}%' ";
+$sql = "SELECT * FROM past_question WHERE course_title LIKE '%{$_POST['query']}%' AND status='active'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -27,20 +27,19 @@ if($result->num_rows){
     $output .= '
     <body>
     <section class="container-fluid login-wrapper pt-1">
-        <div class="container">
+        <div>
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                <div class="login-form">
+                <div class="login-form" style="border: 2px solid #ccc; padding: 20px; border-radius: 25px;">
           
-                <h2 class="pt-5" style="font-size: 3rem; line-height: 1.3;">'.$row['course_title'].'</h2>
-                <span style="font-weight: 500; font-size: 1.7rem;">Faculty: '.$row1['faculty'].'</span><br />
+                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">'.$row['course_title'].'</h2>
                 <span style="font-weight: 500; font-size: 1.7rem;">Department: '.$department.'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">School: '.$row1['school'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Answered: '.$row['type'].'</span>
+                <span style="font-weight: 500; font-size: 1.7rem;">Institution: '.$row1['school'].'</span><br />
+                <span style="font-weight: 500; font-size: 1.7rem;">Price: #'.$row['price'].'</span><br />
                 <form id="profile_form">                         
                     <div class="form-group">
-                        <a href="download.php?path='.$row['file'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Download Past Question</a>
+                        <a href="download-past-question2.php?pq_id='.$row['id'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Buy Now</a>
                     </div>
                 </form>
                

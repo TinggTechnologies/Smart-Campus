@@ -33,7 +33,7 @@ if($stmt->execute()){
                 
                 <form id="status_form">
                     <div class="text-center">
-                    <img src="<?= $row['image']; ?>" style="width: 10rem; border-radius: 50%;" alt="">
+                    <img src="uploads/<?= $row['image']; ?>" style="width: 10rem; border-radius: 50%;" alt="">
                     <a href="edit-photo.php" class="text-primary">Change Photo</a>
                     </div>
                     <div class="input-group mb-5 mt-3">
