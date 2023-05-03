@@ -77,7 +77,71 @@ file_put_contents($counter_file, $counter);
             </ol>
             </p>
             <div class="mt-4">
-            <a href="#" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Get your project done</a>
+            <a href="register320.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Get your project done</a>
+            </div>
+          </div>
+        </div><!-- Features Item -->
+
+
+
+        <div class="row gy-4 align-items-center features-item justify-content-between" id="projects" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/img/easylearn/ml.PNG" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <h3>Networking</h3>
+            <p>
+            <ol>
+                <li>Student's Data Encryption Technique using Advance Encryption Standard(Aes) Algorithm</li>
+                <li>Transmission Control Protocol / Internet Protocol Monitoring Agent Using Java</li>
+            </ol>
+            </p>
+            <div class="mt-4">
+            <a href="register320.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Get your project done</a>
+            </div>
+          </div>
+        </div><!-- Features Item -->
+
+
+
+        <div class="row gy-4 align-items-center features-item justify-content-between" id="projects" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/img/easylearn/profile.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <h3>App Development / Web Development</h3>
+            <p>
+            <ol>
+                <li>Design and Implementation of an Online Prison Management System</li>
+                <li>Design and Implementation of Health Clinical Database Information</li>
+                <li>Designing a Computerized Criminal Record Management System</li>
+                <li>Web based Traffic Offence Reporting System for Federal Road Safety Commission(FRSC) Nigeria</li>
+                <li>Automation of Departmental Course Allocation and Time Table</li>
+                <li>Design and Implementation of Computerized Motor Vehicle National Plate Number Generation System</li>
+                <li>Design and Implementation of a Computerized Based Quality Assurance Monitoring System</li>
+                <li>Design and Implementation of a Computerized Product Distribution Monitoring System</li>
+                <li>Design and Implementation of a Profitable Database System for Government Establishment</li>
+                <li>Design and Implementation of Automated Motor Vehicular Driving Licensing System</li>
+                <li>Design and Implementation of an Oline Entrance Examination System</li>
+                <li>Virtual Classroom and Text based E-Learning</li>
+                <li>Design and Implementation of a Computerized Admission Processing System</li>
+                <li>Design and Implementation of a Computerized Maternity Information System</li>
+                <li>Design and Computerization of an Electronic Fund Transfer System</li>
+                <li>Design and Implementation of a Software Based Personal Digital Assistance(PDA)</li>
+                <li>Design and Implementation of a Computerized Purchased Information System</li>
+                <li>Design and Implementation of a Computerized Patient's Information Tracking System</li>
+                <li>Design and Implementation of a Computerized Students ID-Card Processing System</li>
+                <li>Design and Implementation of a Computerized SYstem for Immigration Service</li>
+                <li>Design and Implementation of a Computerized Tax Evaluation System for Civil Servants</li>
+                <li>Design and Implementation of a Computerized System for Revenue Generation from Business Premises</li>
+                <li>Design and Implementation of a Software-Based Luggage Billing System for an Airline</li>
+                <li>Design and Implementation of a Computerized Business Records Keeping System</li>
+                <li>Design and Implementation of a Computerized Car Leasing Information System</li>
+                <li>Design and Implementation of an Expert System on Medical Diagnosis and Prescription</li>
+            </ol>
+            </p>
+            <div class="mt-4">
+            <a href="register320.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Get your project done</a>
             </div>
           </div>
         </div><!-- Features Item -->
