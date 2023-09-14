@@ -197,7 +197,7 @@ h2{
 
 /* ------------------------ Header Style ------------------------ */ 
 .nav-container{
-    padding: 15px 20px;
+    padding: 7px 20px;
     background-color: #fff;
     position: fixed;
     top: 0;
@@ -430,6 +430,11 @@ h2{
 .nav-add-btn:hover{color: rgb(47, 47, 240);}
 /* ------------------------ Index Page ------------------------ */
 .index-wrapper{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+}
+.dashboard-wrapper{
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: #ebe6e6;

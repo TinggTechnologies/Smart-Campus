@@ -14,7 +14,7 @@
   <title>Eazy Learn</title>
 </head>
 
-<body>
+<body style="margin-top: 10rem;" >
   <!-- navbar -->
 
  <!--  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
@@ -87,7 +87,7 @@
 
 
   <!--*********************** hero session/. carousel ********************************************-->
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+ <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -104,7 +104,7 @@
               </div>
 
               <div class="col-lg-6  text-center text-lg-end overflow-hidden">
-                <!-- img -->
+                
                 <img src="./assets/img/easylearn/shop2.gif" alt="" class="img-fluid img">
               </div>
             </div>
@@ -113,7 +113,7 @@
         </div>
       </div>
 
-      <!--****** second*******  -->
+    
 
       <div class="carousel-item hero-header-two">
         <div class="container-xxl bg-white py-5 bg-dark hero-header-two mb-5">
@@ -125,7 +125,7 @@
               </div>
 
               <div class="col-lg-6  text-center text-lg-end overflow-hidden">
-                <!-- img -->
+               
                 <img src="./assets/img/easylearn/delivery.gif" alt="" class="img-fluid img">
               </div>
             </div>
@@ -135,7 +135,7 @@
       </div>
 
 
-      <!-- third -->
+     
       <div class="carousel-item  hero-header-two">
         <div class="container-xxl bg-white py-5 bg-dark hero-header-two mb-5">
           <div class="container my-5 py-5">
@@ -147,7 +147,7 @@
               </div>
 
               <div class="col-lg-6  text-center text-lg-end overflow-hidden">
-                <!-- img -->
+                
                 <img src="./assets/img/easylearn/delivery.gif" alt="" class="img-fluid img">
               </div>
             </div>
@@ -166,7 +166,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
+    </div> -->
 
     <!-- hero end -->
 
@@ -174,7 +174,7 @@
 
 
     <!--************** *Foods ************************* -->
-    <h2 class="new text-center fs-1  my-3 py-4 text-white bg-primary" id="foods">Food & Snacks</h2>
+    <h2 class="new text-center fs-1  my-3 py-4 text-white bg-primary mt-5" id="foods">Food & Snacks</h2>
     <div class="container py-5 my-4 me-4 wrap">
       <div class="row row-cols-1 row-cols-md-3 g-4">
 
@@ -198,16 +198,15 @@
 
       ?>
 
-        <div class="col col-6 col-md-4">
-          <div class="card shadow">
-            <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+        <div class="col col-6 col-md-4 text-center">
+          <div class="card shadow" style="border-radius: 25px;">
+            <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
             <div class="card-body">
-              <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-              <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+              <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+              <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
               <h4 style="font-size: 2rem;"></h4>
-              <h5><?= $friends_row['business_name']; ?></h5>
               <div class="dropdown">
-                <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                <a class="btn btn-primary px-5" style="border-radius: 25px;" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
                   Order Now
                 </a>
               </div>
@@ -255,16 +254,15 @@
   
         ?>
   
-          <div class="col col-6 col-md-4">
-            <div class="card shadow">
-              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+          <div class="col col-6 col-md-4 text-center">
+            <div class="card shadow" style="border-radius: 25px;">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
               <div class="card-body">
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
                 <h4 style="font-size: 2rem;"></h4>
-                <h5><?= $friends_row['business_name']; ?></h5>
                 <div class="dropdown">
-                  <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                  <a class="btn btn-primary px-5" style="border-radius: 25px;" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
                     Order Now
                   </a>
                 </div>
@@ -307,16 +305,15 @@
   
         ?>
   
-          <div class="col col-6 col-md-4">
-            <div class="card shadow">
-              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+          <div class="col col-6 col-md-4 text-center">
+            <div class="card shadow" style="border-radius: 25px;">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
               <div class="card-body">
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
                 <h4 style="font-size: 2rem;"></h4>
-                <h5><?= $friends_row['business_name']; ?></h5>
                 <div class="dropdown">
-                  <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                  <a class="btn btn-primary px-5" style="border-radius: 25px;" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
                     Order Now
                   </a>
                 </div>
@@ -364,16 +361,15 @@
   
         ?>
   
-          <div class="col col-6 col-md-4">
-            <div class="card shadow">
-              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+          <div class="col col-6 col-md-4 text-center">
+            <div class="card shadow" style="border-radius: 25px;">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
               <div class="card-body">
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
                 <h4 style="font-size: 2rem;"></h4>
-                <h5><?= $friends_row['business_name']; ?></h5>
                 <div class="dropdown">
-                  <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                  <a class="btn btn-primary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" style="border-radius: 25px;">
                     Order Now
                   </a>
                 </div>
@@ -415,20 +411,19 @@
                       $result1 = $stmt1->get_result();
                       if($result1->num_rows > 0){
                           $friends_row = $result1->fetch_assoc();
-  
+                      
   
         ?>
   
-          <div class="col col-6 col-md-4">
-            <div class="card shadow">
-              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+          <div class="col col-6 col-md-4 text-center">
+            <div class="card shadow" style="border-radius: 25px;">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
               <div class="card-body">
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
                 <h4 style="font-size: 2rem;"></h4>
-                <h5><?= $friends_row['business_name']; ?></h5>
                 <div class="dropdown">
-                  <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                  <a class="btn btn-primary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" style="border-radius: 25px;">
                     Order Now
                   </a>
                 </div>
@@ -436,11 +431,10 @@
             </div>
           </div>
   
-          <?php
-                      }}}} else {
-                        echo "no";
-                      }}
-          ?>
+         <?php
+
+                      }}}}}
+?>
 
 
       </div>
@@ -487,16 +481,15 @@
   
         ?>
   
-          <div class="col col-6 col-md-4">
-            <div class="card shadow">
-              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+          <div class="col col-6 col-md-4 text-center">
+            <div class="card shadow" style="border-radius: 25px;">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
               <div class="card-body">
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
                 <h4 style="font-size: 2rem;"></h4>
-                <h5><?= $friends_row['business_name']; ?></h5>
                 <div class="dropdown">
-                  <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                  <a class="btn btn-primary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" style="border-radius: 25px;">
                     Order Now
                   </a>
                 </div>
@@ -547,16 +540,15 @@
   
         ?>
   
-          <div class="col col-6 col-md-4">
-            <div class="card shadow">
-              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+          <div class="col col-6 col-md-4 text-center">
+            <div class="card shadow" style="border-radius: 25px;">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
               <div class="card-body">
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
                 <h4 style="font-size: 2rem;"></h4>
-                <h5><?= $friends_row['business_name']; ?></h5>
                 <div class="dropdown">
-                  <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                  <a class="btn btn-primary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" style="border-radius: 25px;">
                     Order Now
                   </a>
                 </div>
@@ -580,7 +572,7 @@
 
 
             <!--**************************************Books **************************** -->
-        <h2 class="new text-center bg-primary fs-1 py-4 text-white" id="books">Books</h2>
+        <h2 class="new text-center bg-primary fs-1 py-4 text-white mb-5" id="books">Books</h2>
     <div class="container py-5 my-4 me-4 wrap">
       <div class="row row-cols-1 row-cols-md-3 g-4">
       <?php 
@@ -603,16 +595,15 @@
   
         ?>
   
-          <div class="col col-6 col-md-4">
-            <div class="card shadow">
-              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="...">
+          <div class="col col-6 col-md-4 text-center">
+            <div class="card shadow" style="border-radius: 25px;">
+              <img src="uploads/<?= $friendss_row['image']; ?>" class="card-img-top shadow" alt="..." style="border-radius: 25px;">
               <div class="card-body">
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['item_name']; ?></h3>
-                <h3 class="card-title" style="font-size: 1.5rem;"><?= $friendss_row['price']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['item_name']; ?></h3>
+                <h3 class="card-title" style="font-size: 1.7rem;"><?= $friendss_row['price']; ?></h3>
                 <h4 style="font-size: 2rem;"></h4>
-                <h5><?= $friends_row['business_name']; ?></h5>
                 <div class="dropdown">
-                  <a class="btn btn-secondary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" >
+                  <a class="btn btn-primary px-5" href="buy-item.php?item_id=<?= $friendss_row['id']; ?>" style="border-radius: 25px;">
                     Order Now
                   </a>
                 </div>

@@ -38,7 +38,7 @@
 
 .enroll-btn {
   position: absolute;
-  bottom: -30px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.3s ease-in-out;
@@ -140,7 +140,7 @@ if($result->num_rows){
 </div>
         <div class="instructor" style="margin-top: 1rem; padding-bottom: 5rem;">
             <div class="container text-center">
-                <img src="./assets/img/easylearn/group.jpg" style="max-width: 100%;" alt="">
+                <img src="./assets/img/easylearn/tutorial.png" style="max-width: 100%;" alt="">
                 <h4 style="font-size: 2.7rem; font-weight: bold; padding-top: 2rem; padding-bottom: 1rem;">Become an instructor</h4>
                 <p style="font-size: 1.7rem;">Instructors from around the world teach millions of students on Eazy Learn. We provide the tools and skills to teach what you love.</p>
                 <a href="register-teacher.php" class="btn" style="width: 100%; margin-top: 1rem; background: blue; color: #fff; font-weight: 700;">Start teaching today</a>

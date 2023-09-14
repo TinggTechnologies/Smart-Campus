@@ -13,7 +13,7 @@ require "header.php";
 
 <body>
     <div class="row justify-content-center">
-        <div class="col-lg-6">
+        <div class="col-lg-5">
         <section class="container-fluid login-wrapper pt-3">
         <div class="container">
 

@@ -20,17 +20,31 @@ if($stmt->execute()){
 }
 
 
-$rm_sql = "SELECT * FROM register_teachers WHERE teacher_id=?";
+
+$active = 'active';
+$rm_sql = "SELECT * FROM register_teachers WHERE teacher_id=? AND status=?";
 $rm_stmt = $conn->prepare($rm_sql);
-$rm_stmt->bind_param('s', $id);
+$rm_stmt->bind_param('ss', $id, $active);
 if($rm_stmt->execute()){
    $rm_result = $rm_stmt->get_result();
    if($rm_result->num_rows > 0){
-    $rm_row = $rm_result->fetch_assoc();
-    @$stud = $rm_row['status'];
+    echo "<script>location.href = 'teacher-dashboard.php';</script>"; 
    }
 }
 
+$active = 'pending';
+$rm_sql = "SELECT * FROM register_teachers WHERE teacher_id=? AND status=?";
+$rm_stmt = $conn->prepare($rm_sql);
+$rm_stmt->bind_param('ss', $id, $active);
+if($rm_stmt->execute()){
+   $rm_result = $rm_stmt->get_result();
+   if($rm_result->num_rows > 0){
+    echo "<script>location.href = 'register-teacher4.php';</script>"; 
+   }
+}
+
+
+/*
 if(@$stud == 'pending'){
     echo "<script>location.href = 'register-teacher4.php';</script>"; 
 } else if(@$stud == 'active'){
@@ -120,16 +134,18 @@ if(@$bstud == 'pending'){
     echo "<script>location.href = 'business-dashboard.php';</script>"; 
 }
 
+*/
+
 ?>
 
 <body>
-    <section class="container-fluid login-wrapper pt-5">
+    <section class="container-fluid login-wrapper pt-3">
         <div class="container">
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <div class="login-form">
-            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Join Team</a>
+            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i></a>
             <img src="./assets/img/easylearn/intro5.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive">
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Hi, <?= $_SESSION['lastname']; ?>!</h2>
                 <span style="font-weight: 500; font-size: 1rem; opacity: .7; line-height: 1.5;">Thank you for wanting to be part of us, Our goal primarily is to simplify learning and we want you to join us to make this a reality. To continue we want to be sure that you are qualified enough to teach, so we will be asking you some important questions.</span>

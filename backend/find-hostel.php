@@ -42,7 +42,7 @@ if($result->num_rows){
        
     $output .= '
     <body>
-    <section class="container-fluid login-wrapper pt-5">
+    <section class="container-fluid login-wrapper pt-5 pb-5">
         <div class="container">
 
             <div class="row justify-content-center">
@@ -77,9 +77,11 @@ if($result->num_rows){
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                <div class="login-form">
+                <div class="login-form text-center">
           
-                <h2 class="pt-5" style="font-size: 3rem; line-height: 1.3;">No Hostel</h2>              
+                <h2 class="pt-5 text-danger" style="font-size: 8rem; line-height: 1.3;"><i class="bi bi-x-circle-fill"></i>
+                </h2>              
+                <span>No Hostel</span>
                
             </div>
                 </div>

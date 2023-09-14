@@ -18,7 +18,7 @@ if($stmt->execute()){
         $department = $row['department'];
     }
 }
-require "backend/room_mate_finder3.php";
+//require "backend/room_mate_finder3.php";
 ?>
 
 <body>
@@ -97,8 +97,8 @@ require "backend/room_mate_finder3.php";
                 },
                 success: function(response){
                     $('#message').html(response);
-                    $('body').fadeOut();
-                    location.href = "register-teacher3.php";
+                   // $('body').fadeOut();
+                   // location.href = "register-teacher3.php";
                 }
             });
             $('#job_form')[0].reset();

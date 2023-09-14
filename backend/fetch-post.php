@@ -53,32 +53,40 @@ if($stmt->execute()){
 
     $output .= '
     <div class="feed-post">
-  
-        <a href="comments.php?post_id='.$rows['post_id'].'">
-            <div class="feed-wrapper-img pt-5" id="image-container">
-                <img id="" src="uploads/'.$rows['post_image'] .'">
-                <div class="loader"></div>
-            </div>
-            <p class="post-content" style="width: 95%; margin: auto; padding-top: 1rem; padding-bottom: 1rem;">'.$msg.'</p>
-        </a>
-        <div class="post-details" style="display: flex; justify-content: space-between; width: 95%; margin: auto;">
-           <div style="display: flex;">
-           <img src="uploads/'. $rows1['image'] .'">
-           <h5 class="author-name" style="margin-left: 1rem; width: 20rem;">
-               <a href="#">'. $rows1['lastname'] . " " . $rows1['firstname'] .'</a>
-           </h5>
-           </div>
-            <span>
-                  <form id="like_form" style="display: flex; justify-content: center; align-items: center;">
-                <i id="like_loop_'.$rows['post_id'].'" class="bi bi-hand-thumbs-up liked" style="margin-left: 10px; cursor:pointer; font-size: 1.5rem; color: '.$like_color.';" onclick="like_update('.$rows['post_id'].');"> '.$like_count.'</i>
-                <i id="dislike_loop_'.$rows['post_id'].'" class="bi bi-hand-thumbs-down liked" style="margin-right: 10px; cursor:pointer; font-size: 1.5rem; color: '.$like_color.';" onclick="dislike_update('.$rows['post_id'].');"> '.$dislike_count.'</i>
-
-                    <i class="bi bi-chat" style="font-size: 1.5rem;"> '.$count_comment.'</i> 
-                   
-                </form>
-            </span>
+    <div style="padding: 1rem"><div class="post-details d-flex" style="align-items: center; justify-content: space-between; width: 100%; margin: auto;">
+    <img src="uploads/'. $rows1['image'] .'">
+    <h5 class="author-name" style="margin-right: 8rem;">
+        <a href="#">'. $rows1['lastname'] . " " . $rows1['firstname'] .'</a>
+    </h5>
+    <span>
+   
+            <i class="bi bi-grip-horizontal" style="cursor: pointer; font-size: 25px;"></i>
+        
+    
+    </span>
+</div>
+</div>
+    <a href="comments.php?post_id='.$rows['post_id'].'">
+    
+        <div class="feed-wrapper-img">
+            <img src="uploads/'.$rows['post_image'] .'">
         </div>
-    </div>';
+        <p class="post-content" style="width: 95%; margin: auto; padding: 1rem 0;">'.$msg.'</p>    
+    </a>
+    <div class="post-details d-flex" style="align-items: center; justify-content: space-between; width: 90%; margin: auto; padding: 1rem 0">
+       
+            <i class="bi bi-heart liked" style="cursor: pointer; font-size: 18px; padding: 1rem 3rem;"  onclick="like_update('.$rows['post_id'].');" id="like_loop_'.$rows['post_id'].'"> '.$like_count.'</i>
+            <a href="comments.php?post_id='.$rows['post_id'].'">
+                <i class="bi bi-chat" style="cursor: pointer; font-size: 18px; padding: 1rem 3rem;"> '.$count_comment.'</i>
+            </a>
+            <a href="comments.php?post_id='.$rows['post_id'].'">
+            <i class="bi bi-send" style="cursor: pointer; font-size: 18px; padding: 1rem 3rem;"></i>
+        </a>
+          
+    </div>
+</div>
+  
+    ';
 
 }
     }

@@ -26,10 +26,10 @@ if($stmt->execute()){
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <div class="login-form">
-            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Assignment Solver</a>
-            <img src="./assets/img/easylearn/ass.jpg" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
-                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Assignment Solver</h2>
-                <a href="#" style="color: blue; font-weight: 500; font-size: 1.1rem;">Edit Assignment</a>
+          <?php require "includes/ass-nav.php";  ?>
+            <img src="./assets/img/easylearn/virtuals.png" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
+                <h2 class="pt-5 text-center" style="font-size: 2rem; line-height: 1.3;">Assignment Solver</h2>
+                
                 <form id="p_form" method="POST" enctype="multipart/form-data">
                 <?php
                 if(isset($error['file'])){
@@ -95,6 +95,12 @@ if($stmt->execute()){
 <?php require "footer.php"; ?>
 <script>
     $(document).ready(function(){
+
+        $('.menu-toggle .clickme').click(function() {
+            $(this).toggleClass('active');
+            $('.menu-links').toggleClass('active');
+        });
+
         $('#p_form').on('submit', function(e){
             e.preventDefault();
             var formData = new FormData(this);

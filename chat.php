@@ -10,6 +10,10 @@
         right: 0;
         bottom: 10;
     }
+    header{
+        align-items: center;
+    }
+  
 </style>
 <?php
 $incoming_id = $_SESSION['id'];
@@ -34,7 +38,7 @@ if($stmt->execute()){
             <i class="bi bi-three-dots-vertical notifications"></i>
         </header>
 
-        <div class="chat-wrapper">
+        <div class="chat-wrapper" style="margin-top: 2rem;">
 
             <div class="chats" style="overflow-y: auto;">
                 

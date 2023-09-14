@@ -12,21 +12,7 @@
             <a href="intro.php" class="btn get-a-quote">Register</a>
             <a href="login.php" class="btn get-a-quote ms-3">Login</a>
 </div>
-<?php
-$counter_file = "counter.txt";
 
-if(!file_exists($counter_file)){
-  $counter = 0;
-} else {
-  $counter = file_get_contents($counter_file);
-}
-$counter++;
-
-file_put_contents($counter_file, $counter);
-
-
-
-?>
     </div>
   </section><!-- End Hero Section -->
   
@@ -38,50 +24,74 @@ file_put_contents($counter_file, $counter);
 
            
         <div class="section-header mt-5">
-          <span>Features</span>
-          <h2>Features</h2>
+          <span>Services we offer</span>
+          <h2>Services we offer</h2>
 
         </div>
 
         <div class="row gy-4 align-items-center features-item justify-content-between" data-aos="fade-up">
           <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/easylearn/hostel.jpg" class="img-fluid" alt="">
+            <img src="assets/img/easylearn/hostel.png" class="img-fluid" alt="">
           </div>
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="col-md-6 order-2 order-md-1 text-center">
             <h3>Hostel Finder</h3>
-            <p>
-             Eazy Learn's hostel finder is a valuable feature that provides students with a convenient and reliable way to find suitable accomodation near their schools. With this feature, Students can focus on their studies and academic persuits, knowing that their accomodation needs are taken care of.
+            <p class="pt-2">
+             Discover the perfect hostel for your needs with Eazy Learn's user-friendly hostel finder tool.
             </p>
-            <div class="mt-4">
-            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Find a Hostel</a>
+            <div class="mt-5">
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Find Now</a>
             </div>
           </div>
         </div><!-- Features Item -->
 
         <div class="row gy-4 align-items-center features-item justify-content-between" data-aos="fade-up">
           <div class="col-md-5">
-            <img src="assets/img/easylearn/group.jpg" class="img-fluid" alt="">
+            <img src="assets/img/easylearn/assignment.png" class="img-fluid" alt="">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 order-2 order-md-1 text-center pt-3">
             <h3>Assignment Solver</h3>
-            <p>It is time to get the support of highly qualified assignment helpers on Eazy Learn. Are you feeling overwhelmed with your assignment? Don't panic. Register with us and get a well written assignment before your deadline.</p>
-            <div class="mt-4">
-            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Assignment Solver</a>
+            <p class="pt-2">Save time and improve your grades with our assignment solver. Get detailed explanations and solve your assignments with ease.</p>
+            <div class="mt-5">
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Solve Now</a>
             </div>
           </div>
         </div><!-- Features Item -->
 
         <div class="row gy-4 align-items-center features-item justify-content-between" data-aos="fade-up">
           <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/easylearn/girls.jpg" class="img-fluid" alt="">
+            <img src="assets/img/easylearn/roommate.png" class="img-fluid" alt="">
           </div>
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="col-md-6 order-2 order-md-1 text-center pt-3">
             <h3>Room Mate Finder</h3>
-            <p>
-             Eazy Learn's Roommate Finder is an easy-to-use platform that allows students to create a profile, specify their preferences, and connect with potential roommates who share similar interests and lifestyles. Students can browse through other Profiles and find potential roommates who match their criteria.
-            </p>
-            <div class="mt-4">
-            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Find a Room Mate</a>
+            <p class="pt-2">Don't settle for just anyone to share your living space with. Connect with potential roommates based on your shared interests.</p>
+            <div class="mt-5">
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Find Now</a>
+            </div>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item justify-content-between" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="assets/img/easylearn/tutorial.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 order-2 order-md-1 text-center">
+            <h3>Download Tutorial</h3>
+            <p class="pt-2">Looking for a reliable and easy-to-use resource to help you navigate your university courses? Eazy Learn's tutorials have got you covered.</p>
+            <div class="mt-5">
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Download Now</a>
+            </div>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item justify-content-between" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/img/easylearn/buy.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 order-2 order-md-1 text-center pt-3">
+            <h3>Online Shop</h3>
+            <p class="pt-2">Looking for a hassle-free shopping experience? Visit our online store today! With a wide range of products and easy navigation, you'll find what you need in just a few clicks.</p>
+            <div class="mt-5">
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Buy Now</a>
             </div>
           </div>
         </div><!-- Features Item -->
@@ -101,17 +111,47 @@ file_put_contents($counter_file, $counter);
 
         </div>
 
-        <div class="row gy-4 align-items-center features-item justify-content-between" data-aos="fade-up">
+
+         <div class="row gy-4 align-items-center features-item justify-content-between mt-5 pb-5" data-aos="fade-up" style="background-color: rgba(0,0,0,.04);">
           <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/easylearn/ass.jpg" class="img-fluid" alt="">
+            <img src="assets/img/easylearn/vct.png" class="img-fluid" alt="">
           </div>
-          <div class="col-md-6 order-2 order-md-1">
-            <h3 style="color: #030f3a; font-weight: 700;">Start Earning as a student</h3>
-            <p>
-            Eazy Learn provides opportunities for students to make money from what they have passion for. you can get paid for doing the following; freelance tutoring, Business Advertising, Referral Programs, Content Creation, Agency, Transportation, Past question and Tutorial donation etc.
+          <div class="col-md-6 order-2 order-md-1 text-center">
+            <h3 style="color: #030f3a; font-weight: 700;">Start earning as a student</h3>
+            <p class="pt-3 pb-3">
+            Eazy Learn provides opportunities for students to make money from what they have passion for. click the button lets get you started.
             </p>
             <div class="mt-4">
-            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Start Earning</a>
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Earn Now</a>
+            </div>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+    </section><!-- End Services Section -->
+
+     <!-- ======= Services Section ======= -->
+     <section id="service" class="services pt-0">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <span>Eazy Learn for Secondary School</span>
+          <h2>Eazy Learn for Secondary School</h2>
+
+        </div>
+
+
+         <div class="row gy-4 align-items-center features-item justify-content-between mt-5 pb-5" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/img/easylearn/intro.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 order-2 order-md-1 text-center">
+            <h3 style="color: #030f3a; font-weight: 700;">Virtual Campus Tour</h3>
+            <p class="pt-3 pb-3">
+            Explore your dream campus from the comfort of your own home with our virtual campus tour. Get an in-depth look at all the highlights, from the libraries to the lecture halls, and see for yourself why you should attend that university.
+            </p>
+            <div class="mt-4">
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">View Now</a>
             </div>
           </div>
         </div><!-- Features Item -->
@@ -122,13 +162,13 @@ file_put_contents($counter_file, $counter);
 
     <!-- ======= Pricing Section ======= -->
 
-    <!--
-    <section id="pricing" class="pricing pt-0">
+    
+   <!-- <section id="pricing" class="pricing pt-0">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <span>Pricing</span>
-          <h2>Pricing</h2>
+          <span>School Management System</span>
+          <h2>School Management System</h2>
 
         </div>
 
@@ -182,8 +222,8 @@ file_put_contents($counter_file, $counter);
         </div>
 
       </div>
-    </section>
--->
+    </section> -->
+
    
     <section id="faq" class="faq">
       <div class="container" data-aos="fade-up">

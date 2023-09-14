@@ -45,6 +45,7 @@ if($stmt->execute()){
                     <div class="input-group mb-4">
                        <input type="file" id="file" name="file" class="form-control" style="border: 2px solid rgba(0,0,0,.3);" required>
                     </div>
+                    <label for="">Enter 0 if it is free</label>
                     <div class="input-group mb-4">
                     <input type="tel" id="price" name="price" class="form-control" placeholder="Enter Price" required>
                     </div>

@@ -3,16 +3,16 @@ session_start();
 if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
+require "database/connection.php";
+if(isset($_GET['time'])){
+  $time = $_GET['time'];
+}
 if(isset($_SESSION['id'])){
   $id = $_SESSION['id'];
 }
-require "database/connection.php";
-if(isset($_GET['time'])){
-    $time = $_GET['time'];
-}
 
 
-$sql1 = "SELECT * FROM register_house WHERE timestamp='$time' ";
+$sql1 = "SELECT * FROM register_house WHERE timestamp='$time'";
 $stmt1 = $conn->prepare($sql1);
 $stmt1->execute();
 $result1 = $stmt1->get_result();
@@ -86,7 +86,7 @@ if($result1->num_rows > 0){
 
    <!-- ======= Pricing Section ======= -->
  <section id="pricing" class="pricing mt-0 pt-3">
-      <div class="container" data-aos="fade-up">
+      <div class="" data-aos="fade-up">
 
         <div class="row gy-4">
 
@@ -160,9 +160,10 @@ if($result1->num_rows > 0){
         <h3 class="mb-2">Safety Tips</h3>
         <ol>
           <li>Do not make any inspection fee without seeing the agent and property.</li>
-          <li>Only pay Rental fee, Sales fee or any upfront payment after you verify the Landlord.</li>
+          <li>Make sure you pay only through Eazy Learn.</li>
+          <li>If you don't pay through us then we won't be liable for any monetary transaction between you and the agent.</li>
           <li>Ensure you meet the Agent in an open location.</li>
-          <li>The Agent does not represent Eazy Learn and Eazy Learn is not liable for any monetary transaction between you and the agent.</li>
+          <li>Make payment after you have verified the house for security purposes.</li>
         </ol>
         <div class="text-end">
         <a href="" class="text-danger" style="font-size: 1.5rem; border-bottom: 2px solid red;">Report Property</a>
@@ -178,11 +179,40 @@ if($result1->num_rows > 0){
           <a href="connect-agent.php?id=<?= $row1['user_id']; ?>" class="contact_agent form-control">Chat Agent</a>
           </div>
 
+          <div class="mt-5 text-center">
+          
+          <h3 class="mb-2">Make Payment</h3>
+          <p>Payment should only be made after you have verified the house and you are good with everything you have seen.</p>
+
+          <form id="paymentForm">
+          <div class="form-group">
+                <input type="hidden" id="time" value="<?= $time; ?>"/>
+            </div>
+            <div class="form-group">
+                <input type="hidden" id="email-address" value="<?= $_SESSION['email']; ?>" required />
+            </div>
+            <div class="form-group">
+                <input type="hidden" value="<?=  $row['price']; ?>" id="amount" required />
+            </div>
+            <a href="ll.php?time=<?= $time; ?>" class="btn btn-primary w-100" onclick="payWithPaystack()" style="border-radius: 25px;">Pay Now</a>
+            </form>
+          
+      
+          </div>
+
           <div class="mt-5">
           
-          <h3 class="mb-2">Disclaimer</h3>
-          <p>This property consists of an advertisement by <?= $row1['business_name']; ?>. Eazy Learn only serves as a medium for the advertisement for this property and is not responsible for selling the property.</p>
-      
+          <h3 class="mb-2">Safety Tips</h3>
+          <ol>
+            <li>Do not make any inspection fee without seeing the agent and property.</li>
+            <li>Make sure you pay only through Eazy Learn.</li>
+            <li>If you don't pay through us then we won't be liable for any monetary transaction between you and the agent.</li>
+            <li>Ensure you meet the Agent in an open location.</li>
+            <li>Make payment after you have verified the house for security purposes.</li>
+          </ol>
+          <div class="text-end">
+          <a href="" class="text-danger" style="font-size: 1.5rem; border-bottom: 2px solid red;">Report Property</a>
+          </div>
           </div>
   
 
@@ -190,6 +220,7 @@ if($result1->num_rows > 0){
     </section> 
 
   </main><!-- End #main -->
+  <script src="https://js.paystack.co/v1/inline.js"></script> 
 
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -202,6 +233,9 @@ if($result1->num_rows > 0){
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="js/jquery2.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./assets/js/sweetalert.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
@@ -209,3 +243,30 @@ if($result1->num_rows > 0){
 </body>
 
 </html>
+
+<script>
+  const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener("submit", payWithPaystack, false);
+function payWithPaystack(e) {
+  e.preventDefault();
+
+  let handler = PaystackPop.setup({
+    key: 'pk_test_c7e02b7b329cd65db9fb7a3321b5e2b9093465d6', // Replace with your public key
+    email: document.getElementById("email-address").value,
+    amount: document.getElementById("amount").value * 100,
+    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+    // label: "Optional string that replaces customer email"
+    onClose: function(){
+      window.location = "https://eazylearn.com.ng/home/dashboard.php?transaction=cancel";
+      alert('Transaction cancelled.');
+    },
+    callback: function(response){
+      let message = 'Payment complete! Reference: ' + response.reference ;
+      alert(message);
+      window.location = "verify-pq-transaction.php?pq_id=" + <?= $item_id; ?> + "&reference=" + response.reference;
+    }
+  });
+
+  handler.openIframe();
+}
+</script>

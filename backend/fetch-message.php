@@ -17,9 +17,9 @@ $count = $result->num_rows;
 if($count === 0){
   $count = "";
 }
-$output = ' <a href="messages.php">
-<i class="bi bi-chat-text chats" style="font-size: 3rem;"></i>
-<span class="badge bg-success badge-number" style="background-color: rgb(47, 47, 240); position: absolute; right: 6rem; top: 1.9rem; font-weight: bolder; padding: .5rem .5rem 1.7rem;">'. $count.'</span>
+$output = ' <a href="messages.php" style="position: relative;">
+<i class="bi bi-chat-text chats" style="font-size: 2.5rem;"></i>
+<span class="badge bg-success badge-number" style="background-color: rgb(47, 47, 240); position: absolute; right: -.5rem; top: -1.5rem; font-weight: bolder; padding: 1rem .1re m 1rem; height: 2rem; width: 2rem;">'. $count.'</span>
 </a>' ;
 
         echo $output;

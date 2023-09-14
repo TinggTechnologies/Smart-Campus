@@ -64,7 +64,7 @@ if($stmt->execute()){
 
 .enroll-btn {
   position: absolute;
-  bottom: -30px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.3s ease-in-out;
@@ -164,14 +164,7 @@ if($stmt->execute()){
             </div>
           </div>
 
-          <div class="mt-5">
-          
-          <h3 class="mb-5">Sellers Info</h3>
-  
-          <a class="contact_agent form-control text-center"><?= $row1['email']; ?></a><br />
-          <a class="contact_agent form-control text-center"><?= $row1['telephone']; ?></a><br />
-          <a href="connect-seller.php?id=<?= $row1['user_id']; ?>" class="contact_agent form-control text-center">Chat Seller</a><br />
-          </div>
+         
 
 
           <?php

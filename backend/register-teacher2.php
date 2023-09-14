@@ -9,12 +9,11 @@ require_once "../database/connection.php";
     $office = $_POST["office"]; 
     $area = $_POST["area"]; 
     $department = $_POST["department"]; 
+    $job = "Teacher";
     if(isset($_SESSION['id'])){
         $id = $_SESSION['id'];
     }
-    if(isset($_SESSION['job'])){
-        $job = $_SESSION['job'];
-    }
+   
     
 
     $sql = "INSERT INTO register_teachers(teacher_id, department, job, experience, office, area, status) VALUES(?,?,?,?,?,?, 'pending')";

@@ -21,14 +21,14 @@ if($stmt->execute()){
 }
 ?>
 <body>
-    <section class="container-fluid login-wrapper pt-3">
+    <section class="container-fluid login-wrapper pt-3 pb-5">
         <div class="container">
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <div class="login-form">
-            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Past Question</a>
-            <img src="./assets/img/easylearn/ass.jpg" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
+            <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i></a>
+            <img src="./assets/img/easylearn/assignment.png" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
                 <h2 class="pt-5 text-center" style="font-size: 2rem; line-height: 1.3;">Edit Past Question</h2>
                 <?php
                 if(isset($error['file'])){

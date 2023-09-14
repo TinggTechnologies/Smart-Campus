@@ -37,7 +37,7 @@ if($stmt->execute()){
 
 <div class="nav-container">
     <div class="menu-toggle">
-    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo3.jpg" style="width: 13rem;" alt="Eazy Learn Logo"></a>
+    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo4.png" style="width: 8rem;" alt="Eazy Learn Logo"></a>
     <div style="display: flex; align-items: center;">
     <div class="">
            <!-- <a href="./profile.php"><img src="<?= $row['image']; ?>" alt=""></a> -->
@@ -45,7 +45,7 @@ if($stmt->execute()){
 
              </div>
            </div>
-    <div class="clickme" style="padding-left: 2rem;">
+    <div class="clickme" style="padding-left: 2rem; font-size: 1.5rem;">
     <span></span>
     <span></span>
     <span></span>
@@ -63,7 +63,7 @@ if($stmt->execute()){
                             <i class="bi bi-file-earmark-lock"></i> Assignment Solver</a>
                     </li>
                     <li>
-                        <a href="hostel-intro.php">
+                        <a href="./house">
                             <i class="bi bi-house"></i> Hostel Finder</a>
                     </li>
                     <li>
@@ -78,10 +78,7 @@ if($stmt->execute()){
                         <a href="index-shop.php">
                             <i class="bi bi-cart4"></i> Online Shop</a>
                     </li>
-                    <li>
-                        <a href="index-shop.php">
-                            <i class="bi bi-truck"></i> Order Cab</a>
-                    </li>
+    
                     <li>
                         <a href="index-shop.php">
                             <i class="bi bi-pencil-square"></i> Event</a>

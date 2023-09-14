@@ -21,7 +21,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-        $sender_id = $row['sender_id'];
+        $sender_id = $row['user_id'];
         $sql2 = "SELECT * FROM users WHERE user_id=?";
         $stmt2 = $conn->prepare($sql2);
         $stmt2->bind_param('s', $sender_id);
@@ -32,12 +32,12 @@ if($result->num_rows > 0){
         }
         $output .= '
         <a href="'.$row['link'].'"><li class="notification-row d-flex-sb">
-        <img src="uploads/'.$row2['image'].'">
+    
         <div>
             <p>'.$row['message'].'</p>
             <small class="time">'.$row['time'].'</small>
         </div>
-        <span><i class="bi bi-three-dots"></i></span>
+        
         </li></a>
         
         ' ;

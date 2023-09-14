@@ -32,7 +32,7 @@ if($stmt->execute()){
             <img src="./assets/img/easylearn/success.gif" style="border-radius: 10px;" class="pre-login-img img-responsive mt-5">
             
                 <form id="registration_form" class="mt-0">
-                    <p>Thank you for registering to teach at with Easy Learn, we will get back to you through the Email Address you registered with. Thank You!</p>
+                    <p>Thank you for registering to teach with Easy Learn, we will get back to you through the Email Address you registered with. Thank You!</p>
                     
                     <div class="form-group mt-4 text-center">
                         <a href="dashboard.php" class="form-control getStarted-btn">Go to Dashboard</a>

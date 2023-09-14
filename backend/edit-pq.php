@@ -37,7 +37,7 @@ if($result->num_rows){
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">'.$row['course_title'].'</h2>
                 <span style="font-weight: 500; font-size: 1.7rem;">Department: '.$department.'</span><br />
                 <span style="font-weight: 500; font-size: 1.7rem;">Institution: '.$row1['school'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Price: '.$row['price'].'</span>
+                <span style="font-weight: 500; font-size: 1.7rem;">Price: #'.$row['price'].'</span>
                 <form id="profile_form">                         
                     <div class="form-group">
                         <a href="edit-single-pq.php?pq_id='.$row['id'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Edit Past Question</a>

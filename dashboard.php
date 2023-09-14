@@ -1,13 +1,14 @@
 <?php
 require_once "includes/dashboard-header.php"; 
-//require "backend/functions.php";
 
 ?>
 
 
 <body>
 
-    <section class="index-wrapper" style="padding-top: 7rem;">
+
+
+    <section class="dashboard-wrapper" style="padding-top: 7rem;">
        <?php require_once "includes/nav.php"; ?>
         <!-- ================= Navigation ================== -->
         <?php require_once "includes/footer-nav.php"; ?>
