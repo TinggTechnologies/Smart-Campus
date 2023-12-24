@@ -30,7 +30,7 @@ $output = '';
     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
       <div class="pricing-item">
         <h3>'.$row6['lastname'] . " ".$row6['firstname'] .'</h3>
-        <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#'.$row6['school'].' #'.$row1['department'].' #'.$row1['course_title'].' #'.$row1['type'].'</h4>
+        <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#'.$row6['school'].' #'.$row1['department'].' #'.$row1['course_title'].' #'.$row1['price'].'</h4>
         <section id="testimonials" class="testimonials">
 <div class="container position-relative" data-aos="fade-up">
 
@@ -50,7 +50,7 @@ $output = '';
 
 </div>
 </section> 
-        <a href="approve-pq2.php?id='.$row1['id'].'" class="buy-btn">Approve Agent</a>
+        <a href="approve-pq2.php?id='.$row1['pastquestion_id'].'" class="buy-btn">Approve Agent</a>
       </div>
     </div><!-- End Pricing Item -->
 

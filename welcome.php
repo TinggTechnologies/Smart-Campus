@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['id'])){
     header("location: login.php");
   }
-require "header.php"; ?>
+require "includes/login-header.php"; ?>
 
 <body>
     <section class="container-fluid login-wrapper pt-3">
@@ -15,7 +15,7 @@ require "header.php"; ?>
             <div class="login-form">
             <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
+        <img src="assets/img/easylearn/logo-cut2.png" style="border-radius: 5px; width: 7rem; height: 4rem;" alt="">
                 </a>
                                   
             <img src="./assets/img/easylearn/success.gif" class="pre-login-img img-responsive">
@@ -26,7 +26,7 @@ require "header.php"; ?>
 
                     <div class="input-group mb-4">
                         <h6 style="line-height: 1.4; opacity: .8;">
-                        We're thrilled to welcome you to Eazy Learn, your one-stop shop for all your educational needs. Congratulations on taking the first step towards unlocking your full potential!. <br /><br />At Eazy Learn, we're committed to providing you with the best learning experience possible. Our platform is here to support you every step of the way.
+                        We're thrilled to welcome you to Smart Campus, your one-stop shop for all your educational needs. Congratulations on taking the first step towards unlocking your full potential!. <br /><br />At Smart Campus, we're committed to providing you with the best learning experience possible. Our platform is here to support you every step of the way.
                         </h6>
                     </div>
 
@@ -42,4 +42,4 @@ require "header.php"; ?>
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

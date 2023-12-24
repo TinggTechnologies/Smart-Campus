@@ -10,6 +10,7 @@ $output = "";
 $department = $_POST['department'];
 $course_title = $_POST['course_title'];
 $price = $_POST['price'];
+$desc = $_POST['desc'];
     
     if($_FILES['file']['error'] > 0){
         echo 'Error: ' . $_FILES['file']['error'];
@@ -29,9 +30,9 @@ $price = $_POST['price'];
             echo "File Size is too large";
         } else {
             if(move_uploaded_file($fileTemp, $uploadFile)){
-                $sql = "INSERT INTO past_question (department, file, user_id, course_title, price, status) VALUES(?,?,?,?,?, 'pending')";
+                $sql = "INSERT INTO past_question (department, file, user_id, course_title, price, description, status) VALUES(?,?,?,?,?,?, 'pending')";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param('sssss', $department, $fileName, $id, $course_title, $price);
+                $stmt->bind_param('ssssss', $department, $fileName, $id, $course_title, $price, $desc);
                 $stmt->execute();
             } else {
                 echo "Failed to upload";

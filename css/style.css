@@ -129,6 +129,7 @@ input::placeholder{color: var(--dark-color);}
     margin-top: 0;
     font-size: 1.3rem;
     font-family: cursive;
+    padding-top: 0;
 }
 .logo img{
     max-height: 140px;
@@ -151,7 +152,7 @@ input::placeholder{color: var(--dark-color);}
     background-color: rgb(47, 47, 240);
     color: #fff;
     padding: .6rem 0;
-    border-radius: 20px;
+    border-radius: 5px;
     border: none;
 }
 /* ------------------------ Login Page ------------------------ */
@@ -173,7 +174,7 @@ h2{
     border-bottom: 1px solid black;
     outline: none;
     padding-bottom: .6rem;
-    border-radius: 0;
+    border-radius: 1px ;
 }
 .login-form input:hover{
     border: none;

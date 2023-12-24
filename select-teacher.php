@@ -91,16 +91,14 @@ if(isset($_SESSION['id'])){
 
     <section class="container-fluid index-wrapper" style="margin-bottom: 5rem;">
        <?php require_once "includes/nav.php"; ?>
-        <!-- ================= Navigation ================== -->
-        <?php require_once "includes/footer-nav.php"; ?>
-        <!-- End Navigation -->
+       
 
-        <!-- ================= Feeds ================== -->
+        <!-- ================= Teachers ================== -->
 
           <div class="assignment" style="width: 90%; margin: auto;">
 
-          <div style="padding-top: 7rem;">
-          <h2 class="text-center w-700">Select Teacher</h2>
+          <div style="padding-top: 2.5rem;">
+          <h2 class="text-center w-700">Chat Teacher</h2>
             
             
             <div class="assignment-student text-center" style="padding-bottom: 4rem; padding-top: 3rem;">

@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['email'])){
     header("location: login.php");
   }
-require "header.php"; ?>
+require "includes/login-header.php"; ?>
 
 <?php if(isset($_SESSION['code'])){
          $code =  $_SESSION['code'];
@@ -18,7 +18,7 @@ require "header.php"; ?>
             <div class="login-form">
             <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
+        <img src="assets/img/easylearn/logo-cut.png" style="border-radius: 5px; width: 4rem; height: 4rem; margin-left: 8.5rem;" alt=""> 
             </a>
                 <h2 class="pt-5">Verify Your Email</h2>
                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="mt-4">
@@ -56,7 +56,7 @@ require "header.php"; ?>
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 
 <script>
     $(document).on('click', '#register_btn', function(e){

@@ -4,7 +4,7 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/easylearn/congrats.jpg'); background-color: rgba(14, 29, 52, 0.8);">
+      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/easylearn/student3.gif'); background-color: rgba(14, 29, 52, 0.8);">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
@@ -48,7 +48,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h4>Email:</h4>
-                <p>info@eazylearn.com.ng</p>
+                <p>info@smartcampus.com.ng</p>
               </div>
             </div><!-- End Info Item -->
 

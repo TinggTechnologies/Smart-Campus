@@ -16,39 +16,18 @@
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
                                 <div class="hero__caption">
-                                    <h1 data-animation="fadeInRight" data-delay=".6s">Eazy Buy</h1>
-                                    <p data-animation="fadeInRight" data-delay=".8s">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, repellendus.</p>
+                                    <h1 data-animation="fadeInRight" data-delay=".6s">Market Place</h1>
+                                    <p data-animation="fadeInRight" data-delay=".8s">Let's embark on a journey where We connect you to potential sellers and buyers close to your school.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                        <a href="#latest-product-area" class="btn hero-btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="single-slider slider-height" data-background="assets/img/hero/h1_hero.jpg">
-                    <div class="container">
-                        <div class="row d-flex align-items-center justify-content-between">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
-                                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="assets/img/hero/hero_man.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
-                                <div class="hero__caption">
-                                    <span data-animation="fadeInRight" data-delay=".4s">60% Discount</span>
-                                    <h1 data-animation="fadeInRight" data-delay=".6s">Winter <br> Collection</h1>
-                                    <p data-animation="fadeInRight" data-delay=".8s">Best Cloth Collection By 2020!</p>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
        
@@ -59,7 +38,7 @@
                 <div class="row product-btn d-flex justify-content-end align-items-end">
                     <!-- Section Tittle -->
                     <div class="col-xl-4 col-lg-5 col-md-5">
-                        <div class="section-tittle mb-30">
+                        <div class="section-tittle mb-30" id="latest-product-area">
                             <h2 class="pt-5">Latest Products</h2>
                         </div>
                     </div>
@@ -69,9 +48,13 @@
                             <nav>                                                                                                
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" style="color: blue;" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Food</a>
-                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">New</a>
-                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Featured</a>
-                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Offer</a>
+                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Drink</a>
+                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Groceries</a>
+                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Gadgets</a>
+                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#accessories" role="tab" aria-controls="nav-contact" aria-selected="false">Accessories</a>
+                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#wears" role="tab" aria-controls="nav-contact" aria-selected="false">Wears</a>
+                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#beauty" role="tab" aria-controls="nav-contact" aria-selected="false">Beauty</a>
+                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#books" role="tab" aria-controls="nav-contact" aria-selected="false">Books</a>
                                 </div>
                             </nav>
                             <!--End Nav Button  -->
@@ -86,27 +69,20 @@
                             
                         <?php 
       
-      $sql = "SELECT * FROM sell WHERE category='Food and Snacks'";
+      $sql = "SELECT * FROM products WHERE category='Food and Snacks' AND status = 'approved'";
       $stmt = $conn->prepare($sql);
       if($stmt->execute()){
           $result = $stmt->get_result();
           if($result->num_rows > 0){
               while($friendss_row = $result->fetch_assoc()){
                   $fid = $friendss_row['user_id'];
-                  $sql1 = "SELECT * FROM register_business WHERE user_id = ?";
-                  $stmt1 = $conn->prepare($sql1);
-                  $stmt1->bind_param('s', $fid);
-                  if($stmt1->execute()){
-                      $result1 = $stmt1->get_result();
-                      if($result1->num_rows > 0){
-                          $friends_row = $result1->fetch_assoc();
   
   
         ?>
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>"> <img src="../uploads/<?= $friendss_row['image']; ?>" alt=""> </a>
+                                        <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>"> <img src="../<?= $friendss_row['image']; ?>" alt=""> </a>
                                         <div class="new-product">
                                             <span>New</span>
                                         </div>
@@ -116,7 +92,7 @@
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
-                                            <i class="far fa-star low-star"></i>
+                                            <i class="far fa-star"></i>
                                             <i class="far fa-star low-star"></i>
                                         </div>
                                         <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
@@ -130,9 +106,9 @@
                
                             </div>  
                             <?php
-                    }}}} else {
-                      echo "no";
-                    }}
+                    }}} else {
+                      echo "";
+                    }
         ?>
 
                         </div>
@@ -142,21 +118,13 @@
                         <div class="row">
                         <?php 
       
-      $sql = "SELECT * FROM sell WHERE category='Drinks'";
+      $sql = "SELECT * FROM products WHERE category='Drinks' AND status = 'approved'";
       $stmt = $conn->prepare($sql);
       if($stmt->execute()){
           $result = $stmt->get_result();
           if($result->num_rows > 0){
               while($friendss_row = $result->fetch_assoc()){
                   $fid = $friendss_row['user_id'];
-                  $sql1 = "SELECT * FROM register_business WHERE user_id = ?";
-                  $stmt1 = $conn->prepare($sql1);
-                  $stmt1->bind_param('s', $fid);
-                  if($stmt1->execute()){
-                      $result1 = $stmt1->get_result();
-                      if($result1->num_rows > 0){
-                          $friends_row = $result1->fetch_assoc();
-  
   
         ?>
 
@@ -164,7 +132,7 @@
                                 <div class="single-product mb-60">
                                     <div class="product-img">
                                     <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>"> 
-                                        <img src="../uploads/<?= $friendss_row['image']; ?>" alt="">
+                                        <img src="../<?= $friendss_row['image']; ?>" alt="">
                                     </a>
                                     </div>
                                     <div class="product-caption">
@@ -172,7 +140,7 @@
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
-                                            <i class="far fa-star low-star"></i>
+                                            <i class="far fa-star"></i>
                                             <i class="far fa-star low-star"></i>
                                         </div>
                                         <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
@@ -185,9 +153,9 @@
                                 </div>
                             </div>
                             <?php
-                      }}}} else {
-                        echo "no";
-                      }}
+                      }}} else {
+                        echo "";
+                      }
           ?>
 
                         </div>
@@ -195,40 +163,72 @@
                     <!-- Card three -->
                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                         <div class="row">
+
+                        <?php 
+      
+      $sql = "SELECT * FROM products WHERE category='Groceries' AND status = 'approved'";
+      $stmt = $conn->prepare($sql);
+      if($stmt->execute()){
+          $result = $stmt->get_result();
+          if($result->num_rows > 0){
+              while($friendss_row = $result->fetch_assoc()){
+                  $fid = $friendss_row['user_id'];
+  
+  
+        ?>
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product2.png" alt="">
+                                    <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>">
+                                        <img src="../<?= $friendss_row['image']; ?>" alt="">
+                                    </a>
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
-                                            <i class="far fa-star low-star"></i>
+                                            <i class="far fa-star"></i>
                                             <i class="far fa-star low-star"></i>
                                         </div>
-                                        <h4><a href="#">Green Dress with details</a></h4>
+                                        <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
                                         <div class="price">
                                             <ul>
-                                                <li>$40.00</li>
-                                                <li class="discount">$60.00</li>
+                                                <li><?= $friendss_row['price']; ?></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div> 
                             
-                           
+                            <?php
+                      }}} else {
+                        echo "";
+                      }
+          ?>
                         </div>
                     </div>
                     <!-- card four -->
                     <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
                         <div class="row">
+                        <?php 
+      
+      $sql = "SELECT * FROM products WHERE category='Gadgets' AND status = 'approved'";
+      $stmt = $conn->prepare($sql);
+      if($stmt->execute()){
+          $result = $stmt->get_result();
+          if($result->num_rows > 0){
+              while($friendss_row = $result->fetch_assoc()){
+                  $fid = $friendss_row['user_id'];
+  
+  
+        ?>
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product1.png" alt="">
+                                    <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>">
+                                        <img src="../<?= $friendss_row['image']; ?>" alt="">
+                                    </a>
                                         <div class="new-product">
                                             <span>New</span>
                                         </div>
@@ -238,20 +238,223 @@
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
                                             <i class="far fa-star"></i>
-                                            <i class="far fa-star low-star"></i>
+                                            <i class="far fa-star"></i>
                                             <i class="far fa-star low-star"></i>
                                         </div>
-                                        <h4><a href="#">Green Dress with details</a></h4>
+                                        <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
                                         <div class="price">
                                             <ul>
-                                                <li>$40.00</li>
-                                                <li class="discount">$60.00</li>
+                                                <li><?= $friendss_row['price']; ?></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+                            <?php
+                      }}} else {
+                        echo "";
+                      }
+          ?>
+                    </div>
+                </div>
+                <!-- End Nav Card -->
+
+                <!-- card four -->
+                <div class="tab-pane fade" id="accessories" role="tabpanel" aria-labelledby="nav-last-tab">
+                        <div class="row">
+                        <?php 
+      
+      $sql = "SELECT * FROM products WHERE category='Home Accessories' AND status = 'approved'";
+      $stmt = $conn->prepare($sql);
+      if($stmt->execute()){
+          $result = $stmt->get_result();
+          if($result->num_rows > 0){
+              while($friendss_row = $result->fetch_assoc()){
+                  $fid = $friendss_row['user_id'];
+  
+        ?>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                    <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>">
+                                        <img src="../<?= $friendss_row['image']; ?>" alt="">
+                                    </a>
+                                        <div class="new-product">
+                                            <span>New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star low-star"></i>
+                                        </div>
+                                        <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
+                                        <div class="price">
+                                            <ul>
+                                                <li><?= $friendss_row['price']; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                      }}} else {
+                        echo "";
+                      }
+          ?>
+                    </div>
+                </div>
+                <!-- End Nav Card -->
+
+                <!-- card four -->
+                <div class="tab-pane fade" id="wears" role="tabpanel" aria-labelledby="nav-last-tab">
+                        <div class="row">
+                        <?php 
+      
+      $sql = "SELECT * FROM products WHERE category='Wears and Jewelries' AND status = 'approved'";
+      $stmt = $conn->prepare($sql);
+      if($stmt->execute()){
+          $result = $stmt->get_result();
+          if($result->num_rows > 0){
+              while($friendss_row = $result->fetch_assoc()){
+                  $fid = $friendss_row['user_id'];
+  
+        ?>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                    <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>">
+                                        <img src="../<?= $friendss_row['image']; ?>" alt="">
+                                    </a>
+                                        <div class="new-product">
+                                            <span>New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star low-star"></i>
+                                        </div>
+                                        <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
+                                        <div class="price">
+                                            <ul>
+                                                <li><?= $friendss_row['price']; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                      }}} else {
+                        echo "";
+                      }
+          ?>
+                    </div>
+                </div>
+                <!-- End Nav Card -->
+
+                 <!-- card four -->
+                 <div class="tab-pane fade" id="beauty" role="tabpanel" aria-labelledby="nav-last-tab">
+                        <div class="row">
+                        <?php 
+      
+      $sql = "SELECT * FROM products WHERE category='Beaulty and Health' AND status = 'approved'";
+      $stmt = $conn->prepare($sql);
+      if($stmt->execute()){
+          $result = $stmt->get_result();
+          if($result->num_rows > 0){
+              while($friendss_row = $result->fetch_assoc()){
+                  $fid = $friendss_row['user_id'];
+  
+        ?>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                    <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>">
+                                        <img src="../<?= $friendss_row['image']; ?>" alt="">
+                                    </a>
+                                        <div class="new-product">
+                                            <span>New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star low-star"></i>
+                                        </div>
+                                        <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
+                                        <div class="price">
+                                            <ul>
+                                                <li><?= $friendss_row['price']; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                      }}} else {
+                        echo "";
+                      }
+          ?>
+                    </div>
+                </div>
+                <!-- End Nav Card -->
+
+                <!-- card four -->
+                <div class="tab-pane fade" id="books" role="tabpanel" aria-labelledby="nav-last-tab">
+                        <div class="row">
+                        <?php 
+      
+      $sql = "SELECT * FROM products WHERE category='Books' AND status = 'approved'";
+      $stmt = $conn->prepare($sql);
+      if($stmt->execute()){
+          $result = $stmt->get_result();
+          if($result->num_rows > 0){
+              while($friendss_row = $result->fetch_assoc()){
+                  $fid = $friendss_row['user_id'];  
+  
+        ?>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                    <a href="single-product.php?item_id=<?= $friendss_row['id']; ?>">
+                                        <img src="../uploads/<?= $friendss_row['image']; ?>" alt="">
+                                    </a>
+                                        <div class="new-product">
+                                            <span>New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star low-star"></i>
+                                        </div>
+                                        <h4><a href="#"><?= $friendss_row['item_name']; ?></a></h4>
+                                        <div class="price">
+                                            <ul>
+                                                <li><?= $friendss_row['price']; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                      }}} else {
+                        echo "";
+                      }
+          ?>
                     </div>
                 </div>
                 <!-- End Nav Card -->
@@ -259,7 +462,7 @@
         </section>
         <!-- Latest Products End -->
         <!-- Best Product Start -->
-        <div class="best-product-area lf-padding" >
+        <div class="best-product-area lf-padding text-center" >
            <div class="product-wrapper bg-height" style="background-image: url('assets/img/categori/card.png')">
                 <div class="container position-relative">
                     <div class="row justify-content-between align-items-end">
@@ -273,9 +476,9 @@
                         </div>
                         <div class="col-xl-8 col-lg-8">
                             <div class="best-product-caption">
-                                <h2>Find The Best Product<br> from Our Shop</h2>
-                                <p>Designers who are interesten creating state ofthe.</p>
-                                <a href="#" class="black-btn">Shop Now</a>
+                                <h2>Meet With Our sellers</h2>
+                                <p>Uncover the personalities and stories of our vibrant community of sellers.</p>
+                                <a href="#" class="black-btn">Meet sellers</a>
                             </div>
                         </div>
                     </div>
@@ -288,7 +491,7 @@
         </div>
        
         <!-- Latest Offers Start -->
-        <div class="latest-wrapper lf-padding">
+      <!--  <div class="latest-wrapper lf-padding">
             <div class="latest-area latest-height d-flex align-items-center" data-background="assets/img/collection/latest-offer.png">
                 <div class="container">
                     <div class="row d-flex align-items-center">
@@ -308,12 +511,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- man Shape -->
+                
                 <div class="man-shape">
                     <img src="assets/img/collection/latest-man.png" alt="">
                 </div>
             </div>
-        </div>
+        </div> -->
        
 
    

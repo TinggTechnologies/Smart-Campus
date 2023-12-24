@@ -15,16 +15,23 @@ $stmt->execute();
 $result = $stmt->get_result();
 $count = $result->num_rows;
 if($count === 0){
-  $count = "";
+  $count = "transparent";
+} else {
+    $count = "#d9534f";
 }
-$output .= ' <a href="notification.php" style="position: relative;">
-<i class="bi bi-bell"></i>
-<span class="badge bg-success badge-number" style="background: rgb(47, 47, 240); position: absolute; right: -.8rem; top: -.7rem; ">'. $count.'</span>
+$output .= ' <a href="notification.php" class="notis">
+<i class="bi bi-bell" style="color: rgba(0,0,0,1);"></i>
+<small class="bell-notis notification-count" style="    background: '.$count.';"></small>
+<span>Notification</span>
 </a>
 
 ' ;
 
         echo $output;
+
+?>
+
+
 
        
 

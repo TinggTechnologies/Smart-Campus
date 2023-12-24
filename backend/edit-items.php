@@ -12,7 +12,7 @@ if(isset($_SESSION['ass_code'])){
 $output = '';
 
 
-$sql = "SELECT * FROM sell WHERE user_id=?";
+$sql = "SELECT * FROM products WHERE user_id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $id);
 if($stmt->execute()){

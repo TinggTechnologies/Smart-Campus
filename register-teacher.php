@@ -4,7 +4,7 @@ if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
 require "database/connection.php";
-require "header.php"; 
+require "includes/login-header.php"; 
 
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -28,7 +28,7 @@ $rm_stmt->bind_param('ss', $id, $active);
 if($rm_stmt->execute()){
    $rm_result = $rm_stmt->get_result();
    if($rm_result->num_rows > 0){
-    echo "<script>location.href = 'teacher-dashboard.php';</script>"; 
+    echo "<script>location.href = 'agent-dashboard.php';</script>"; 
    }
 }
 
@@ -43,98 +43,6 @@ if($rm_stmt->execute()){
    }
 }
 
-
-/*
-if(@$stud == 'pending'){
-    echo "<script>location.href = 'register-teacher4.php';</script>"; 
-} else if(@$stud == 'active'){
-    echo "<script>location.href = 'teacher-dashboard.php';</script>"; 
-}
-
-$rm_sql = "SELECT * FROM register_house WHERE user_id=?";
-$rm_stmt = $conn->prepare($rm_sql);
-$rm_stmt->bind_param('s', $id);
-if($rm_stmt->execute()){
-   $rm_result = $rm_stmt->get_result();
-   if($rm_result->num_rows > 0){
-    $rm_row = $rm_result->fetch_assoc();
-    @$hstud = $rm_row['status'];
-   }
-}
-
-if(@$hstud == 'pending'){
-    echo "<script>location.href = 'approved.php';</script>"; 
-} else if(@$hstud == 'active'){
-    echo "<script>location.href = 'agent-dashboard.php';</script>"; 
-}
-
-$rm_sql = "SELECT * FROM register_business WHERE user_id=?";
-$rm_stmt = $conn->prepare($rm_sql);
-$rm_stmt->bind_param('s', $id);
-if($rm_stmt->execute()){
-   $rm_result = $rm_stmt->get_result();
-   if($rm_result->num_rows > 0){
-    $rm_row = $rm_result->fetch_assoc();
-    @$bstud = $rm_row['status'];
-   }
-}
-
-if(@$bstud == 'pending'){
-    echo "<script>location.href = 'approved.php';</script>"; 
-} else if(@$bstud == 'active'){
-    echo "<script>location.href = 'business-dashboard.php';</script>"; 
-}$rm_sql = "SELECT * FROM register_teachers WHERE teacher_id=?";
-$rm_stmt = $conn->prepare($rm_sql);
-$rm_stmt->bind_param('s', $id);
-if($rm_stmt->execute()){
-   $rm_result = $rm_stmt->get_result();
-   if($rm_result->num_rows > 0){
-    $rm_row = $rm_result->fetch_assoc();
-    @$stud = $rm_row['status'];
-   }
-}
-
-if(@$stud == 'pending'){
-    echo "<script>location.href = 'register-teacher4.php';</script>"; 
-} else if(@$stud == 'active'){
-    echo "<script>location.href = 'teacher-dashboard.php';</script>"; 
-}
-
-$rm_sql = "SELECT * FROM register_house WHERE user_id=?";
-$rm_stmt = $conn->prepare($rm_sql);
-$rm_stmt->bind_param('s', $id);
-if($rm_stmt->execute()){
-   $rm_result = $rm_stmt->get_result();
-   if($rm_result->num_rows > 0){
-    $rm_row = $rm_result->fetch_assoc();
-    @$hstud = $rm_row['status'];
-   }
-}
-
-if(@$hstud == 'pending'){
-    echo "<script>location.href = 'approved.php';</script>"; 
-} else if(@$hstud == 'active'){
-    echo "<script>location.href = 'agent-dashboard.php';</script>"; 
-}
-
-$rm_sql = "SELECT * FROM register_business WHERE user_id=?";
-$rm_stmt = $conn->prepare($rm_sql);
-$rm_stmt->bind_param('s', $id);
-if($rm_stmt->execute()){
-   $rm_result = $rm_stmt->get_result();
-   if($rm_result->num_rows > 0){
-    $rm_row = $rm_result->fetch_assoc();
-    @$bstud = $rm_row['status'];
-   }
-}
-
-if(@$bstud == 'pending'){
-    echo "<script>location.href = 'approved.php';</script>"; 
-} else if(@$bstud == 'active'){
-    echo "<script>location.href = 'business-dashboard.php';</script>"; 
-}
-
-*/
 
 ?>
 
@@ -166,4 +74,4 @@ if(@$bstud == 'pending'){
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

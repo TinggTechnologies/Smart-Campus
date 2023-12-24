@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
-require "header.php"; 
+require "includes/login-header.php"; 
 require "database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -119,7 +119,7 @@ if(@$bstud == 'pending'){
         </div>
     </section>
 
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 <script>
     $(document).on('click', '#job_btn', function(e){
         e.preventDefault();

@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
-require "header.php"; ?>
+require "includes/login-header.php"; ?>
 
 <?php
 require "./database/connection.php"; 
@@ -19,7 +19,7 @@ require "./database/connection.php";
                 <div class="login-form">
                 <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
+        <img src="assets/img/easylearn/logo-cut2.png" style="border-radius: 5px; width: 7rem; height: 4rem;" alt="">
                 </a>
             <img src="./assets/img/easylearn/student4.gif" style="border-radius: 10px; padding-right: 5rem;" class="pre-login-img img-responsive">
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Let's Know More About You</h2>
@@ -94,7 +94,7 @@ require "./database/connection.php";
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 <script>
     $(document).on('click', '#student_btn', function(e){
         e.preventDefault();

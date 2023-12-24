@@ -33,17 +33,17 @@ if(isset($_POST["btn"])){
         $mail = new PHPMailer(true);
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
-        $mail->Host = 'mail.prestigehealthcare.com.ng';
+        $mail->Host = 'mail.smartcampus.com.ng';
         $mail->SMTPAuth = true;
-        $mail->Username = "presti23";
-        $mail->Password = "Joseph@21";
+        $mail->Username = "info@smartcampus.com.ng";
+        $mail->Password = "Chizaram@21";
         $mail->SMTPSecure = "ssl";
         $mail->Port = 465;
         
-        $mail->From = "info@eazylearn.com.ng";
-        $mail->FromName = "Eazy Learn Team";
+        $mail->From = "info@smartcampus.com.ng";
+        $mail->FromName = "Smart Campus Team";
         
-        $mail->addAddress($email, "Eazy Learner");
+        $mail->addAddress($email, "Smart Campus");
         
         $mail->isHTML(true);
         
@@ -71,8 +71,8 @@ if(isset($_POST["btn"])){
                              <br>
                             <tr>
                                 <td style="text-align:center;">
-                                  <a href="https://eazylearn.com.ng/home" title="logo" target="_blank">
-                                    <img width="100" src="https://www.eazylearn.com.ng/home/assets/img/easylearn/logo4.png" title="logo" alt="logo">
+                                  <a href="https://smartcampus.com.ng" title="logo" target="_blank">
+                                    <img width="100" src="https://www.smartcampus.com.ng/assets/img/easylearn/logo4.png" title="logo" alt="logo">
                                   </a>
                                 </td>
                             </tr>
@@ -91,7 +91,7 @@ if(isset($_POST["btn"])){
                                                    
                                                 
          <h3>Hello!</h3><br>
-          welcome to Eazy Learn. we are really excited to have you to join our community! This email will help you get started. Please save it for your records</em><br>
+          welcome to Smart Campus. we are really excited to have you to join our community! This email will help you get started. Please save it for your records</em><br>
          <br>
          <p>please feel free to reach us on the contact below if you have any questions or if there is anything else we can help with(09048480552).</p>
          <br>

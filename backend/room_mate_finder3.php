@@ -21,7 +21,7 @@ if(isset($_FILES['file'])){
 
     $fileExt = explode('.', $_FILES['file']['name']);
     $fileActualExt = strtolower(end($fileExt));
-    $allowed = array('jpg', 'jpeg', 'png', 'gif', 'pdf', 'doc');
+    $allowed = array('jpg', 'jpeg', 'png', 'gif', 'pdf', 'docx');
     if(in_array($fileActualExt, $allowed)){
         if($_FILES['file']['error'] === 0){
         if($_FILES['file']['size'] < 2000000){

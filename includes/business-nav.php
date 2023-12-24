@@ -44,9 +44,7 @@ if($stmt->execute()){
     <div style="display: flex; align-items: center;">
     <div class="">
            <!-- <a href="./profile.php"><img src="<?= $row['image']; ?>" alt=""></a> -->
-            <div class="mes">
-
-             </div>
+           
            </div>
     <div class="clickme" style="padding-left: 2rem;">
     <span></span>

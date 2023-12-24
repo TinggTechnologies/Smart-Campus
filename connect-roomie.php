@@ -32,13 +32,13 @@ if($stmt1->execute()){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Easy Learn</title>
+  <title>Smart Campus</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/easylearn/logo2.jpg" rel="icon">
-  <link href="assets/img/easylearn/logo2.jpg" rel="apple-touch-icon">
+  <link href="assets/img/easylearn/logo-cut.png" rel="icon">
+  <link href="assets/img/easylearn/logo-cut.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +65,7 @@ if($stmt1->execute()){
 
       <div class="section-header mt-2">
           
-          <a href="javascript:history.back();" style="font-size: 1.4rem; margin-right: 4rem; color: rgba(0,0,0,1);"><i class="bi bi-arrow-left" style="margin-right: 4rem;"></i> Room Mate Finder</a>
+          <a href="javascript:history.back();" style="font-size: 1.4rem; margin-right: 4rem; color: rgba(0,0,0,1);"><i class="bi bi-arrow-left" style="margin-right: 4rem;"></i></a>
 
         </div>
 
@@ -75,7 +75,8 @@ if($stmt1->execute()){
 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
   <div class="pricing-item">
     <img src="uploads/<?= $rows1['image']; ?>" style="margin: auto; max-width: 100%; padding-bottom: 1rem;" alt="">
-    <h3>Are you sure you want to connect with <span class="text-primary"><?= $rows1['lastname']; ?></span></h3>
+    <div class="message text-center text-danger"></div>
+    <h3>Are you sure you want <span class="text-primary"><?= $rows1['lastname']; ?> to be your roommate? </span></h3>
     <form id="connect_form">
     <input type="hidden" id="friend_id" value="<?= $friend_id; ?>">
      <input type="hidden" id="user_id" value="<?= $id; ?>">
@@ -98,8 +99,6 @@ if($stmt1->execute()){
 <!-- End Footer -->
 
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-<div id="preloader"></div>
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

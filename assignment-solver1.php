@@ -4,7 +4,7 @@ if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
 require "database/connection.php";
-require "header.php"; 
+require "includes/login-header.php"; 
 
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -27,10 +27,9 @@ if($stmt->execute()){
                 <div class="col-lg-6">
                 <div class="login-form">
           <?php require "includes/ass-nav.php";  ?>
-            <img src="./assets/img/easylearn/virtuals.png" style="border-radius: 10px;" class="mt-4 pre-login-img img-responsive">
-                <h2 class="pt-5 text-center" style="font-size: 2rem; line-height: 1.3;">Assignment Solver</h2>
-                
-                <form id="p_form" method="POST" enctype="multipart/form-data">
+                <h2 class="pt-5 mt-5" style="font-size: 2rem; line-height: 1.3;">Unlock Your Academic Potential</h2>
+                <p>Welcome to Smart Campus where academic excellence meets innovation, Say goodbye to assignment woes and embrace a seamless journey towards mastering your academic challenges. upload your assignment hurdles below to the best teachers.</p>
+                <form id="p_form" class="pt-2 mt-0" method="POST" enctype="multipart/form-data">
                 <?php
                 if(isset($error['file'])){
                     echo $error['file'];
@@ -92,7 +91,7 @@ if($stmt->execute()){
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 <script>
     $(document).ready(function(){
 
@@ -116,8 +115,19 @@ if($stmt->execute()){
                     processData: false,
                     contentType: false,
                     success: function(response){
-                        $('#message').html(response);
-                      location.href = "select-teacher.php";
+                        //$('#message').html(response);
+                        Swal.fire({
+                            title: "Success",
+                            text: "Your assignment has been saved and sent successfully to our teachers. We will connect you to different teachers to select.",
+                            icon: "success",
+                            buttons: true,
+                            dangerMode: true,
+                         })
+                         .then((willRedirect) => {
+                            if(willRedirect){
+                                window.location.href = 'select-teacher.php';
+                            }
+                         });
                     }
                 });
             }

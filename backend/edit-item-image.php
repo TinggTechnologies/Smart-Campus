@@ -27,7 +27,7 @@ if($_FILES['file']['error'] > 0){
         echo "Image Size is too large";
     } else {
         if(move_uploaded_file($fileTemp, $uploadFile)){
-            $sql = "UPDATE sell SET image=? WHERE id='$item_id'";
+            $sql = "UPDATE products SET image=? WHERE id='$item_id'";
             $stmt = $conn->prepare($sql); 
             $stmt->bind_param('s', $fileName);
             $stmt->execute();

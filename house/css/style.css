@@ -1,31 +1,5 @@
 @charset "UTF-8";
-/******************************************************************
-Theme Name: Aler
-Description: 
-Author: 
-Author URI: 
-Version: 1.0
-Created: 
-******************************************************************/
-/*------------------------------------------------------------------
-[Table of contents]
 
-1.  Template default CSS
-	1.1	Variables
-	1.2	Mixins
-	1.3	Flexbox
-	1.4	Reset
-2.  Helper Css
-3.  Header Section
-4.  Hero Section
-5.  Service Section
-6.  Feature Property Section
-7.  Team Section
-8.  Testimonial Section
-9.  Contact
-10.  Footer Style
-
--------------------------------------------------------------------*/
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
@@ -147,7 +121,7 @@ ol {
   top: -9px;
   width: 5px;
   height: 46px;
-  background: #00C89E;
+  background: rgb(25, 25, 104);
   content: "";
 }
 
@@ -186,7 +160,7 @@ ol {
   color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
-  background: #00C89E;
+  background: blue;
   padding: 10px 20px;
   display: inline-block;
 }
@@ -194,7 +168,7 @@ ol {
 .site-btn {
   font-size: 14px;
   color: #ffffff;
-  background: #00C89E;
+  background: blue;
   border: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -231,36 +205,36 @@ ol {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    border: 4px solid #f44336;
+    border: 4px solid darkblue;
     border-left-color: transparent;
   }
   50% {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
-    border: 4px solid #673ab7;
+    border: 4px solid blue;
     border-left-color: transparent;
   }
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-    border: 4px solid #f44336;
+    border: 4px solid darkblue;
     border-left-color: transparent;
   }
 }
 @-webkit-keyframes loader {
   0% {
     -webkit-transform: rotate(0deg);
-    border: 4px solid #f44336;
+    border: 4px solid darkblue;
     border-left-color: transparent;
   }
   50% {
     -webkit-transform: rotate(180deg);
-    border: 4px solid #673ab7;
+    border: 4px solid blue;
     border-left-color: transparent;
   }
   100% {
     -webkit-transform: rotate(360deg);
-    border: 4px solid #f44336;
+    border: 4px solid darkblue;
     border-left-color: transparent;
   }
 }
@@ -318,7 +292,7 @@ ol {
   color: #ffffff;
   font-weight: 700;
   letter-spacing: 0.5px;
-  background: #00C89E;
+  background: blue;
   padding: 14px 30px;
   text-transform: uppercase;
   display: inline-block;
@@ -365,7 +339,7 @@ ol {
   top: 2px;
   width: 5px;
   height: 16px;
-  background: #00C89E;
+  background: blue;
   content: "";
 }
 .hs-nav .nav-menu ul li:hover > a:after {
@@ -397,7 +371,7 @@ ol {
   top: 42px;
   width: 100%;
   height: 2px;
-  background: #00C89E;
+  background: blue;
   content: "";
   opacity: 0;
   -webkit-transition: all 0.3s;
@@ -488,7 +462,7 @@ ol {
   color: #666666;
 }
 .hs-item .hc-inner-text .hc-text p span {
-  color: #00C89E;
+  color: blue;
 }
 .hs-item .hc-inner-text .hc-text .label {
   font-size: 12px;
@@ -501,7 +475,7 @@ ol {
   margin-right: 10px;
 }
 .hs-item .hc-inner-text .hc-text h5 {
-  color: #00C89E;
+  color: blue;
   font-weight: 700;
   display: inline-block;
 }
@@ -553,11 +527,11 @@ ol {
   margin-bottom: 0;
   margin-left: -4px;
   cursor: pointer;
-  border: 1px solid #00C89E;
+  border: 1px solid blue;
   color: #111111;
 }
 .change-btn .cb-item label.active {
-  background: #00C89E;
+  background: blue;
   color: #ffffff;
 }
 .change-btn .cb-item label input {
@@ -660,7 +634,7 @@ ol {
 .search-form-content .filter-form .search-btn {
   font-size: 14px;
   height: 46px;
-  background: #00C89E;
+  background: blue;
   color: #ffffff;
   border: none;
   cursor: pointer;
@@ -675,13 +649,13 @@ ol {
 }
 
 .ui-slider .ui-slider-range {
-  background: #00C89E;
+  background: blue;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
   width: 13px;
   height: 13px;
-  background: #00C89E;
+  background: blue;
   border-radius: 50%;
   border: none;
   margin-left: 0;
@@ -745,7 +719,7 @@ ol {
   top: 0;
   height: 20px;
   width: 20px;
-  background: #00C89E;
+  background: blue;
   line-height: 20px;
   text-align: center;
 }
@@ -756,7 +730,7 @@ ol {
   font-size: 16px;
   font-family: "ElegantIcons";
   color: #ffffff;
-  background: #00C89E;
+  background: blue;
 }
 
 .more-option .card-heading a[aria-expanded=true]:after,
@@ -765,7 +739,7 @@ ol {
   font-size: 16px;
   font-family: "ElegantIcons";
   color: #ffffff;
-  background: #00C89E;
+  background: blue;
 }
 
 /*-------------------------
@@ -841,12 +815,12 @@ ol {
   content: "";
   font-family: "ElegantIcons";
   font-size: 18px;
-  color: #00C89E;
+  color: blue;
 }
 .property-item .pi-text .pt-price {
   font-size: 18px;
   font-weight: 700;
-  color: #00C89E;
+  color: blue;
   margin-bottom: 10px;
 }
 .property-item .pi-text .pt-price span {
@@ -867,7 +841,7 @@ ol {
   font-weight: 500;
 }
 .property-item .pi-text p span {
-  color: #00C89E;
+  color: blue;
 }
 .property-item .pi-text ul {
   padding-bottom: 20px;
@@ -912,7 +886,7 @@ ol {
 }
 .property-item .pi-text .pi-agent .pa-item .pa-text {
   font-size: 14px;
-  color: #00C89E;
+  color: blue;
   font-weight: 600;
   float: right;
   line-height: 30px;
@@ -963,7 +937,7 @@ ol {
   margin-right: 0;
 }
 .property-pagination a:hover {
-  background: #00C89E;
+  background: blue;
   color: #ffffff;
 }
 .property-pagination a.icon span {
@@ -1068,7 +1042,7 @@ ol {
   display: block;
   font-size: 14px;
   font-weight: 700;
-  color: #00C89E;
+  color: blue;
   background: #ffffff;
   padding: 15px 0;
   text-transform: uppercase;
@@ -1193,7 +1167,7 @@ ol {
   padding: 12px 30px;
 }
 .team-section .team-btn a i {
-  color: #00C89E;
+  color: blue;
   margin-right: 6px;
 }
 
@@ -1207,7 +1181,7 @@ ol {
   transition: all 0.3s;
 }
 .ts-item:hover {
-  background: #00C89E;
+  background: blue;
 }
 .ts-item:hover .ts-text img {
   height: 100px;
@@ -1238,7 +1212,7 @@ ol {
 }
 .ts-item .ts-text span {
   font-size: 14px;
-  color: #00C89E;
+  color: blue;
   display: block;
   font-weight: 600;
   margin-bottom: 40px;
@@ -1293,7 +1267,7 @@ ol {
 }
 .cs-item-list .cs-item .cs-text span {
   font-size: 12px;
-  color: #00C89E;
+  color: blue;
   font-weight: 600;
   display: block;
 }
@@ -1378,7 +1352,7 @@ ol {
 }
 .testimonial-slider .testimonial-item .ti-author .ta-text span {
   font-size: 14px;
-  color: #00C89E;
+  color: blue;
   display: block;
   margin-bottom: 5px;
 }
@@ -1425,7 +1399,7 @@ ol {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background: #00C89E;
+  background: blue;
   font-size: 24px;
   color: #ffffff;
   line-height: 60px;
@@ -1662,7 +1636,7 @@ ol {
   content: "";
   font-family: "ElegantIcons";
   font-size: 18px;
-  color: #00C89E;
+  color: blue;
 }
 .pd-text .pd-title .label {
   font-size: 12px;
@@ -1677,7 +1651,7 @@ ol {
 .pd-text .pd-title .pt-price {
   font-size: 18px;
   font-weight: 700;
-  color: #00C89E;
+  color: blue;
   margin-bottom: 10px;
   display: inline-block;
 }
@@ -1698,7 +1672,7 @@ ol {
   font-weight: 500;
 }
 .pd-text .pd-title p span {
-  color: #00C89E;
+  color: blue;
 }
 .pd-text .pd-social {
   text-align: right;
@@ -1720,7 +1694,7 @@ ol {
   transition: all 0.3s;
 }
 .pd-text .pd-social a:hover {
-  background: #00C89E;
+  background: blue;
   color: #ffffff;
 }
 .pd-text .pd-social a:last-child {
@@ -1750,7 +1724,7 @@ ol {
 }
 .pd-text .pd-board .tab-board .nav-tabs .nav-item a.active {
   color: #ffffff;
-  background: #00C89E;
+  background: blue;
 }
 .pd-text .pd-board .tab-board .tab-content .tab-details {
   border: 1px solid #e1e1e1;
@@ -1780,7 +1754,7 @@ ol {
   display: inline-block;
 }
 .pd-text .pd-board .tab-board .tab-content .tab-details ul li .type-value {
-  color: #00C89E;
+  color: blue;
   display: inline-block;
 }
 .pd-text .pd-board .tab-board .tab-content .tab-desc {
@@ -1818,7 +1792,7 @@ ol {
   margin-bottom: 6px;
 }
 .pd-text .pd-widget .map-location .ml-item .ml-single-item h6 span {
-  color: #00C89E;
+  color: blue;
   text-transform: lowercase;
   margin-left: 6px;
   font-size: 14px;
@@ -1858,7 +1832,7 @@ ol {
 .pd-text .pd-widget .pd-agent .agent-text .at-title span {
   display: block;
   font-size: 12px;
-  color: #00C89E;
+  color: blue;
   font-weight: 500;
 }
 .pd-text .pd-widget .pd-agent .agent-text .at-title .primary-btn {
@@ -1873,7 +1847,7 @@ ol {
 }
 .pd-text .pd-widget .pd-agent .agent-text .at-option .at-number {
   font-size: 14px;
-  color: #00C89E;
+  color: blue;
   font-weight: 600;
   display: inline-block;
   padding: 10px 16px;
@@ -1968,7 +1942,7 @@ ol {
 .review-form .group-input input:focus,
 .leave-comment-form .group-input input:focus,
 .cc-form .group-input input:focus {
-  border-color: #00C89E;
+  border-color: blue;
 }
 .review-form textarea,
 .leave-comment-form textarea,
@@ -1993,7 +1967,7 @@ ol {
 .review-form textarea:focus,
 .leave-comment-form textarea:focus,
 .cc-form textarea:focus {
-  border-color: #00C89E;
+  border-color: blue;
 }
 .review-form .rating,
 .leave-comment-form .rating,
@@ -2056,7 +2030,7 @@ ol {
 }
 .property-sidebar .single-sidebar .top-agent .ta-item .ta-text .ta-num {
   font-size: 14px;
-  color: #00C89E;
+  color: blue;
   font-weight: 500;
 }
 .property-sidebar .single-sidebar .sf-slider.owl-carousel .owl-dots {
@@ -2070,7 +2044,7 @@ ol {
 }
 .property-sidebar .single-sidebar .sf-slider.owl-carousel .owl-dots button.active {
   height: 3px;
-  background: #00C89E;
+  background: blue;
 }
 .property-sidebar .single-sidebar .sf-slider.owl-carousel .owl-dots button:last-child {
   margin-right: 0;
@@ -2094,7 +2068,7 @@ ol {
 }
 .property-sidebar .single-sidebar .sf-slider .sf-item .sf-text span {
   font-size: 12px;
-  color: #00C89E;
+  color: blue;
   font-weight: 500;
   display: block;
 }
@@ -2169,7 +2143,7 @@ ol {
   margin-bottom: 0;
 }
 .pc-table table thead tr th.compare-item p span {
-  color: #00C89E;
+  color: blue;
   margin-right: 5px;
 }
 .pc-table table tbody tr:nth-child(even) {
@@ -2187,7 +2161,7 @@ ol {
   width: 335px;
 }
 .pc-table table tbody tr td.icon-check span {
-  color: #00C89E;
+  color: blue;
 }
 .pc-table table tbody tr td.icon-close span {
   color: #f31700;
@@ -2258,7 +2232,7 @@ ol {
   display: inline-block;
 }
 .property-submit-form form .pf-summernote .text-editor .button-group .btn-item.media-insert {
-  background: #00C89E;
+  background: blue;
   color: #ffffff;
   padding-left: 34px;
   padding-right: 26px;
@@ -2533,7 +2507,7 @@ li .richText-btn[data-command=toggleCode] {
 .agent-search-form form button {
   font-size: 13px;
   color: #ffffff;
-  background: #00C89E;
+  background: blue;
   border: none;
   height: 100%;
   width: 46px;
@@ -2576,10 +2550,10 @@ li .richText-btn[data-command=toggleCode] {
   transition: all 0.3s;
 }
 .as-item:hover {
-  background: #00C89E;
+  background: blue;
 }
 .as-item:hover .as-pic .rating-point {
-  color: #00C89E;
+  color: blue;
   background: #ffffff;
 }
 .as-item:hover .as-text .at-title {
@@ -2608,7 +2582,7 @@ li .richText-btn[data-command=toggleCode] {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  background: #00C89E;
+  background: blue;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -2659,7 +2633,7 @@ li .richText-btn[data-command=toggleCode] {
 }
 .as-item .as-text .primary-btn {
   background: #f2f2f2;
-  color: #00C89E;
+  color: blue;
   display: block;
   padding: 14px 20px;
   text-align: center;
@@ -2704,7 +2678,7 @@ li .richText-btn[data-command=toggleCode] {
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-  background: #00C89E;
+  background: blue;
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -2792,7 +2766,7 @@ li .richText-btn[data-command=toggleCode] {
 .profile-agent-content .profile-agent-newslatter form button {
   height: 50px;
   width: 50px;
-  background: #00C89E;
+  background: blue;
   color: #ffffff;
   font-size: 18px;
   border: none;
@@ -3086,7 +3060,7 @@ li .richText-btn[data-command=toggleCode] {
   line-height: 75px;
   text-align: center;
   font-size: 30px;
-  color: #00C89E;
+  color: blue;
   float: left;
   margin-right: 20px;
 }
@@ -3234,7 +3208,7 @@ li .richText-btn[data-command=toggleCode] {
 }
 .blog-details-content .bc-widget .comment-option .co-item .ci-text ul li i {
   font-size: 14px;
-  color: #00C89E;
+  color: blue;
   margin-right: 5px;
 }
 
@@ -3674,7 +3648,7 @@ li .richText-btn[data-command=toggleCode] {
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.5px;
-    background: #00C89E;
+    background: blue;
     padding: 14px 30px;
     text-transform: uppercase;
     display: inline-block;
@@ -4134,7 +4108,7 @@ li .richText-btn[data-command=toggleCode] {
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.5px;
-    background: #00C89E;
+    background: blue;
     padding: 14px 30px;
     text-transform: uppercase;
     display: inline-block;

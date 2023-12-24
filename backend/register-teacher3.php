@@ -43,15 +43,15 @@ if(isset($_FILES['file'])){
                 $mail = new PHPMailer(true);
 $mail->SMTPDebug = 0;
 $mail->isSMTP();
-$mail->Host = 'mail.prestigehealthcare.com.ng';
+$mail->Host = 'mail.smartcampus.com.ng';
 $mail->SMTPAuth = true;
-$mail->Username = "presti23";
-$mail->Password = "Joseph@21";
+$mail->Username = "info@smartcampus.com.ng";
+$mail->Password = "Chizaram@21";
 $mail->SMTPSecure = "ssl";
 $mail->Port = 465;
 
-$mail->From = "info@eazylearn.com.ng";
-$mail->FromName = "Eazy Learn Team";
+$mail->From = "info@smartcampus.com.ng";
+$mail->FromName = "Smart Campus Team";
 
 $mail->addAddress($email, $lastname . " " . $firstname);
 
@@ -81,8 +81,8 @@ $mail->Body = '<!doctype html>
                      <br>
                     <tr>
                         <td style="text-align:center;">
-                          <a href="https://eazylearn.com.ng/home" title="logo" target="_blank">
-                            <img width="100" src="https://www.eazylearn.com.ng/home/assets/img/easylearn/logo4.png" title="logo" alt="logo">
+                          <a href="https://smartcampus.com.ng" title="logo" target="_blank">
+                            <img width="100" src="https://www.smartcampus.com.ng/assets/img/easylearn/logo-cut.png" title="logo" alt="logo">
                           </a>
                         </td>
                     </tr>
@@ -101,9 +101,8 @@ $mail->Body = '<!doctype html>
                                            
                                         
  <h3>Hello '.$lastname.'!</h3><br>
-  welcome to Eazy Learn Tutorial. we are really excited to have you to join our community! This email will help you get started. Please save it for your records</em><br>
+  welcome to Smart Campus Tutorial. we are really excited to have you to join our community! This email will help you get started. Please save it for your records</em><br>
  <br>
- <p>You can start teaching, solving assignments and handling students projects on Eazy Learn. Eazy Learn own 20% of the money the student will be paying. The payment will be done to Eazy Learns account and when you are done with the project, you will receive 80% of your money after the user has acknowledged he/she has recieved the work.</p>
  <br>
                                        </p>
                                         

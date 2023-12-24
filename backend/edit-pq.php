@@ -25,32 +25,36 @@ if($result->num_rows){
             $name = $row1['lastname'] . " " . $row1['firstname'];
             $department = $row1['department'];
         }
-    $output .= '
-    <body>
-    <section class="container-fluid login-wrapper pt-5">
-        <div class="container">
+    ?>
+     <style>
+        /* Custom CSS for the background */
+        .custom-bg {
+        background: repeating-linear-gradient(45deg, rgba(0, 0, 255, 0.2), rgba(0, 0, 255, 0.2) 10px, rgba(41, 128, 185, 0.2) 10px, rgba(41, 128, 185, 0.2) 20px);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+      
+    </style>
+  <section class="container pt-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6">
+                <div class="card p-4 custom-bg">
+                    <h2 class="card-title"><?=$row['course_title']?></h2>
+                    <p class="card-text">Department: <?=$department?></p>
+                    <p class="card-text">Institution: <?=$row1['school']?></p>
+                    <p class="card-text">Price: &#x20A6;<?=$row['price']?></p>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                <div class="login-form" style="border: 2px solid #ccc; padding: 20px; border-radius: 25px;">
-          
-                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">'.$row['course_title'].'</h2>
-                <span style="font-weight: 500; font-size: 1.7rem;">Department: '.$department.'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Institution: '.$row1['school'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Price: #'.$row['price'].'</span>
-                <form id="profile_form">                         
-                    <div class="form-group">
-                        <a href="edit-single-pq.php?pq_id='.$row['id'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Edit Past Question</a>
-                    </div>
-                </form>
-               
-            </div><hr>
+                    <form id="profile_form">
+                        <div class="form-group">
+                            <a href="edit-single-pq.php?pq_id=<?=$row['pastquestion_id']?>" class="btn btn-primary btn-lg">Edit Past Question</a>
+                        </div>
+                    </form>
                 </div>
             </div>
-           
         </div>
-    </section>
-    ' ;
+    </section> <br />
+    <?php
 }
 } else {
     $output .= '
@@ -80,3 +84,4 @@ if($result->num_rows){
 
 
         echo $output;
+        ?>

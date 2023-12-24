@@ -12,7 +12,7 @@ $stmt1->bind_param('ssss', $friend_id, $user_id, $friend_id, $user_id);
 if($stmt1->execute()){
     $result1 = $stmt1->get_result();
     if($result1->num_rows > 0){
-        echo "yes";
+        echo "You two are already friends. Check your friends listto chat the user up.";
 
     }  else {
 

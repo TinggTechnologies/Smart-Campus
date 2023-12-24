@@ -13,6 +13,7 @@ if(isset($_POST['donate-pdf-btn'])){
     $item_name = $_POST['item_name'];
     $price = $_POST['price'];
     $category = $_POST['category'];
+    $description = $_POST['desc'];
 
 if(isset($_FILES['file'])){
     $file = $_FILES['file'];
@@ -31,9 +32,9 @@ if(isset($_FILES['file'])){
             $fileNameNew = time() . '.' . $fileActualExt;
             $fileDestination = 'uploads/'. $fileNameNew;
             if(move_uploaded_file($_FILES['file']['tmp_name'], $fileDestination)){
-            $sql = "INSERT INTO sell (user_id, item_name, price, category, image) VALUES(?,?,?,?,?)";
+            $sql = "INSERT INTO products (user_id, item_name, price, category, image, description) VALUES(?,?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('sssss', $user_id, $item_name, $price, $category, $fileDestination);
+            $stmt->bind_param('ssssss', $user_id, $item_name, $price, $category, $fileDestination, $description);
             if($stmt->execute()){
                 echo "<script>location.href ='upload-item-success.php';</script>";
             }

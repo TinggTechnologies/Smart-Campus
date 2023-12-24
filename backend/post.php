@@ -2,45 +2,58 @@
 session_start();
 require_once "../database/connection.php";
 
-    $text = trim($_POST["text"]);
-    $text = stripslashes($text);
-    $text = htmlspecialchars($text); 
-
-    if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
-    } else {
-        echo "no session";
-    }
+} else {
+    echo "No session";
+}
 
-    if($_FILES['file']['error'] > 0){
-        echo 'Error: ' . $_FILES['file']['error'];
-    } else {
-        $fileType = $_FILES['file']['type'];
-        $fileSize = $_FILES['file']['size'];
-        $fileTemp = $_FILES['file']['tmp_name'];
-        $fileExt = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-        $fileName = uniqid('img_') . '.' . $fileExt;
-        $uploadDir = '../uploads/';
-        $uploadFile = $uploadDir . $fileName;
-        $allowedTypes = array('image/jpeg', 'image/png', 'image/gif');
-        $maxSize = 5000000;
-        if(!in_array($fileType, $allowedTypes)){
-            echo "Invalid File Type";
-        } else if($fileSize > $maxSize){
-            echo "Image Size is too large";
+if ($_FILES['file']['error'] > 0) {
+    echo 'Error: ' . $_FILES['file']['error'];
+} else {
+    $text = $_POST['text'];
+    $fileType = $_FILES['file']['type'];
+    $fileSize = $_FILES['file']['size'];
+    $fileTemp = $_FILES['file']['tmp_name'];
+    $fileExt = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+    $fileName = uniqid('file_') . '.' . $fileExt;
+    $uploadDir = '../uploads/';
+    $uploadFile = $uploadDir . $fileName;
+    $allowedImageTypes = array('image/jpeg', 'image/png', 'image/gif');
+    $allowedVideoTypes = array('video/mp4', 'video/webm', 'video/quicktime');
+    $maxSize = 5000000; // 5MB
+
+    if (in_array($fileType, $allowedImageTypes)) {
+        // Handle image upload
+        if ($fileSize > $maxSize) {
+            echo "Image size is too large";
         } else {
-            if(move_uploaded_file($fileTemp, $uploadFile)){
-                $sql = "INSERT INTO post (post_image, user_id, text) VALUES(?,?,?)";
-                $stmt = $conn->prepare($sql); 
-                $stmt->bind_param('sss', $fileName, $id, $text);
+            if (move_uploaded_file($fileTemp, $uploadFile)) {
+                // Assuming 'post_image' is the column in your database for storing file paths
+                $sql = "INSERT INTO post (post_image, user_id, text, post_date) VALUES (?, ?, ?, DATE_FORMAT(NOW(), '%Y-%m-%d %h:%i %p'))";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param('sss', $uploadFile, $id, $text); // Use $uploadFile
                 $stmt->execute();
             } else {
-                echo "Failed to upload";
+                echo "Failed to upload image";
             }
         }
-         
+    } elseif (in_array($fileType, $allowedVideoTypes)) {
+        // Handle video upload
+        if ($fileSize > $maxSize) {
+            echo "Video size is too large";
+        } else {
+            if (move_uploaded_file($fileTemp, $uploadFile)) {
+                // Assuming 'post_image' is the column in your database for storing file paths
+                $sql = "INSERT INTO post (post_image, user_id, text, post_date) VALUES (?, ?, ?, DATE_FORMAT(NOW(), '%Y-%m-%d %h:%i %p'))";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param('sss', $uploadFile, $id, $text); // Use $uploadFile
+                $stmt->execute();
+            } else {
+                echo "Failed to upload video";
+            }
+        }
+    } else {
+        echo "Invalid file type";
     }
-     
-
-
-   
+}

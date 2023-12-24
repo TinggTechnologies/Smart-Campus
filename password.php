@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['id'])){
     header("location: login.php");
   }
-require "header.php"; ?>
+require "includes/login-header.php"; ?>
 
 <body>
     <section class="container-fluid login-wrapper pt-3">
@@ -14,7 +14,7 @@ require "header.php"; ?>
             <div class="login-form">
             <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
+        <img src="assets/img/easylearn/logo-cut2.png" style="border-radius: 5px; width: 7rem; height: 4rem;" alt=""> 
             </a>
                 <h2 class="pt-5">Set your password</h2>
                 <form role="form" action="">
@@ -30,7 +30,7 @@ require "header.php"; ?>
                         <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password *">
                     </div>
                     <div class="input-group mb-3">
-                        <h6 style="line-height: 1.4; opacity: .7;">By clicking Agree & join, you agree to the Easy Learn <a href="privacy.php" style="color: rgb(214, 78, 101);">User Agreement</a>, <a href="privacy.php" style="color: rgb(214, 78, 101);">Privacy and Policy</a>.</h6>
+                        <h6 style="line-height: 1.4; opacity: .7;"><input type="checkbox" required /> By clicking Agree & join, you agree to the Smart Campus <a href="privacy.php" style="color: rgb(214, 78, 101);">User Agreement</a>, <a href="privacy.php" style="color: rgb(214, 78, 101);">Privacy and Policy</a>.</h6>
                     </div>
                     
                     <div class="form-group">
@@ -44,12 +44,13 @@ require "header.php"; ?>
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 <script>
     $(document).on('click', '#register_btn', function(e){
         e.preventDefault();
 
         var password = $('#password').val();
+        var checkbox = $('#checkbox');
         var confirm_password = $('#confirm_password').val();
         var strength = 0;
 
@@ -72,7 +73,7 @@ require "header.php"; ?>
             'Password does not match',
             'error'
           )
-        }
+        } 
         
 
         else{

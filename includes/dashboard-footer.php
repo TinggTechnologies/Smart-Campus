@@ -1,5 +1,5 @@
-<script src="js/jquery2.js"></script>
-    <script src="./js/profile.js"></script>
+<script src="moyin_js/jquery2.js"></script>
+    <script src="./moyin_js/profile.js"></script>
     <script src="./assets/js/sweetalert.js"></script>
     
 </body>
@@ -51,7 +51,7 @@
                 url:"backend/fetch-fr.php",
                 method: "POST",
                 success: function(data){
-                    $(".fr").html(data);
+                    $(".people").html(data);
                 }
             });
         }
@@ -83,4 +83,4 @@
  
     });
    </script>
-       <script src="js/index.js"></script>
+       <script src="moyin_js/index.js"></script>

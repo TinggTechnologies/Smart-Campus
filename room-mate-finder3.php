@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
-require "header.php"; 
+require "includes/login-header.php"; 
 require "database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -21,7 +21,7 @@ require "backend/room_mate_finder3.php";
 ?>
 
 <body>
-    <section class="container-fluid login-wrapper pt-5">
+    <section class="container-fluid login-wrapper pt-3">
         <div class="container">
 
             <div class="row justify-content-center">
@@ -57,4 +57,4 @@ require "backend/room_mate_finder3.php";
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

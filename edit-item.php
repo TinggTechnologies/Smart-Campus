@@ -12,7 +12,7 @@ if(isset($_GET['item_id'])){
     $item_id = $_GET['item_id']; 
 }
 
-$sql = "SELECT * FROM sell WHERE id=?";
+$sql = "SELECT * FROM products WHERE id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $item_id);
 if($stmt->execute()){

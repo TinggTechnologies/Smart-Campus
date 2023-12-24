@@ -4,7 +4,7 @@ if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
 require "database/connection.php";
-require "header.php"; 
+require "includes/login-header.php"; 
 
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -29,13 +29,15 @@ if($stmt->execute()){
                 <div class="col-lg-6">
                 <div class="login-form">
             <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Edit Past Question</a>
-            <img src="./assets/img/easylearn/congrats.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive mt-5">
+            <div class="text-center pt-5 mt-5">
+            <i style="border-radius: 10px; font-size: 5rem; color: green;" class="bi bi-check-circle-fill mt-5"></i>
+            </div>
             
                 <form id="registration_form" class="mt-0">
-                    <p>You have successfully updated your past question.</p>
+                    <p class="text-center">You have successfully updated your past question.</p>
                     
                     <div class="form-group mt-4 text-center">
-                        <a href="dashboard.php" class="form-control getStarted-btn">Go to Dashboard</a>
+                        <a href="store/download_pastquestion.php" class="form-control getStarted-btn">Go to Dashboard</a>
                     </div>
                 </form>
                
@@ -45,4 +47,4 @@ if($stmt->execute()){
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

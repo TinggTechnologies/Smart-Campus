@@ -66,7 +66,7 @@ if($stmt->execute()){
           
                     
         $output .= '
-        <a href="chat.php?id='.$fetch['user_id'].'"><li class="individual-chat d-flex-sb">
+        <a href="chat2.php?id='.$fetch['user_id'].'"><li class="individual-chat d-flex-sb">
        <div class="d-flex">
        <img src="uploads/'.$fetch['image'].'">
        <div class="friend-chat" style="margin-left: .5rem;">

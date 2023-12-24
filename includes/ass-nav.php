@@ -38,7 +38,7 @@ if($stmt->execute()){
 
 <div class="nav-container">
     <div class="menu-toggle">
-    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo3.jpg" style="width: 13rem;" alt="Eazy Learn Logo"></a>
+    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo-cut.png" style="width: 5rem;" alt="Eazy Learn Logo"></a>
     <div style="display: flex; align-items: center;">
     <div class="">
            <!-- <a href="./profile.php"><img src="<?= $row['image']; ?>" alt=""></a> -->
@@ -53,19 +53,15 @@ if($stmt->execute()){
     </div>
 
 </div>
-    <ul class="menu-links" style="padding-top: 4rem;">
+    <ul class="menu-links" style="padding-top: 3rem;">
     <li>
-                        <a href="download-past-question.php" style="font-size: 1.3rem;">
-                            <i class="bi bi-download"></i> View Assignment</a>
+                        <a href="register-teacher.php" style="font-size: 1rem;">
+                            <i class="bi bi-download me-2"></i> Register Teacher </a>
                     </li>   
             
                     <li>
-                        <a href="upload-pq.php" style="font-size: 1.3rem;">
-                            <i class="bi bi-cash"></i> Chat Teacher</a>
-                    </li>
-                    <li>
-                        <a href="edit-pq.php" style="font-size: 1.3rem;">
-                            <i class="bi bi-pencil-square"></i> Payment</a>
+                        <a href="select-teacher.php" style="font-size: 1rem;">
+                            <i class="bi bi-cash me-2"></i> Chat Teacher</a>
                     </li>
          
     </ul>

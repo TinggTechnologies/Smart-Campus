@@ -10,34 +10,62 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="./assets/img/easylearn/logo4.png" rel="icon">
-    <link href="./assets/img/easylearn/logo4.png" rel="apple-touch-icon">
+    <link href="./assets/img/easylearn/logo-cut.png" rel="icon">
+    <link href="./assets/img/easylearn/logo-cut.png" rel="apple-touch-icon">
 
-    <title>Eazy Learn</title>
-    <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/query.css">
+    <title>Smart Campus</title>
+    <link rel="stylesheet" href="moyin_vendors/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="moyin_vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="moyin_css/style.css">
+    <link rel="stylesheet" href="moyin_css/query.css">
     <link rel="stylesheet" href="./assets/css/sweetalert.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <section class="container-fluid index-wrapper" style="padding-top: 9rem;">
-       <?php require_once "includes/nav.php"; ?>
-        <!-- ================= Navigation ================== -->
-        <?php require_once "includes/footer-nav.php"; ?>
-        <!-- End Navigation -->
+<section class="index-wrapper">
+        <!-- ================= Nav ================== -->
+       <?php require "includes/blog-nav.php"; ?>
+       
+
+        <!-- ================= Footer Nav ================== -->
+        <?php require "includes/footer-nav.php"; ?>
+        <!-- End Footer Nav -->
+
+        <!-- ================= Post here ================== -->
+        <div class="post-here d-flex-sb">
+            <div class="phd d-flex">
+                <div class="phd-img-div"><a href="profile.php"><img src="./assets/img/easylearn/student3.gif"></a></div>
+                <input type="text" class="open-create-post" placeholder="What's new on campus?">
+                
+            </div>
+             
+           
+        </div>
+        
+        <!-- End Post here -->
+        <div id="postPopup" class="modal">
+        <div class="modal-content">
+        
+    </div>
+    
+</div>
+
 
         <!-- ================= Feeds ================== -->
-        <div class="feed-wrapper" style="padding-top: 3.5rem;">
+        <div class="feed-wrapper">
 
-       
+            
+           
+            
+
+        </div>
         <!-- End Feeds -->
     </section>
 
-   <?php require_once "includes/dashboard-footer.php"; ?>
+    <script src="moyin_js/jquery2.js"></script>
+    <script src="moyin_js/index.js"></script>
 
    <script>
     
@@ -48,10 +76,6 @@
         $(document).on('click', '.feed-text', function(){
             location.href = 'create-post.php';
         });
-
-        setInterval(function(){
-            fetch_user();
-        }, 5000);
 
         function fetch_user(){
             $.ajax({

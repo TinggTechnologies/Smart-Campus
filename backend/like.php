@@ -1,24 +1,46 @@
-
-
 <?php
-
 session_start();
 include "../database/connection.php";
 
-$post_id = $_POST['post_id'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $post_id = $_POST['post_id'];
+    $user_id = $_SESSION['id'];
 
-$sql = "UPDATE post SET like_count = like_count + 1 WHERE post_id=?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('s', $post_id);
-if($stmt->execute()){
-    $sql3 = "SELECT * FROM likes where post_id=?";
-    $stmt3 = $conn->prepare($sql3);
-    $stmt3->bind_param('s', $post_id);
-    if($stmt3->execute()){
-        $result3 = $stmt3->get_result();
-        $liking = $result3->num_rows;
+    // Check if the user already liked this post
+    $stmt = $conn->prepare("SELECT * FROM likes WHERE post_id = ? AND user_id = ?");
+    $stmt->bind_param('ss', $post_id, $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // User already liked the post, so remove the like
+        $stmt = $conn->prepare("DELETE FROM likes WHERE post_id = ? AND user_id = ?");
+        $stmt->bind_param('ss', $post_id, $user_id);
+        if($stmt->execute()){
+            $stmt1 = $conn->prepare("SELECT * FROM likes WHERE post_id = ?");
+            $stmt1->bind_param('s', $post_id);
+            if($stmt1->execute()){
+                $likes_result = $stmt1->get_result();
+                $count_likes = $likes_result->num_rows;
+                echo $count_likes;
+        }}
+        
+    } else {
+        // User didn't like the post, so add a like
+        $stmt = $conn->prepare("INSERT INTO likes (post_id, user_id) VALUES (?, ?)");
+        $stmt->bind_param('ss', $post_id, $user_id);
+        if($stmt->execute()){
+            $stmt1 = $conn->prepare("SELECT * FROM likes WHERE post_id = ?");
+            $stmt1->bind_param('s', $post_id);
+            if($stmt1->execute()){
+                $likes_result = $stmt1->get_result();
+                $count_likes = $likes_result->num_rows;
+                echo $count_likes;
+             
+        }}
     }
+} else {
+    echo "Invalid request.";
 }
 
-
-echo $liking;
+?>

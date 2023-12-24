@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row gy-4 d-flex justify-content-center">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h2 data-aos="fade-up">Welcome to Eazy Learn</h2>
+          <h2 data-aos="fade-up">Welcome to Smart Campus</h2>
           <p data-aos="fade-up" data-aos-delay="100">The ultimate solution to stress-free schooling hereby giving you an enjoyable learning experience.</p>
 
           <div class="d-flex form pb-5 align-items-center justify-content-center mb-3" data-aos="fade-up" data-aos-delay="200">
@@ -22,6 +22,7 @@
     <section id="features" class="features pt-3">
       <div class="container">
 
+
            
         <div class="section-header mt-5">
           <span>Services we offer</span>
@@ -36,7 +37,7 @@
           <div class="col-md-6 order-2 order-md-1 text-center">
             <h3>Hostel Finder</h3>
             <p class="pt-2">
-             Discover the perfect hostel for your needs with Eazy Learn's user-friendly hostel finder tool.
+             Discover the perfect hostel for your needs with Smart Campus' user-friendly hostel finder tool.
             </p>
             <div class="mt-5">
             <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Find Now</a>
@@ -76,7 +77,7 @@
           </div>
           <div class="col-md-6 order-2 order-md-1 text-center">
             <h3>Download Tutorial</h3>
-            <p class="pt-2">Looking for a reliable and easy-to-use resource to help you navigate your university courses? Eazy Learn's tutorials have got you covered.</p>
+            <p class="pt-2">Looking for a reliable and easy-to-use resource to help you navigate your university courses? Smart Campus tutorials have got you covered.</p>
             <div class="mt-5">
             <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Download Now</a>
             </div>
@@ -88,7 +89,7 @@
             <img src="assets/img/easylearn/buy.png" class="img-fluid" alt="">
           </div>
           <div class="col-md-6 order-2 order-md-1 text-center pt-3">
-            <h3>Online Shop</h3>
+            <h3>MarketPlace</h3>
             <p class="pt-2">Looking for a hassle-free shopping experience? Visit our online store today! With a wide range of products and easy navigation, you'll find what you need in just a few clicks.</p>
             <div class="mt-5">
             <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Buy Now</a>
@@ -119,7 +120,7 @@
           <div class="col-md-6 order-2 order-md-1 text-center">
             <h3 style="color: #030f3a; font-weight: 700;">Start earning as a student</h3>
             <p class="pt-3 pb-3">
-            Eazy Learn provides opportunities for students to make money from what they have passion for. click the button lets get you started.
+            Smart Campus provides opportunities for students to make money from what they have passion for. click the button lets get you started.
             </p>
             <div class="mt-4">
             <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Earn Now</a>
@@ -135,8 +136,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <span>Eazy Learn for Secondary School</span>
-          <h2>Eazy Learn for Secondary School</h2>
+          <span>Smartcampus for Secondary School</span>
+          <h2>Smartcampus for Secondary School</h2>
 
         </div>
 
@@ -151,7 +152,7 @@
             Explore your dream campus from the comfort of your own home with our virtual campus tour. Get an in-depth look at all the highlights, from the libraries to the lecture halls, and see for yourself why you should attend that university.
             </p>
             <div class="mt-4">
-            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">View Now</a>
+            <a href="intro.php" class="my-btn" style="border-radius: 25px; padding: .7rem 3rem;">Tour Now</a>
             </div>
           </div>
         </div><!-- Features Item -->
@@ -243,12 +244,12 @@
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
                     <i class="bi bi-question-circle question-icon"></i>
-                    What is Eazy Learn Tech?
+                    What is Smart Campus Tech?
                   </button>
                 </h3>
                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Eazy Learn is a platform designed to solve the challenges faced by students in higher institutions in Nigeria. It was created to provide a one-stop solution to most of the challenges students face on a daily basis. The platform offers various features that are tailored to the needs of students in Nigeria, such as Hostel Finder, Room Mate Finder, downloading past questions,downloading tutorials, advertising student businesses, and many more.
+                    Smart Campus is a platform designed to solve the challenges faced by students in higher institutions in Nigeria. It was created to provide a one-stop solution to most of the challenges students face on a daily basis. The platform offers various features that are tailored to the needs of students in Nigeria, such as Hostel Finder, Room Mate Finder, downloading past questions,downloading tutorials, advertising student businesses, and many more.
                   </div>
                 </div>
               </div>
@@ -257,7 +258,7 @@
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
                     <i class="bi bi-question-circle question-icon"></i>
-                    What Problem is Eazy Learn solving in the Educational Sector?
+                    What Problem is Smart Campus solving in the Educational Sector?
                   </button>
                 </h3>
                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
@@ -285,7 +286,7 @@
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
                     <i class="bi bi-question-circle question-icon"></i>
-                    Can students make money off Eazy Learn?
+                    Can students make money off Smart Campus?
                   </button>
                 </h3>
                 <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">

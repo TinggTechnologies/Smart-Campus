@@ -9,7 +9,7 @@ if(isset($_SESSION['id'])){
 $output = '';
 
 
-$sql2 = "SELECT * FROM register_business WHERE status='pending'";
+$sql2 = "SELECT * FROM products WHERE status='pending'";
 $stmt2 = $conn->prepare($sql2);
 if($stmt2->execute()){
     $result2 = $stmt2->get_result();
@@ -31,8 +31,8 @@ if($stmt2->execute()){
 
     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
       <div class="pricing-item">
-        <h3>'.$name.'</h3>
-        <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#'.$row3['date_of_birth'].' #'.$row3['gender'].' #'.$row3['department'].' #'.$row3['school'].'</h4>
+        <h3>'.$rowss['item_name'].'</h3>
+        <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#'.$rowss['category'].' #'.$rowss['price'].' #'.$rowss['description'].'</h4>
         <section id="testimonials" class="testimonials">
 <div class="container position-relative" data-aos="fade-up">
 
@@ -41,7 +41,7 @@ if($stmt2->execute()){
 
       <div class="swiper-slide">
         <div class="testimonial-item">
-          <img src="uploads/'.$row3['image'].'" style="border-radius: 25px;" class="testimonial-img" alt="">                 
+          <img src="./'.$rowss['image'].'" style="border-radius: 25px;" class="testimonial-img" alt="">                 
         </div>
       </div>
       

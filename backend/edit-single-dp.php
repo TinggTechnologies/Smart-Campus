@@ -13,6 +13,7 @@ if(isset($_POST['dp-btn'])){
 $course_title = $_POST['course_title'];
 $description = $_POST['description'];
 $dp_id = $_POST['dp_id'];
+$price = $_POST['price'];
 
 
     if(isset($_FILES['file'])){
@@ -25,16 +26,16 @@ $dp_id = $_POST['dp_id'];
 
     $fileExt = explode('.', $_FILES['file']['name']);
     $fileActualExt = strtolower(end($fileExt));
-    $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'doc');
+    $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'docx');
     if(in_array($fileActualExt, $allowed)){
         if($_FILES['file']['error'] === 0){
-        if($_FILES['file']['size'] < 2000000){
+        if($_FILES['file']['size'] < 10000000){
             $fileNameNew = time() . '.' . $fileActualExt;
             $fileDestination = 'uploads/'. $fileNameNew;
             if(move_uploaded_file($_FILES['file']['tmp_name'], $fileDestination)){
-            $sql = "UPDATE tutorial SET container=?, course_title=?, description=? WHERE tutorial_id=?";
+            $sql = "UPDATE tutorial SET container=?, course_title=?, description=?, amount=? WHERE tutorial_id=?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('ssss', $fileDestination, $course_title, $description, $dp_id);
+            $stmt->bind_param('sssis', $fileDestination, $course_title, $description, $price, $dp_id);
             if($stmt->execute()){
             echo "<script>location.href = 'dp-edit-success.php';</script>";
             }

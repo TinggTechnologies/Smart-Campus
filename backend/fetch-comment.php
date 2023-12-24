@@ -2,16 +2,40 @@
 session_start();
 require "../database/connection.php";
 
-if(isset($_GET['post_id'])){
-    $post_id = $_GET['post_id'];
- }
+function formatPostTime($postTime, $timezone = 'Africa/Lagos') {
+  // Create DateTime objects for the current time and the post time
+  $currentTime = new DateTime('now', new DateTimeZone($timezone));
+  $postTime = new DateTime($postTime, new DateTimeZone($timezone));
 
-$output = '';
+  // Calculate the difference in time
+  $interval = $postTime->diff($currentTime);
+
+  // Define singular and plural units for each time interval
+  $units = [
+      'y' => ['year', 'years'],
+      'm' => ['month', 'months'],
+      'd' => ['day', 'days'],
+      'h' => ['hour', 'hours'],
+      'i' => ['minute', 'minutes'],
+      's' => ['second', 'seconds']
+  ];
+
+  // Check each unit and return the appropriate representation
+  foreach ($units as $key => $unit) {
+      if ($interval->$key > 0) {
+          $unitStr = ($interval->$key === 1) ? $unit[0] : $unit[1];
+          return $interval->$key . ' ' . $unitStr . ' ago';
+      }
+  }
+
+  return 'just now';
+}
+
 $comment = $_POST['comment'];
 $user_id = $_POST['user_id'];
 $post_id = $_POST['post_id'];
 
-$sql = "SELECT * FROM comment WHERE post_id=?";
+$sql = "SELECT * FROM comment WHERE post_id=? LIMIT 1";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $post_id);
 if($stmt->execute()){
@@ -44,23 +68,24 @@ if($stmt->execute()){
 
                 }
             }
+            $formattedTime = formatPostTime($rows['timestamp']);
 
-$output .= '
+?>
+<div class="comment-body d-flex-sb">
+<div class="d-flex">
+                <img style="width: 5rem; height: 5rem; border-radius: 50%;" src="uploads/<?= $rows1['image']; ?>">
+                <div class="comments-dt" style="padding-left: 1rem;">
+                    <h4 style="width: 15rem; margin-bottom: 0;"><?= $rows1['lastname'] . ' ' . $rows1['firstname']; ?> </h4><span class="comment-time"><?= $formattedTime; ?></span><br />
+                    <span><?= $rows['comment']; ?></span>
+                    <!--<span class="open-reply"><i>10 likes</i> <i class="bi bi-chat"> Reply</i></span> -->
+                </div> 
+            </div>
+            </div>
+<?php
 
-<div class="individuals-comment d-flex-sb">
-<div class="person-profile-xs">
-    <img src="uploads/'.$rows1['image'].'">
-</div>
-<div class="individuals">
-    <h6>'.$rows1['lastname']. ' ' .$rows1['firstname'].'</h6>
-    <p>'.$rows['comment'].'</p>
-</div>
+} } else {
+  echo "<div class='text-center text-danger'>no comment</div>";
+}}
 
-</div>
 
-';
-
-} }}
-
-echo $output;
 

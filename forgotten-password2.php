@@ -27,7 +27,7 @@ if($stmt->execute()){
                 <div class="col-lg-6">
                 <div class="login-form">
                 <a href="javascript:history.back();" style="font-size: 1.4rem;"><i class="bi bi-arrow-left" style="margin-right: .5rem;"></i> Change Password</a>
-            <img src="./assets/img/easylearn/intro5.jpg" style="border-radius: 10px;" class="pre-login-img img-responsive mt-5">
+            <img src="assets/img/easylearn/logo-cut.png" style="border-radius: 5px; width: 4rem; height: 4rem; margin-left: 8.5rem;" alt="">
                 <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">Enter a More Secured Password?</h2>
                 
                 <form id="status_form">

@@ -20,7 +20,7 @@ if(isset($_POST['donate-pdf-btn'])){
     $category = $_POST['category'];
     $item_id = $_POST['item_id'];
 
-    $sql = "UPDATE sell SET item_name=?, price=?, category=? WHERE id=?";
+    $sql = "UPDATE products SET item_name=?, price=?, category=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssss', $item_name, $price, $category, $item_id);
     if($stmt->execute()){

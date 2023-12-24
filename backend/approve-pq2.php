@@ -26,7 +26,7 @@ $sql6 = "SELECT * FROM users WHERE user_id='$user_id' ";
                 $email = $row6['email'];
               }
 
-            $sql = "UPDATE past_question SET status='active', point='5' WHERE id='$agent_id'";
+            $sql = "UPDATE past_question SET status='active' WHERE pastquestion_id='$agent_id'";
             $stmt = $conn->prepare($sql);
             if($stmt->execute()){
                 $mail = new PHPMailer(true);

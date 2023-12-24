@@ -4,10 +4,10 @@
 <div class="container">
   <div class="row gy-4">
     <div class="col-lg-5 col-md-12 footer-info">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <span>Eazy Learn</span>
+      <a href="./" class="logo d-flex align-items-center">
+        <span>Smart Campus</span>
       </a>
-      <p>Eazy Learn, the ultimate solution to stress-free schooling.</p>
+      <p>Smart Campus, the ultimate solution to stress-free schooling.</p>
       <div class="social-links d-flex mt-4">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -45,7 +45,7 @@
         Ekiti State,<br>
         Nigeria.<br><br>
         <strong>Phone:</strong> +234 9048480552<br>
-        <strong>Email:</strong> info@eazylearn.com.ng<br>
+        <strong>Email:</strong> info@smartcampus.com.ng<br>
       </p>
 
     </div>
@@ -55,7 +55,7 @@
 
 <div class="container mt-4">
   <div class="copyright">
-    &copy; Copyright <strong><span>Eazy Learn</span></strong>. All Rights Reserved
+    &copy; Copyright <strong><span>Smart Campus</span></strong>. All Rights Reserved
   </div>
  
 </div>

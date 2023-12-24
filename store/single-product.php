@@ -1,11 +1,13 @@
 <?php require "header.php"; ?>
+<script src="../js/jquery2.js"></script>
+
 <?php
 
 if(isset($_GET['item_id'])){
     $item_id = $_GET['item_id'];
 }
 
-$sql = "SELECT * FROM sell WHERE id=?";
+$sql = "SELECT * FROM products WHERE id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $item_id);
 if($stmt->execute()){
@@ -49,7 +51,7 @@ if($stmt->execute()){
         <div class="col-lg-12">
           <div class="product_img_slide owl-carousel">
             <div class="single_product_img">
-              <img src="../uploads/<?= $rows['image']; ?>" alt="#" class="img-fluid">
+              <img src="../<?= $rows['image']; ?>" alt="#" class="img-fluid">
             </div>
           </div>
         </div>
@@ -62,16 +64,21 @@ if($stmt->execute()){
             <div class="card_area">
                 <div class="product_count_area">
                     <p>Quantity</p>
+                    <form id="inputForm">
                     <div class="product_count d-inline-block">
-                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                        <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
-                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                        <span class="product_count_item inumber-decrement myButton"> <i class="ti-minus"></i></span>
+                        <input class="product_count_item input-number" id="quality" name="quality" type="text" value="1" min="0" max="10">
+                        <span class="product_count_item number-increment myButton"> <i class="ti-plus"></i></span>
                     </div>
-                    <p>#<?= $price; ?></p>
+                    <input type="hidden" value="<?php echo $_SESSION['id']; ?>" name="user_id" id="user_id">
+                        <input type="hidden" value="<?php echo $rows['id']; ?>" name="product_id" id="product_id">
+                    <p><div id="output" name="price">#<?= $price; ?> </div></p> 
+                  
                 </div>
               <div class="add_to_cart">
-                  <a href="#" class="btn_3">add to cart</a>
+                  <button id="add_to_cart" class="btn_3">add to cart</a>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -87,6 +94,45 @@ if($stmt->execute()){
 }
 
 ?>
+ <script>
+    $(document).ready(function(){
+      $('.myButton').click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+          type: 'POST',
+          url: 'process_quality.php',
+          data: $('#inputForm').serialize(),
+          success: function(data){
+            var price = <?php echo $price; ?>;
+            var result = parseFloat(data) * price;
+            $('#output').html("#" + result);
+          }
+        });
+      });
+    });
+  </script>
+   <script>
+    $(document).ready(function(){
+      $('#add_to_cart').click(function(e){
+        e.preventDefault();
+
+        var price = $('#output').val();
+        var quantity = $('#quality').val();
+        var user_id = $('#user_id').val();
+        var product_id = $('#product_id').val();
+
+        $.ajax({
+          type: 'POST',
+          url: 'process_order.php',
+          data: $('#inputForm').serialize(),
+          success: function(data){
+            $('#output').html(data);
+          }
+        });
+      });
+    });
+  </script>
 
 <!-- JS here -->
         <!-- All JS Custom Plugins Link Here here -->
@@ -123,6 +169,7 @@ if($stmt->execute()){
         <!-- Jquery Plugins, main Jquery -->    
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
+        <script src="../js/jquery2.js"></script>
 
         <!-- swiper js -->
         <script src="./assets/js/swiper.min.js"></script>

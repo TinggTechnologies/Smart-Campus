@@ -2,13 +2,17 @@
 <body>
 
     <section class="index-wrapper" style="padding-top: 9rem;">
-        <?php require "includes/nav.php"; ?>
-        <?php require "includes/footer-nav-notification.php"; ?>
+        <?php 
+        require "includes/nav.php";
+        require "includes/footer-nav-notification.php"; 
+        ?>
+        
         <div class="notification-wrapper" style="margin-top: 1rem;">
 
 
             
         </div>
+      
     </section>
 
 <?php require "includes/dashboard-footer.php"; ?>

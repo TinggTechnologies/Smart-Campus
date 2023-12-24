@@ -7,13 +7,12 @@ require_once '../PHPMailer/src/PHPMailer.php';
 require_once '../PHPMailer/src/SMTP.php';
 include "../database/connection.php";
 
-if(isset($_SESSION['id'])){
-    $id = $_SESSION['id'];
-}
 
 
 if(isset($_POST['btn'])){
-
+    if(isset($_SESSION['id'])){
+        $id = $_SESSION['id'];
+    }
 $teacher_id = $_POST['teacher_id'];
 $yid = $_POST['yid'];
 
@@ -29,15 +28,15 @@ if($stmt2->execute()){
         $email = $row2['email'];
     }}
 
-            $sql = "UPDATE register_business SET status='active' WHERE id='$yid'";
+            $sql = "UPDATE products SET status='approved' WHERE id='$teacher_id'";
             $stmt = $conn->prepare($sql);
             if($stmt->execute()){
-                $message = "Your Business has been approved by Eazy Learn, you can start uploading your business for students to make transaction.";
-                $sql1 = "INSERT INTO  notification (user_id, message) VALUES(?,?)";
+                $message = "Your product has been approved by Smart Campus,  for students to make transaction.";
+                $sql1 = "INSERT INTO  notification (user_id, sender_id, message) VALUES(?,'admin',?)";
                 $stmt1 = $conn->prepare($sql1);
                 $stmt1->bind_param('ss', $yid, $message);
                 if($stmt1->execute()){
-            echo "<script>location.href = 'admin-dashboard.php';</script>";
+           
             }
            
 } }

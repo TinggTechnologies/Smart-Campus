@@ -4,7 +4,7 @@ if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
 require "database/connection.php";
-require "header.php"; 
+require "includes/login-header.php"; 
 
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -50,4 +50,4 @@ if($stmt->execute()){
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

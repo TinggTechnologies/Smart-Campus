@@ -18,18 +18,18 @@
             <ul>
                 <a href="edit-profile.php"><li><i class="bi bi-person-plus"></i> Edit Profile</li></a>
                 <a href="change-password.php"><li><i class="bi bi-lock"></i> Change Password</li></a>
-                <a href="#"><li><i class="bi bi-pen"></i> Report a problem</li></a>
-                <a href="help.php"><li><i class="bi bi-question-circle"></i> Help Center</li></a>
-                <a href="#"><li><i class="bi bi-chat"></i> Chat with us</li></a>
-                <a href="#"><li><i class="bi bi-file-earmark"></i> Privacy Policy</li></a>
+                <a href="chat-agent.php?id=admin"><li><i class="bi bi-pen"></i> Report a problem</li></a>
+                <a href="chat-agent.php?id=admin"><li><i class="bi bi-chat"></i> Chat with us</li></a>
+                <a href="privacy.php"><li><i class="bi bi-file-earmark"></i> Privacy Policy</li></a>
+                <a href="bank-account.php"><li><i class="bi bi-house"></i> Bank Account</li></a>
                 <a href="logout.php"><li><i class="bi bi-box-arrow-in-right"></i> Logout</li></a>
                 <hr>
-                <a href="#"><li class="delete-account" style="border-radius: 25px;"><i class="bi bi-trash-fill"></i> Delete Account</li></a>
+                <a href="#"><li class="delete-account" style="border-radius: 25px; background: blue;"><i class="bi bi-trash-fill"></i> Delete Account</li></a>
             </ul>
         </div>
 
         <div class="footer" style="margin-top: 3rem;">
-            <p class="text-center">Eazy Learn &copy; 2023</p>
+            <p class="text-center" style="font-family:'san-serif'; font-size: 2rem;">Smartcampus &copy; 2023</p>
         </div>
 
     </section>

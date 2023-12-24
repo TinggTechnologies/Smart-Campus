@@ -29,10 +29,10 @@ require "backend/upload-items.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Favicons -->
-    <link href="assets/img/easylearn/logo4.png" rel="icon">
-    <link href="assets/img/easylearn/logo4.png" rel="apple-touch-icon">
+    <link href="assets/img/easylearn/logo-cut.png" rel="icon">
+    <link href="assets/img/easylearn/logo-cut.png" rel="apple-touch-icon">
 
-    <title>Easy Learn</title>
+    <title>Smart Campus</title>
     <link rel="stylesheet" href="./vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/sweetalert.css">
@@ -87,10 +87,14 @@ require "backend/upload-items.php";
                                     <label for="file">Upload Image</label>
                                     <input class="form-control" type="file" id="file" name="file" required>
                                 </div>
+                                <div class="form-group mt-5 text-center">
+                                    <textarea name="desc" id="desc" style="width: 21rem; height: 8rem;" placeholder="Enter the description of the items"></textarea>
+                                </div>
             
                                 <div class="form-group mt-5">
                                     <button type="submit" name="donate-pdf-btn" id="donate-pdf-btn" class="form-control getStarted-btn">Upload</button>
                                 </div>
+                               
                                 
                             </form>
                             

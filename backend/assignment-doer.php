@@ -22,7 +22,7 @@ if($stmt2->execute()){
 
 
 
-$sql = "SELECT * FROM register_teachers WHERE department=? AND status='active'";
+$sql = "SELECT * FROM register_teachers WHERE department=? AND status='active' AND teacher_id != '$id'";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $dept);
 if($stmt->execute()){
@@ -45,7 +45,7 @@ if($stmt->execute()){
                 <h5>Department: <span>'.$row2['department'].'</span></h5>
                 <h5>School: <span>'.$row1['school'].'</span></h5>
                 <h5>Rating: <span>4/5</span></h5><br />
-                <a href="teacher-choosen.php?teacher_id='.$user_id.'" class="assignment-pdf" style="border: none; background: blue;">Select Teacher</a>
+                <a href="chat2.php?id='.$user_id.'" class="assignment-pdf" style="border: none; background: blue;">Chat Teacher</a>
                 </div>
                 <hr>
                 ';

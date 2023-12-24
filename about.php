@@ -4,12 +4,12 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/easylearn/congrats.jpg');">
+      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/easylearn/student3.gif');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
               <h2>About Us</h2>
-              <p>Everything you need to know about Eazy Learn.</p>
+              <p>Simplifying learning and enhancing Student's life.</p>
             </div>
           </div>
         </div>
@@ -30,15 +30,17 @@
 
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-            <img src="assets/img/easylearn/intro9.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-          </div>
+           
           <div class="col-lg-6 content order-last  order-lg-first">
             <h3>About Us</h3>
             <p>
-            Eazy Learn is an Edu Tech Company which aims at improving the Educational Sector in Africa. For a nation to grow Economically there has to be a sound Educational Infrastructure and that is what Eazy Learn is about. In the nearest future we will be integrating technologies like Machine Learning and Artificial Intelligence to our systems. So help us God!
+            Smart Campus is a groundbreaking educational platform founded in the year 2022 by Ndunche Joseph and Moyin, visionaries driven by the desire to transform the traditional educational system into a more efficient, accessible, and stress-free experience. The inception of this innovative project was sparked by the founder's personal experience at the Federal University of Oye-Ekiti, where challenges related to attendance tracking served as a catalyst for envisioning a more technologically advanced and streamlined approach to education.
             </p>
-           
+            <h5 style="font-weight: bolder;">Vision and Mission</h5>
+            <p>Smart Campus was established with a vision to create a seamless learning environment that harnesses the power of technology to enhance educational experiences. The mission is to simplify the lives of students and educators by providing a comprehensive and user-friendly platform that addresses various aspects of academic life, ultimately promoting better learning outcomes.</p>
+
+           <h5 style="font-weight: bolder;">Conclusion</h5>
+           <p>Smart Campus is a pioneering educational initiative that envisions a future where learning is efficient, enjoyable, and devoid of unnecessary stress. By integrating advanced technologies and providing a range of features catered to the needs of students and educators, Smart Campus is leading the way in revolutionizing the educational landscape, making learning more accessible and empowering for all.</p>
           </div>
         </div>
 

@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Eazy Learn</title>
-  <meta content="Eazy Learn is an Edu Tech Company which was initiated by Ndunche Joseph to make Learning in Africa much easier and to connect different schools together." name="description">
-  <meta content="Eazy Learn, Easy Learn, Learning Made Easy, Learning made easy in Nigeria" name="keywords">
+  <title>Smart Campus</title>
+  <meta content="Smart Campus is an Edu Tech Company which was initiated by Ndunche Joseph Chizaram to make Learning in Africa much easier and to connect different schools together." name="description">
+  <meta content="Smartcampus, Smart Campus, SmartCampus, Smart campus in Nigeria" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/easylearn/logo4.png" rel="icon">
-  <link href="assets/img/easylearn/logo4.png" rel="apple-touch-icon">
+  <link href="assets/img/easylearn/logo-cut.png" rel="icon">
+  <link href="assets/img/easylearn/logo-cut.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
@@ -39,7 +39,7 @@
 
       <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
+        <img src="assets/img/easylearn/logo-cut2.png" style="border-radius: 5px; width: 7rem; height: 4rem;" alt=""> 
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list text-black"></i>

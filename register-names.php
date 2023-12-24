@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['id'])){
     header("location: dashboard.php");
   }
-require "header.php"; ?>
+require "includes/login-header.php"; ?>
 
 <body>
     <section class="container-fluid login-wrapper pt-3">
@@ -14,9 +14,9 @@ require "header.php"; ?>
                 <div class="login-form">
                 <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt="">   
+        <img src="assets/img/easylearn/logo-cut.png" style="border-radius: 5px; width: 4rem; height: 4rem; margin-left: 8.5rem;" alt="">   
 </a>
-                <h2 class="pt-5">Add your name</h2>
+                <h2 class="pt-5 text-center">Add your name</h2>
                 <form id="registration_form">
                 <div class="form-group mb-3">
                         <div id="message">
@@ -46,7 +46,7 @@ require "header.php"; ?>
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 <script>
     $(document).on('click', '#register_btn', function(e){
         e.preventDefault();

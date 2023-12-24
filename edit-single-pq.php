@@ -4,13 +4,13 @@ if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
 require "database/connection.php";
-require "header.php"; 
+require "includes/login-header.php"; 
 require "backend/edit-single-pq.php";
 
 if(isset($_GET['pq_id'])){
     $pq_id = $_GET['pq_id'];
 }
-$sql = "SELECT * FROM past_question WHERE id=?";
+$sql = "SELECT * FROM past_question WHERE pastquestion_id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $pq_id);
 if($stmt->execute()){
@@ -65,4 +65,4 @@ if($stmt->execute()){
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

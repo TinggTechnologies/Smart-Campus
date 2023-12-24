@@ -10,6 +10,7 @@ if(isset($_SESSION['id'])){
 
     $title = $_POST['title'];
     $desc = $_POST['desc'];
+    $price = $_POST['price'];
 
     if($_FILES['file']['error'] > 0){
         echo 'Error: ' . $_FILES['file']['error'];
@@ -29,9 +30,9 @@ if(isset($_SESSION['id'])){
             echo "File Size is too large";
         } else {
             if(move_uploaded_file($fileTemp, $uploadFile)){
-                $sql = "INSERT INTO tutorial (container, course_title, teacher_id, description, status, type) VALUES(?,?,?,?, 'pending', 'pdf')";
+                $sql = "INSERT INTO tutorial (container, course_title, teacher_id, description, status, amount) VALUES(?,?,?,?, 'pending', ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param('ssss', $fileName, $title, $user_id, $desc);
+                $stmt->bind_param('ssssi', $fileName, $title, $user_id, $desc, $price);
                 $stmt->execute();
             } else {
                 echo "Failed to upload";

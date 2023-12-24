@@ -12,7 +12,7 @@ require "database/connection.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Easy Learn</title>
+  <title>Smart Campus</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -91,7 +91,7 @@ require "database/connection.php";
 
       <div class="swiper-slide">
         <div class="testimonial-item">
-          <img src="<?= $row6['image']; ?>" style="border-radius: 25px;" class="testimonial-img" alt="">                 
+          <img src="uploads/<?= $row6['image']; ?>" style="border-radius: 25px;" class="testimonial-img" alt="">                 
         </div>
       </div>
  

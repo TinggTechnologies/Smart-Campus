@@ -15,83 +15,46 @@ if($stmt->execute()){
     }
 }
 ?>
+
+<style>
+    header {
+        z-index: 100;
+    }
+    video {
+        z-index: 1;
+    }
+</style>
  
- <style>
-    .logo{
-        font-size: 25px;
-  margin: 0;
-  font-weight: 700; 
-  color: #fff;
-  font-family: cursive;
-  color: rgba(0,0,0,.7);
-    }
-    .profile{
-        justify-content: center;
-        align-items: center;
-    }
-    .profile img{
-        margin-right: 1.2rem;
-    }
- 
- </style>
+ <header class="d-flex-sb">
+            <i class="bi bi-list-nested slider"></i>
+            <!-- Menu Dropdown -->
+            <div class="menu-dropdown">
+                <div class="top">
+                    <i class="bi bi-info-circle" title="Info"></i>
+                </div>
+                <ul>
+                    <li>
+                        <a href="profile.php" class="slider-profile-details d-flex">
+                            <img src="uploads/<?= $row['image']; ?>">
+                            <div>
+                                <span><?= $row['lastname'] . ' ' . $row['firstname']; ?></span>
+                                <p><?= $row['department']; ?></p>
+                            </div>
+                        </a>
+                    </li>
+                    <hr>
+                    <li><a href="./store/agent-dashboard.php"><i class="bi bi-app-indicator"></i> Dashboard</a></li>
+                    <li><a href="./store/download_pastquestion.php"><i class="bi bi-file-earmark-pdf"></i> Past Question</a></li>
+                    <li><a href="./store/download-tutorial.php"><i class="bi bi-file-easel"></i> Tutorial</a></li>
+                    <li><a href="./store"><i class="bi bi-basket"></i> Marketplace</a></li>
+                    <li><a href="assignment-solver1.php"><i class="bi bi-book"></i> Assignment Solver</a></li>
+                    <li><a href="room-mate-finder1.php"><i class="bi bi-people"></i> Roommate Finder</a></li>
+                    <li><a href="./house"><i class="bi bi-building"></i> Hostel Finder</a></li>
+                    <hr>
+                    <li><a href="settings.php"><i class="bi bi-gear"></i> Settings</a></li>
+                </ul>
+            </div>
+            <!-- End Menu Dropdown -->
+            <img src="./assets/img/easylearn/logo-cut.png" style="width: 5rem;">
 
-<div class="nav-container">
-    <div class="menu-toggle">
-    <a href="./dashboard.php"><img src="./assets/img/easylearn/logo4.png" style="width: 8rem;" alt="Eazy Learn Logo"></a>
-    <div style="display: flex; align-items: center;">
-    <div class="">
-           <!-- <a href="./profile.php"><img src="<?= $row['image']; ?>" alt=""></a> -->
-            <div class="mes">
-
-             </div>
-           </div>
-    <div class="clickme" style="padding-left: 2rem; font-size: 1.5rem;">
-    <span></span>
-    <span></span>
-    <span></span>
-    </div>
-
-</div>
-    <ul class="menu-links">
-    <li>
-                        <a href="pq1.php">
-                            <i class="bi bi-file-richtext"></i> Past Question</a>
-                    </li>   
-            
-                    <li>
-                        <a href="assignment-solver.php">
-                            <i class="bi bi-file-earmark-lock"></i> Assignment Solver</a>
-                    </li>
-                    <li>
-                        <a href="./house">
-                            <i class="bi bi-house"></i> Hostel Finder</a>
-                    </li>
-                    <li>
-                        <a href="room-mate-finder1.php">
-                            <i class="bi bi-people"></i> Room Mate Finder</a>
-                    </li>
-                    <li>
-                        <a href="tutorial1.php">
-                            <i class="bi bi-file-earmark-easel"></i> Tutorial</a>
-                    </li>
-                    <li>
-                        <a href="index-shop.php">
-                            <i class="bi bi-cart4"></i> Online Shop</a>
-                    </li>
-    
-                    <li>
-                        <a href="index-shop.php">
-                            <i class="bi bi-pencil-square"></i> Event</a>
-                    </li>
-
-                    <li>
-                        <a href="settings.php">
-                            <i class="bi bi-controller"></i> Settings</a>
-                    </li>
-                    <li>
-                        <a href="logout.php">
-                            <i class="bi bi-box-arrow-in-right"></i> Logout</a>
-                    </li>
-    </ul>
-    </div>
-</div>
+        </header>

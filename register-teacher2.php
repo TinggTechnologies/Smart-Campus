@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
-require "header.php"; 
+require "includes/login-header.php"; 
 require "database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -18,7 +18,7 @@ if($stmt->execute()){
         $department = $row['department'];
     }
 }
-//require "backend/room_mate_finder3.php";
+
 ?>
 
 <body>
@@ -63,7 +63,7 @@ if($stmt->execute()){
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 
 <script>
     $(document).on('click', '#job_btn', function(e){
@@ -97,8 +97,8 @@ if($stmt->execute()){
                 },
                 success: function(response){
                     $('#message').html(response);
-                   // $('body').fadeOut();
-                   // location.href = "register-teacher3.php";
+                    $('body').fadeOut();
+                   location.href = "register-teacher3.php";
                 }
             });
             $('#job_form')[0].reset();

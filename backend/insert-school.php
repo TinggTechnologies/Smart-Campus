@@ -15,6 +15,8 @@ require_once "../database/connection.php";
     $firstname = $_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
     $email = $_SESSION['email'];
+    $admin = 'smartcampus';
+    $message = "Thank you for joining Smartcampus" . $lastname;
 
     if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -33,21 +35,21 @@ require_once "../database/connection.php";
         $mail = new PHPMailer(true);
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
-        $mail->Host = 'mail.prestigehealthcare.com.ng';
+        $mail->Host = 'mail.smartcampus.com.ng';
         $mail->SMTPAuth = true;
-        $mail->Username = "presti23";
-        $mail->Password = "Joseph@21";
+        $mail->Username = "info@smartcampus.com.ng";
+        $mail->Password = "Chizaram@21";
         $mail->SMTPSecure = "ssl";
         $mail->Port = 465;
         
-        $mail->From = "info@eazylearn.com.ng";
-        $mail->FromName = "Eazy Learn Team";
+        $mail->From = "info@smartcampus.com.ng";
+        $mail->FromName = "Smart Campus Team";
         
         $mail->addAddress($email, $lastname . " " . $firstname);
         
         $mail->isHTML(true);
         
-        $mail->Subject = "Welcome to Eazy Learn.";
+        $mail->Subject = "Welcome to Smart Campus.";
         $mail->Body = '<!doctype html>
         <html lang="en-US">
         
@@ -72,7 +74,7 @@ require_once "../database/connection.php";
                             <tr>
                                 <td style="text-align:center;">
                                   <a href="https://eazylearn.com.ng/home" title="logo" target="_blank">
-                                    <img width="100" src="https://www.eazylearn.com.ng/home/assets/img/easylearn/logo4.png" title="logo" alt="logo">
+                                    <img width="100" src="https://www.smartcampus.com.ng/assets/img/easylearn/logo-cut.png" title="logo" alt="logo">
                                   </a>
                                 </td>
                             </tr>
@@ -98,7 +100,7 @@ require_once "../database/connection.php";
          <br>
          <p>please feel free to reach us on the contact below if you have any questions or if there is anything else we can help with(09048480552).</p>
          <br>
-         Eazy Learn Team.
+         Smart Campus Team.
                                                </p>
                                                 
                 
@@ -110,7 +112,7 @@ require_once "../database/connection.php";
                                     </table>
                                 </td>
                             <tr>
-                                <td style="height:20px;">&nbsp;</td>
+                                <td style="height:20px;">&nbsp; </td>
                             </tr>
                             <tr>
                                <td style="text-align:center;">
@@ -126,7 +128,14 @@ require_once "../database/connection.php";
         </body>
         
         </html>';
+        
         $mail->AltBody = "";
-        $mail->send();
+        if($mail->send()){
+            $sql = "INSERT INTO notification (user_id, sender_id, message) VALUES (???)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('sss', $id, $admin, $message);
+            $stmt->execute();
+        }
+
 
     }

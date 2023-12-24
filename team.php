@@ -4,7 +4,7 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/easylearn/congrats.jpg');">
+      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/easylearn/student3.gif');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
@@ -26,14 +26,8 @@
 
 
     <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team pt-0">
+    <section id="team" class="team pt-5">
       <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <span>Our Team</span>
-          <h2>Our Team</h2>
-
-        </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 

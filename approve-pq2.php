@@ -59,7 +59,7 @@ require "database/connection.php";
     $output = '';
     
     
-    $sql1 = "SELECT * FROM past_question WHERE id='$id' AND status='pending'";
+    $sql1 = "SELECT * FROM past_question WHERE pastquestion_id='$id' AND status='pending'";
         $stmt1 = $conn->prepare($sql1);
         $stmt1->execute();
         $result1 = $stmt1->get_result();
@@ -80,7 +80,7 @@ require "database/connection.php";
     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
       <div class="pricing-item message">
       <h3><?= $row6['lastname'] . " ".$row6['firstname']; ?></h3>
-      <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#<?= $row6['school'].' #'.$row1['department'].' #'.$row1['course_title'].' #'.$row1['type']; ?></h4>
+      <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#<?= $row6['school'].' #'.$row1['department'].' #'.$row1['course_title'].' #'.$row1['price']; ?></h4>
         <section id="testimonials" class="testimonials">
         <input type="hidden" id="agent_id" value="<?= $id; ?>">
         <input type="hidden" id="user_id" value="<?= $user_id; ?>">
@@ -91,7 +91,7 @@ require "database/connection.php";
 
       <div class="swiper-slide">
         <div class="testimonial-item">
-          <img src="<?= $row6['image']; ?>" style="border-radius: 25px;" class="testimonial-img" alt="">                 
+          <img src="uploads/<?= $row6['image']; ?>" style="border-radius: 25px;" class="testimonial-img" alt="">                 
         </div>
       </div>
  

@@ -29,6 +29,20 @@ if($rm_stmt->execute()){
    }
 }
 
+$sql2 = "SELECT * FROM orders WHERE user_id=? AND payment_status='pending'";
+$stmt2 = $conn->prepare($sql2);
+$stmt2->bind_param('s', $id);
+if($stmt2->execute()){
+    $result2 = $stmt2->get_result();
+    $count_cart = $result2->num_rows;
+    $background = '#00b1ff';
+    $boxshadow = '0 2px 5px rgba(0, 0, 0, 0.3)';
+    if($count_cart == 0){
+        $count_cart = "";
+        $background = "transparent";
+        $boxshadow = '';
+    } 
+}
 
 ?>
 <!doctype html>
@@ -36,11 +50,11 @@ if($rm_stmt->execute()){
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>EazyLearn </title>
+        <title>Smart Campus</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="../assets/img/easylearn/logo4.png">
+		<link rel="shortcut icon" type="image/x-icon" href="../assets/img/easylearn/logo-cut.png">
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -64,7 +78,7 @@ if($rm_stmt->execute()){
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="../assets/img/easylearn/logo4.png" alt="">
+                    <img src="../assets/img/easylearn/logo-cut.png" alt="">
                 </div>
             </div>
         </div>
@@ -72,6 +86,28 @@ if($rm_stmt->execute()){
     <!-- Preloader Start -->
 
     <header>
+   <style>
+    .header-bottom .header-right .shopping-card::before {
+  position: absolute;
+  content: "<?= $count_cart;?>";
+  width: 25px;
+  height: 25px;
+  background: <?= $background; ?>;
+  color: #fff;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 12px;
+  top: 0px;
+  right: 10px;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  box-shadow: <?= $boxshadow; ?>;
+}
+   </style>
         <!-- Header Start -->
        <div class="header-area">
             <div class="main-header ">
@@ -118,7 +154,7 @@ if($rm_stmt->execute()){
                             <!-- Logo -->
                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
                                 <div class="logo">
-                                  <a href="index.html"><img style="width: 8rem;" src="../assets/img/easylearn/logo3.jpg" alt=""></a>
+                                  <a href="index.php"><img style="width: 6rem; height: 2rem;" src="../assets/img/easylearn/logo-cut.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
@@ -126,32 +162,20 @@ if($rm_stmt->execute()){
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
-                                            <li><a href="./">Home</a></li>
-                                            <li><a href="Catagori.html">Catagory</a></li>
-                                            <li class="hot"><a href="#">Latest</a>
+                                            <li><a href="./">Market Place</a></li>
+                                            <li class="hot"><a href="#">Cart</a>
                                                 <ul class="submenu">
-                                                    <li><a href="product_list.html"> Product list</a></li>
-                                                    <li><a href="single-product.html"> Product Details</a></li>
+                                                    <li><a href="cart.php"> Check Cart</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="blog.html">Blog</a>
+                                            <li><a href="#">Become a seller</a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
+                                                    <li><a href="../upload-items.php">Upload Items</a></li>
+                                                    <li><a href="../edit-items.php">Edit Items</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="login.html">Login</a></li>
-                                                    <li><a href="cart.html">Card</a></li>
-                                                    <li><a href="elements.html">Element</a></li>
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="confirmation.html">Confirmation</a></li>
-                                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Product Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            </li> 
+                                            <li><a href="../chat-agent-intro.php">chat agent</a></li>
+                                            <li 
                                         </ul>
                                     </nav>
                                 </div>
@@ -173,7 +197,7 @@ if($rm_stmt->execute()){
                                     </li>
                                     <li>
                                         <div class="shopping-card">
-                                            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                            <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>
                                    <li class="d-none d-lg-block"> <a href="#" class="btn header-btn">Sign in</a></li>

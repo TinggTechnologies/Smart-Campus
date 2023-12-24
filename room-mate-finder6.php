@@ -12,13 +12,13 @@ require "database/connection.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Easy Learn</title>
+  <title>Smart Campus</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/easylearn/logo4.jpg" rel="icon">
-  <link href="assets/img/easylearn/logo4.jpg" rel="apple-touch-icon">
+  <link href="assets/img/easylearn/logo-cut.png" rel="icon">
+  <link href="assets/img/easylearn/logo-cut.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@ require "database/connection.php";
       <div class="section-header mt-2 d-flex justify-content-between align-items-center">
      <a href="javascript:history.back();">
      <i class="bi bi-arrow-left"></i>
-          <a  href="#" style="font-size: 1.2rem; color: rgba(0,0,0,1); margin-left: .5rem;"> Room Mate Finder</a>
+
 </a>
 <a href="edit-room-mate-profile.php">Edit Profile</a>
         </div>
@@ -54,18 +54,16 @@ require "database/connection.php";
 <div class="fetch-room-mate">
   
 </div>
-
+<br /><br />
+<div class="text-center">
+<a href="dashboard.php" class="btn btn-primary">Go to dashboard</a>
+</div>
       </div>
     </section><!-- End Pricing Section -->
     </main>
-    <footer id="footer" class="footer">
-
-</footer><!-- End Footer -->
-<!-- End Footer -->
+   
 
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-<div id="preloader"></div>
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

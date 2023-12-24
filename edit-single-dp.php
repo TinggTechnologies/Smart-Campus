@@ -4,7 +4,7 @@ if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
 require "database/connection.php";
-require "header.php"; 
+require "includes/login-header.php"; 
 require "backend/edit-single-dp.php";
 
 if(isset($_GET['dp_id'])){
@@ -44,6 +44,9 @@ if($stmt->execute()){
                                 <div class="input-group mb-5">
                                     <input type="text" name="course_title" id="course_title" class="form-control" value="<?= $row['course_title']; ?>" required>
                                 </div>
+                                <div class="input-group mb-5">
+                                    <input type="text" name="price" id="price" class="form-control" value="<?= $row['amount']; ?>" required>
+                                </div>
 
                                 <div class="form-group mb-5">
                                     <label for="desc">Description</label>
@@ -68,4 +71,4 @@ if($stmt->execute()){
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

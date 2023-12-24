@@ -7,7 +7,7 @@ require "database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
-date_default_timezone_set('Africa/Lagos');
+//date_default_timezone_set('Africa/Lagos');
 $sql = "SELECT * FROM users WHERE user_id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $id);
@@ -42,14 +42,14 @@ if($rm_stmt->execute()){
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="./assets/img/easylearn/logo4.png" rel="icon">
-    <link href="./assets/img/easylearn/logo4.png" rel="apple-touch-icon">
+    <link href="./assets/img/easylearn/logo-cut.png" rel="icon">
+    <link href="./assets/img/easylearn/logo-cut.png" rel="apple-touch-icon">
 
-    <title>Eazy Learn</title>
-    <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/query.css">
+    <title>Smart Campus</title>
+    <link rel="stylesheet" href="moyin_vendors/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="moyin_vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="moyin_css/style.css">
+    <link rel="stylesheet" href="moyin_css/query.css">
     <link rel="stylesheet" href="./assets/css/sweetalert.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>

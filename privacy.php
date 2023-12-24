@@ -1,9 +1,6 @@
 <?php 
-session_start();
-if(!isset($_SESSION['id'])){
-    header("location: login.php");
-  }
-require "header.php"; ?>
+
+require "includes/login-header.php"; ?>
 
 <body>
     <section class="container-fluid login-wrapper pt-3">
@@ -12,15 +9,17 @@ require "header.php"; ?>
            <div class="row justify-content-center">
             <div class="col-lg-6">
             <div class="login-form">
-            <a href="index.php" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/easylearn/logo3.jpg" style="border-radius: 5px;" alt=""> 
-            </a>
-                <h2 class="pt-5">Eazy Learn Privacy and Policy</h2>
+           
+       
+        <div class="text-center">
+        <img src="assets/img/easylearn/logo-cut.png" style="border-radius: 5px; width: 7rem;" alt=""> 
+        </div>
+           
+                <h2 class="pt-2">Privacy and Policy</h2>
                 <form role="form" class="mt-4" action="">
                
                     <div class="input-group mb-3">
-                        <p>At Eazy Learn, we value the privacy of our users and are committed to protecting their personal information. This Privacy Policy outlines how we collect, use, and protect the personal information of our users.
+                        <p style="font-weight: 600;">At Smartcampus, we value the privacy of our users and are committed to protecting their personal information. This Privacy Policy outlines how we collect, use, and protect the personal information of our users.
 
 Information We Collect:
 We collect personal information when users register on our website or use our services. The information we collect may include the user’s name, email address, phone number, date of birth, and location. We also collect information about the user’s device, IP address, and browser information.
@@ -51,9 +50,7 @@ Contact Us:
 If you have any questions or concerns about our Privacy Policy, please contact us at info@eazylearn.com.ng.</p>
                     </div>
                     
-                    <div class="form-group text-center">
-                        <a href="password.php" id="register_btn" class="form-control getStarted-btn">Agree & Join</a>
-                    </div>
+                  
                 </form>
                
             </div>
@@ -62,4 +59,4 @@ If you have any questions or concerns about our Privacy Policy, please contact u
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>

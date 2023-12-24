@@ -6,7 +6,6 @@ include "../database/connection.php";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
-$output = '';
 
 $sql = "SELECT * FROM past_question WHERE course_title LIKE '%{$_POST['query']}%' AND status='active'";
 $stmt = $conn->prepare($sql);
@@ -24,46 +23,46 @@ if($result->num_rows){
             $name = $row1['lastname'] . " " . $row1['firstname'];
             $department = $row1['department'];
         }
-    $output .= '
-    <body>
-    <section class="container-fluid login-wrapper pt-1">
-        <div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                <div class="login-form" style="border: 2px solid #ccc; padding: 20px; border-radius: 25px;">
-          
-                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">'.$row['course_title'].'</h2>
-                <span style="font-weight: 500; font-size: 1.7rem;">Department: '.$department.'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Institution: '.$row1['school'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Price: #'.$row['price'].'</span><br />
-                <form id="profile_form">                         
-                    <div class="form-group">
-                        <a href="download-past-question2.php?pq_id='.$row['id'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Buy Now</a>
+    ?>
+    <div class="best-product-area lf-padding" style="width: 100%; margin-bottom: 1rem;">
+           <div class="product-wrapper bg-height" style="background: rgba(0,0,255,.07);">
+                <div class="container position-relative">
+                    <div class="row justify-content-between align-items-end">
+                        <div class="product-man position-absolute  d-none d-lg-block">
+                            <img src="assets/img/categori/card-man.png" alt="">
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
+                            <div class="vertical-text">
+                                <span>Smartcampus</span>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="best-product-caption text-center">
+                            <h2><?= $row['course_title'] ?></h2>
+                                <p><?= $row['description'] ?></p>
+                                <a href="pq-checkout.php?pq_id=<?=$row['pastquestion_id']; ?>" class="btn">Download PDF</a>
+                            </div>
+                        </div>
                     </div>
-                </form>
-               
-            </div><hr>
                 </div>
-            </div>
-           
-        </div>
-    </section>
-    ' ;
+           </div>
+                      
+                    </div><br />
+<?php
 }
 } else {
-    $output .= '
+    ?>
     
     <body>
-    <section class="container-fluid login-wrapper pt-2">
+    <section class="container-fluid login-wrapper">
         <div class="container">
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                <div class="login-form text-center">
+                <div style="text-align: center;">
           
-                <h2 class="pt-5" style="font-size: 7rem; line-height: 1.3;"><i class="bi bi-x-circle-fill text-danger"></i></h2> 
-                <span style="font-size: 1.8rem;">No Past Question</span>             
+               
+                <span style="font-size: 1.5rem; color: red;">No Past Question</span>             
                
             </div>
                 </div>
@@ -73,10 +72,10 @@ if($result->num_rows){
     </section>
 
 
-    ';
+<?php
 }
 
 
 
 
-        echo $output;
+   

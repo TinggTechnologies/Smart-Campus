@@ -40,58 +40,58 @@ if($result->num_rows){
                 $file = $row1['file'];
         }
        
-    $output .= '
-    <body>
-    <section class="container-fluid login-wrapper pt-5 pb-5">
-        <div class="container">
-
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                <div class="login-form">
-                <img src="'.$file.'" class="img-responsive" />
-                <h2 class="pt-5" style="font-size: 3rem; line-height: 1.3;">'.$row['house_title'].'</h2>
-                <span style="font-weight: 500; font-size: 1.7rem;">Town: '.$row['town'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Type: '.$row['house_type'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Price: '.$row1['price'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">School: '.$school.'</span><br />
-                <form id="profile_form">                         
-                    <div class="form-group">
-                    <a href="buy-hostel.php?time='.$row['timestamp'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">'.$row['house_type'].' house</a>
+    // Check file extension to determine if it's a video or image
+    $file_extension = pathinfo($file, PATHINFO_EXTENSION);
+    if (in_array(strtolower($file_extension), ['mp4', 'avi', 'mov'])) {
+        // It's a video
+        $output .= '
+            <div class="col-lg-4 col-md-6 mix all house">
+                <div class="property-item">
+                    <div class="pi-pic set-bg">
+                        <a href="./property-details.php?time=' . $row['timestamp'] . '">
+                            <video width="100%" controls style="width: 100%; height: 17rem;">
+                                <source src="../' . $file . '" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="label">For ' . $row['house_type'] . '</div>
+                    </div><br /><br />
+                    <div class="pi-text">
+                        <div class="pt-price">' . $row1['price'] . '<span>/year</span></div>
+                        <h5><a href="">' . $row['house_title'] . '</a></h5>
+                        <p><span class="icon_pin_alt"></span> ' . $row['town'] . '</p>
+                        <ul>
+                            <li><i class="fa fa-bathtub"></i> ' . $row1['toilet'] . '</li>
+                            <li><i class="fa fa-bed"></i> ' . $row1['bedroom'] . '</li>
+                            <a href="./property-details.php?time=' . $row['timestamp'] . '"> View Hostel </a>
+                        </ul>
                     </div>
-                </form>
-               
-            </div><hr>
                 </div>
-            </div>
-           
-        </div>
-    </section>
-    ' ;
-}
-} else {
-    $output .= '
-    
-    <body>
-    <section class="container-fluid login-wrapper pt-5">
-        <div class="container">
-
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                <div class="login-form text-center">
-          
-                <h2 class="pt-5 text-danger" style="font-size: 8rem; line-height: 1.3;"><i class="bi bi-x-circle-fill"></i>
-                </h2>              
-                <span>No Hostel</span>
-               
-            </div>
+            </div>';
+    } elseif (in_array(strtolower($file_extension), ['jpg', 'png', 'jpeg', 'gif'])) {
+        // It's an image
+        $output .= '
+            <div class="col-lg-4 col-md-6 mix all house">
+                <div class="property-item">
+                    <div class="pi-pic set-bg">
+                        <a href="./property-details.php?time=' . $row['timestamp'] . '">
+                            <img src="../' . $file . '" style="width: 100%; height: 17rem;" />
+                        </a>
+                        <div class="label">For ' . $row['house_type'] . '</div>
+                    </div><br /><br />
+                    <div class="pi-text">
+                        <div class="pt-price">' . $row1['price'] . '<span>/year</span></div>
+                        <h5><a href="">' . $row['house_title'] . '</a></h5>
+                        <p><span class="icon_pin_alt"></span> ' . $row['town'] . '</p>
+                        <ul>
+                            <li><i class="fa fa-bathtub"></i> ' . $row1['toilet'] . '</li>
+                            <li><i class="fa fa-bed"></i> ' . $row1['bedroom'] . '</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-           
-        </div>
-    </section>
-
-
-    ';
+            </div>';
+}}} else {
+    $output .= '<div class="text-danger text-center" style="font-size: 1.3rem; padding-bottom: 1rem;"> No Hostel </div>';
 }
 
 

@@ -66,7 +66,7 @@ if($stmt3->execute()){
 
       <div class="swiper-slide">
         <div class="testimonial-item">
-          <img src="'.$rowss['selfie'].'" style="border-radius: 25px;" class="testimonial-img" alt="">                 
+          <img src="'.$rowss['selfie'].'" style="border-radius: 50%; width: 15rem;" class="testimonial-img" alt="">                 
         </div>
       </div>
       
@@ -85,6 +85,8 @@ if($stmt3->execute()){
   </div>';
 
 }
+    } else {
+      $output .= "<div class='text-center text-danger'>No roommate, Check later.</div>";
     }
 }
 

@@ -1,4 +1,4 @@
-<?php require "header.php"; ?>
+<?php require "includes/login-header.php"; ?>
 <body>
     <section class="container-fluid login-wrapper mt-5 pt-5">
         <div class="container text-center">
@@ -20,6 +20,6 @@
         </div>
     </section>
 
-    <script src="./js/jquery2.js"></script>
+    <script src="js/jquery2.js"></script>
 </body>
 </html>

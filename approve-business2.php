@@ -59,7 +59,7 @@ require "database/connection.php";
     $output = '';
     
     
-    $sql2 = "SELECT * FROM register_business WHERE id=?";
+    $sql2 = "SELECT * FROM products WHERE id=?";
     $stmt2 = $conn->prepare($sql2);
     $stmt2->bind_param('s', $id);
     if($stmt2->execute()){
@@ -83,8 +83,8 @@ require "database/connection.php";
     
     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
       <div class="pricing-item message">
-        <h3><?= $name; ?></h3>
-        <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#<?= $row3['date_of_birth'].' #'.$row3['gender'].' #'.$row3['department'].' #'.$row3['school']; ?></h4>
+        <h3><?= $rowss['item_name']; ?></h3>
+        <h4 style="font-size: 1.3rem; color: rgba(0,0,0,.6);">#<?= $rowss['category'].' #'.$rowss['price'].' #'.$rowss['description']; ?></h4>
         <section id="testimonials" class="testimonials">
         <input type="hidden" id="teacher_id" value="<?= $id; ?>">
         <input type="hidden" id="yid" value="<?= $yid; ?>">
@@ -95,7 +95,7 @@ require "database/connection.php";
 
       <div class="swiper-slide">
         <div class="testimonial-item">
-          <img src="<?= $row3['image']; ?>" style="border-radius: 25px;" class="testimonial-img" alt="">                 
+          <img src="<?= $rowss['image']; ?>" style="border-radius: 25px;" class="testimonial-img" alt="">                 
         </div>
       </div>
     </div>
@@ -181,7 +181,7 @@ require "database/connection.php";
                 },
                 success: function(data){
                     $('.message').html(data);
-                    location.href = 'admin-dashboard.php';
+                    //location.href = 'admin-dashboard.php';
                     
                 }
             });

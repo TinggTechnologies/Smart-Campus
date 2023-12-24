@@ -35,13 +35,11 @@ if($result->num_rows){
                 <div class="login-form text-center"  style="border: 2px solid #ccc; padding: 20px; border-radius: 25px;">
           
                 <h2 class="pt-5" style="font-size: 3rem; line-height: 1.3;">'.$name.'</h2>
-                <span style="font-weight: 400; font-size: 1.7rem;">Faculty: '.$row1['faculty'].'</span><br />
-                <span style="font-weight: 400; font-size: 1.7rem;">Department: '.$department.'</span><br />
                 <span style="font-weight: 400; font-size: 1.7rem;">Course Title: '.$row['course_title'].'</span><br />
                 <span style="font-weight: 400; font-size: 1.7rem;">Description: '.$row['description'].'</span>
                 <form id="profile_form">                         
                     <div class="form-group">
-                        <a href="edit-single-dp.php?dp_id='.$row['tutorial_id'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Edit Donate Pdf</a>
+                        <a href="edit-single-dp.php?dp_id='.$row['tutorial_id'].'" i style="padding: 1rem 3rem; color: blue;" class="getStarted-btn">Edit Donate Pdf</a>
                     </div>
                 </form>
                

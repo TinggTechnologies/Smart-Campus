@@ -9,7 +9,7 @@ if(isset($_GET['item_id'])){
     $item_id = $_GET['item_id'];
 }
 
-$sql = "SELECT * FROM sell WHERE id=?";
+$sql = "SELECT * FROM products WHERE id=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $item_id);
 if($stmt->execute()){
@@ -18,7 +18,7 @@ if($stmt->execute()){
         $row = $result->fetch_assoc();
     }
 }
-require "header.php"; ?>
+require "includes/login-header.php"; ?>
 
 <body>
     <section class="container-fluid login-wrapper pt-3">
@@ -61,7 +61,7 @@ require "header.php"; ?>
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 <script>
     $(document).ready(function(){
         $('#upload-form').on('submit', function(e){

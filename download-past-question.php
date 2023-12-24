@@ -1,7 +1,58 @@
-<?php require "includes/dashboard-header.php"; 
+<?php
+session_start();
+if(!isset($_SESSION['id'])){
+  header("location: login.php");
+}
+require "database/connection.php";
+if(isset($_SESSION['id'])){
+    $id = $_SESSION['id'];
+}
+//date_default_timezone_set('Africa/Lagos');
+$sql = "SELECT * FROM users WHERE user_id=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('s', $id);
+if($stmt->execute()){
+    $result = $stmt->get_result();
+    if($result->num_rows > 0){
+        $row = $result->fetch_assoc();
+    }
+}
+
+
+$rm_sql = "SELECT * FROM users WHERE user_id=? AND (department='' OR school='' OR faculty='')";
+$rm_stmt = $conn->prepare($rm_sql);
+$rm_stmt->bind_param('s', $id);
+if($rm_stmt->execute()){
+   $rm_result = $rm_stmt->get_result();
+   if($rm_result->num_rows > 0){
+    echo "<script>location.href = 'verify-email.php';</script>"; 
+   }
+}
 
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="./assets/img/easylearn/logo4.png" rel="icon">
+    <link href="./assets/img/easylearn/logo4.png" rel="apple-touch-icon">
+
+    <title>EazyLearn</title>
+    <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/query.css">
+    <link rel="stylesheet" href="./assets/css/sweetalert.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
 
 <body>
 
@@ -41,39 +92,44 @@ if($result->num_rows){
             $name = $row1['lastname'] . " " . $row1['firstname'];
             $department = $row1['department'];
         }
-    $output .= '
+    ?>
+     <style>
+        /* Custom CSS for the background */
+        .custom-bg {
+            background: repeating-linear-gradient(45deg, rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7) 10px, rgba(0, 174, 255, 0.7) 10px, rgba(0, 174, 255, 0.7) 20px);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
     <body>
     <section class="container-fluid login-wrapper pt-1">
         <div>
-
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                <div class="login-form" style="border: 2px solid #ccc; padding: 20px; border-radius: 25px;">
-          
-                <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;">'.$row['course_title'].'</h2>
-                <span style="font-weight: 500; font-size: 1.7rem;">Department: '.$department.'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Institution: '.$row1['school'].'</span><br />
-                <span style="font-weight: 500; font-size: 1.7rem;">Price: #'.$row['price'].'</span><br />
-                <form id="profile_form">                         
-                    <div class="form-group">
-                        <a href="download-past-question2.php?pq_id='.$row['id'].'" i style="padding: 1rem 3rem;" class="getStarted-btn">Buy Now</a>
+                    <div class="login-form custom-bg" style="border: 2px solid #ccc; padding: 20px; border-radius: 25px;">
+                        <h2 class="pt-5" style="font-size: 2rem; line-height: 1.3;"><?=$row['course_title']?></h2>
+                        <span style="font-weight: 500; font-size: 1.7rem;">Department: <?=$department?></span><br />
+                        <span style="font-weight: 500; font-size: 1.7rem;">Institution: <?=$row1['school']?></span><br />
+                        <span style="font-weight: 500; font-size: 1.7rem;">Price: &#x20A6;<?=$row['price']?></span><br />
+                        <form id="profile_form">
+                            <div class="form-group">
+                                <a href="download-past-question2.php?pq_id=<?=$row['id']?>" i style="padding: 1rem 3rem;" class="getStarted-btn">Buy Now</a>
+                            </div>
+                        </form>
                     </div>
-                </form>
-               
-            </div><hr>
                 </div>
             </div>
-           
         </div>
     </section>
-    ' ;
+    <?php
 }
 } 
 
 
 
 
-        echo $output;
+     ?>
             ?>
         </div>
     </section>

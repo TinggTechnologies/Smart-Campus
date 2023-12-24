@@ -4,10 +4,10 @@ if(!isset($_SESSION['id'])){
   header("location: login.php");
 }
 require "database/connection.php";
-require "header.php"; ?>
+require "includes/login-header.php"; ?>
 
 <body>
-    <section class="container-fluid login-wrapper pt-5">
+    <section class="container-fluid login-wrapper pt-3">
         <div class="container">
 
             <div class="row justify-content-center">
@@ -37,7 +37,7 @@ require "header.php"; ?>
            
         </div>
     </section>
-<?php require "footer.php"; ?>
+<?php require "includes/login-footer.php"; ?>
 <script>
     $(document).on('click', '#register_btn', function(e){
         e.preventDefault();

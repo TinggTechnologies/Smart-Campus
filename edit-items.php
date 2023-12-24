@@ -90,9 +90,9 @@ if(isset($_SESSION['id'])){
     </style>
 
     <section class="container-fluid index-wrapper" style="margin-bottom: 5rem;">
-       <?php require_once "includes/business-nav.php"; ?>
+       <?php require_once "includes/nav.php"; ?>
         <!-- ================= Navigation ================== -->
-        <?php require_once "includes/footer-nav-no.php"; ?>
+        <?php require_once "includes/footer-nav.php"; ?>
         <!-- End Navigation -->
 
         <!-- ================= Feeds ================== -->
@@ -103,7 +103,7 @@ if(isset($_SESSION['id'])){
           <h3 class="text-center">Edit Items</h3>
             
             
-            <div class="assignment-student" style="padding-bottom: 4rem; padding-top: 3rem;">
+            <div class="assignment-student text-center" style="padding-bottom: 4rem; padding-top: 3rem;">
 
            
             </div>
